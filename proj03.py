@@ -1,18 +1,13 @@
 # /*******************************************************************************
-#  Author		: Gil Gerard Austria, Hayden Daly, Justin Bernstein
+#  Author		: Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  Date			: 2019-06-09
 #  Description	: Project 02
 #  Github   : https://github.com/haydendaly/GEDCOM-Parser
-#  Pledge		:"I pledge my honor that I have abided by the Stevens Honor System"	- Gil Gerard Austria, Hayden Daly, Justin Bernstein
+#  Pledge		:"I pledge my honor that I have abided by the Stevens Honor System"	- Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  *******************************************************************************/
 
-# Order of Checks
-#   Check that level is between 0 and 2, inclusive: 0 <= level <= 2
-#   Check that the tag is a valid, recognized tag in general: check if in keys of validTagLevelPairs
-#       If the tag is INDI or FAM, make sure that the order is 0 <id> INDI/FAM
-#   Check that the tag-level Pair is valid: Use the validTagLevelPairs Dict
-
 import sys
+from datetime import date
 from prettytable import PrettyTable
 
 validTagLevelPairs = {
@@ -83,12 +78,129 @@ def validate(line):
     return formatString(level, tag, "Y", arguments)
 
 
+monthToNumDict = {
+    'JAN': '01',
+    'FEB': '02',
+    'MAR': '03',
+    'APR': '04',
+    'MAY': '05',
+    'JUN': '06',
+    'JUL': '07',
+    'AUG': '08',
+    'SEP': '09',
+    'OCT': '10',
+    'NOV': '11',
+    'DEC': '12'
+}
+
 def displayIndiData(individualData):
-    print(individualData)
+    print('Individuals')
+
+    indiDataTable = PrettyTable()
+    indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Age", "Alive", "Death", "Child", "Spouse"]
+
+    idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
+
+    for id in idListSorted:
+        indiData = individualData[ id ]
+
+        name = indiData['NAME']
+        gender = indiData['SEX']
+
+        try:
+            child = '{\'' + indiData['FAMC'] + '\'}'
+        except:
+            child = 'None'
+
+        try:
+            if ( len( indiData['FAMS'] ) == 1 ):
+                spouse = '{\'' + "".join( indiData['FAMS'] ) + '\'}'
+            else:
+                spouse = '{\'' + "', '".join( indiData['FAMS'] ) + '\'}'
+        except:
+            spouse = 'N/A'
+
+        # Format Birth Date
+        birthdate = indiData['BIRT']
+        birthdateSplit = birthdate.split(" ")
+        birthday = birthdateSplit[2] + '-' + monthToNumDict[ birthdateSplit[1] ] + '-' + birthdateSplit[0].zfill(2)
+
+        # Calculate Age
+        dateToday = date.today()
+        ageInYears = dateToday.year - int( birthdateSplit[2] )
+        birthMonthHasPassed = dateToday.month < int( monthToNumDict[ birthdateSplit[1] ] )
+        if ( birthMonthHasPassed == -1 ):
+            age = ageInYears
+        elif ( birthMonthHasPassed == 0 ):
+            birthdateHasPassed = dateToday.day < int( birthdateSplit[0] )
+            if ( birthdateHasPassed == -1 ):
+                age = ageInYears
+            elif ( birthdateHasPassed == 0 or birthdateHasPassed == 1 ):
+                age = ageInYears + 1
+        else:
+            age = ageInYears + 1
+
+
+        # Check if DEAT Tag Exists and Format Death Date
+        if ( 'DEAT' in indiData.keys() ):
+            alive = 'False'
+
+            deathdate = indiData['DEAT']
+            deathdateSplit = deathdate.split(" ")
+            death = deathdateSplit[2] + '-' + monthToNumDict[ deathdateSplit[1] ] + '-' + deathdateSplit[0]
+        else:
+            alive = 'True'
+            death = 'N/A'
+
+        indiDataTable.add_row([id, name, gender, birthday, age, alive, death, child, spouse])
+
+    print( indiDataTable )
     return
 
-def displayFamData(familyData):
-    print(familyData)
+def displayFamData(individualData, familyData):
+    print('Families')
+
+    famDataTable = PrettyTable()
+    famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
+
+    idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
+
+    for id in idListSorted:
+        famData = familyData[id]
+
+        # Format Married Date
+        marriedDate = famData['MARR']
+        marriedDateSplit = marriedDate.split(" ")
+        married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+
+        # Check if Divorced and Format Data
+        try:
+            divorcedDate = famData['DIV']
+            divorcedDateSplit = divorcedDate.split(" ")
+            divorced = divorcedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+        except:
+            divorced = 'N/A'
+
+        # Get Husband Data
+        husbandId = famData['HUSB']
+        husbandName = individualData[husbandId].get('NAME')
+
+        # Get Wife Data
+        wifeId = famData['WIFE']
+        wifeName = individualData[wifeId].get('NAME')
+
+        # Check if Children Exist and Format Data
+        try:
+            if ( len( famData['CHIL'] ) == 1 ):
+                children = '{\'' + "".join( famData['CHIL'] ) + '\'}'
+            else:
+                children = '{\'' + "\', \'".join( famData['CHIL'] ) + '\'}'
+        except:
+            children = 'None'
+
+        famDataTable.add_row([id, married, divorced, husbandId, husbandName, wifeId, wifeName, children])
+
+    print(famDataTable)
     return
 
 
@@ -145,7 +257,7 @@ def parseValidDataForDisplay(validLinesList):
                     familyData[ prevTopLevelId ].update( { tag: "" } )
 
     displayIndiData(individualData)
-    displayFamData(familyData)
+    displayFamData(individualData, familyData)
     return
 
 
