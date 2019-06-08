@@ -93,7 +93,7 @@ monthToNumDict = {
     'DEC': '12'
 }
 
-def displayIndiData(individualData):
+def displayIndiData(outputFile, individualData):
     print('Individuals')
 
     indiDataTable = PrettyTable()
@@ -156,13 +156,13 @@ def displayIndiData(individualData):
 
     print( indiDataTable )
 
-    outputTable = open('INDI_AND_FAM_DATA_TABLE_output.txt', 'a')
+    outputTable = open(outputFile, 'a')
     outputTable.write('Individuals\n')
     outputTable.write(indiDataTable.get_string())
 
     return
 
-def displayFamData(individualData, familyData):
+def displayFamData(outputFile, individualData, familyData):
     print('Families')
 
     famDataTable = PrettyTable()
@@ -173,12 +173,15 @@ def displayFamData(individualData, familyData):
     for id in idListSorted:
         famData = familyData[id]
 
-        # Format Married Date
-        marriedDate = famData['MARR']
-        marriedDateSplit = marriedDate.split(" ")
-        married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+        # Check if Married and Format Married Date
+        try:
+            marriedDate = famData['MARR']
+            marriedDateSplit = marriedDate.split(" ")
+            married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+        except:
+            married = 'N/A'
 
-        # Check if Divorced and Format Data
+        # Check if Divorced and Format Death Date
         try:
             divorcedDate = famData['DIV']
             divorcedDateSplit = divorcedDate.split(" ")
@@ -187,12 +190,20 @@ def displayFamData(individualData, familyData):
             divorced = 'N/A'
 
         # Get Husband Data
-        husbandId = famData['HUSB']
-        husbandName = individualData[husbandId].get('NAME')
+        try:
+            husbandId = famData['HUSB']
+            husbandName = individualData[husbandId].get('NAME')
+        except:
+            husbandId = 'N/A'
+            husbandName = 'N/A'
 
         # Get Wife Data
-        wifeId = famData['WIFE']
-        wifeName = individualData[wifeId].get('NAME')
+        try:
+            wifeId = famData['WIFE']
+            wifeName = individualData[wifeId].get('NAME')
+        except:
+            wifeId = 'N/A'
+            wifeName = 'N/A'
 
         # Check if Children Exist and Format Data
         try:
@@ -207,13 +218,13 @@ def displayFamData(individualData, familyData):
 
     print(famDataTable)
 
-    outputTable = open('INDI_AND_FAM_DATA_TABLE_output.txt', 'a')
+    outputTable = open(outputFile, 'a')
     outputTable.write('\nFamilies\n')
     outputTable.write(famDataTable.get_string())
     return
 
 
-def parseValidDataForDisplay(validLinesList):
+def parseValidDataForDisplay(outputFile, validLinesList):
     prevTopLevelTag = ""
     prevTopLevelId = ""
     individualData = {}
@@ -265,8 +276,8 @@ def parseValidDataForDisplay(validLinesList):
                     prevTagPendingDate = tag
                     familyData[ prevTopLevelId ].update( { tag: "" } )
 
-    displayIndiData(individualData)
-    displayFamData(individualData, familyData)
+    displayIndiData(outputFile, individualData)
+    displayFamData(outputFile, individualData, familyData)
     return
 
 
@@ -282,8 +293,9 @@ def main(fileName):
         output.write('<-- ' + lineValidation + "\n")
         validLinesList.append(lineValidation)
 
-    outputTable = open(fileName[:-4]+'INDI_AND_FAM_DATA_TABLE_output.txt', 'w+')
-    parseValidDataForDisplay(validLinesList)
+    tableTxtName = fileName[:-4]+'_INDI_AND_FAM_DATA_TABLE_output.txt'
+    outputTable = open(tableTxtName, 'w+')
+    parseValidDataForDisplay(tableTxtName, validLinesList)
 
     return
 
