@@ -155,6 +155,11 @@ def displayIndiData(individualData):
         indiDataTable.add_row([id, name, gender, birthday, age, alive, death, child, spouse])
 
     print( indiDataTable )
+
+    outputTable = open('INDI_AND_FAM_DATA_TABLE_output.txt', 'a')
+    outputTable.write('Individuals\n')
+    outputTable.write(indiDataTable.get_string())
+
     return
 
 def displayFamData(individualData, familyData):
@@ -201,6 +206,10 @@ def displayFamData(individualData, familyData):
         famDataTable.add_row([id, married, divorced, husbandId, husbandName, wifeId, wifeName, children])
 
     print(famDataTable)
+
+    outputTable = open('INDI_AND_FAM_DATA_TABLE_output.txt', 'a')
+    outputTable.write('\nFamilies\n')
+    outputTable.write(famDataTable.get_string())
     return
 
 
@@ -273,6 +282,7 @@ def main(fileName):
         output.write('<-- ' + lineValidation + "\n")
         validLinesList.append(lineValidation)
 
+    outputTable = open(fileName[:-4]+'INDI_AND_FAM_DATA_TABLE_output.txt', 'w+')
     parseValidDataForDisplay(validLinesList)
 
     return
