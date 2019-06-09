@@ -1,7 +1,7 @@
 # /*******************************************************************************
 #  Author		: Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  Date			: 2019-06-09
-#  Description	: Project 02
+#  Description	: Project 03
 #  Github   : https://github.com/haydendaly/GEDCOM-Parser
 #  Pledge		:"I pledge my honor that I have abided by the Stevens Honor System"	- Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  *******************************************************************************/
@@ -168,10 +168,13 @@ def displayFamData(individualData, familyData):
     for id in idListSorted:
         famData = familyData[id]
 
-        # Format Married Date
-        marriedDate = famData['MARR']
-        marriedDateSplit = marriedDate.split(" ")
-        married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+        try:
+            # Format Married Date
+            marriedDate = famData['MARR']
+            marriedDateSplit = marriedDate.split(" ")
+            married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
+        except:
+            married = 'N/A'
 
         # Check if Divorced and Format Data
         try:
@@ -182,12 +185,18 @@ def displayFamData(individualData, familyData):
             divorced = 'N/A'
 
         # Get Husband Data
-        husbandId = famData['HUSB']
-        husbandName = individualData[husbandId].get('NAME')
+        try:
+            husbandId = famData['HUSB']
+            husbandName = individualData[husbandId].get('NAME')
+        except:
+            husbandName = 'N/A'
 
         # Get Wife Data
-        wifeId = famData['WIFE']
-        wifeName = individualData[wifeId].get('NAME')
+        try:
+            wifeId = famData['WIFE']
+            wifeName = individualData[wifeId].get('NAME')
+        except:
+            wifeName = 'N/A'
 
         # Check if Children Exist and Format Data
         try:
