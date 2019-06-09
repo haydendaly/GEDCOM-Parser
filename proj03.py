@@ -1,8 +1,8 @@
 # /*******************************************************************************
 #  Author		: Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  Date			: 2019-06-09
-#  Description	: Project 02
-#  Github   : https://github.com/haydendaly/GEDCOM-Parser
+#  Description	: Project 03
+#  Github       : https://github.com/haydendaly/GEDCOM-Parser
 #  Pledge		:"I pledge my honor that I have abided by the Stevens Honor System"	- Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  *******************************************************************************/
 
@@ -96,10 +96,13 @@ monthToNumDict = {
 def displayIndiData(outputFile, individualData):
     print('Individuals')
 
-    indiDataTable = PrettyTable()
-    indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Age", "Alive", "Death", "Child", "Spouse"]
+    try:
+        indiDataTable = PrettyTable()
+        indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Alive", "Death", "Child", "Spouse"]
 
-    idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
+        idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
+    except:
+        print("No module 'PrettyTable'")
 
     for id in idListSorted:
         indiData = individualData[ id ]
@@ -125,22 +128,6 @@ def displayIndiData(outputFile, individualData):
         birthdateSplit = birthdate.split(" ")
         birthday = birthdateSplit[2] + '-' + monthToNumDict[ birthdateSplit[1] ] + '-' + birthdateSplit[0].zfill(2)
 
-        # Calculate Age
-        dateToday = date.today()
-        ageInYears = dateToday.year - int( birthdateSplit[2] )
-        birthMonthHasPassed = dateToday.month < int( monthToNumDict[ birthdateSplit[1] ] )
-        if ( birthMonthHasPassed == -1 ):
-            age = ageInYears
-        elif ( birthMonthHasPassed == 0 ):
-            birthdateHasPassed = dateToday.day < int( birthdateSplit[0] )
-            if ( birthdateHasPassed == -1 ):
-                age = ageInYears
-            elif ( birthdateHasPassed == 0 or birthdateHasPassed == 1 ):
-                age = ageInYears + 1
-        else:
-            age = ageInYears + 1
-
-
         # Check if DEAT Tag Exists and Format Death Date
         if ( 'DEAT' in indiData.keys() ):
             alive = 'False'
@@ -152,7 +139,7 @@ def displayIndiData(outputFile, individualData):
             alive = 'True'
             death = 'N/A'
 
-        indiDataTable.add_row([id, name, gender, birthday, age, alive, death, child, spouse])
+        indiDataTable.add_row([id, name, gender, birthday, alive, death, child, spouse])
 
     print( indiDataTable )
 
@@ -165,16 +152,19 @@ def displayIndiData(outputFile, individualData):
 def displayFamData(outputFile, individualData, familyData):
     print('Families')
 
-    famDataTable = PrettyTable()
-    famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
+    try:
+        famDataTable = PrettyTable()
+        famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
 
-    idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
+        idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
+    except:
+        print("No module 'PrettyTable'")
 
     for id in idListSorted:
         famData = familyData[id]
 
-        # Check if Married and Format Married Date
         try:
+            # Format Married Date
             marriedDate = famData['MARR']
             marriedDateSplit = marriedDate.split(" ")
             married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
