@@ -96,10 +96,13 @@ monthToNumDict = {
 def displayIndiData(individualData):
     print('Individuals')
 
-    indiDataTable = PrettyTable()
-    indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Age", "Alive", "Death", "Child", "Spouse"]
+    try:
+        indiDataTable = PrettyTable()
+        indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Age", "Alive", "Death", "Child", "Spouse"]
 
-    idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
+        idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
+    except:
+        print("No module 'PrettyTable'")
 
     for id in idListSorted:
         indiData = individualData[ id ]
@@ -160,10 +163,13 @@ def displayIndiData(individualData):
 def displayFamData(individualData, familyData):
     print('Families')
 
-    famDataTable = PrettyTable()
-    famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
+    try:
+        famDataTable = PrettyTable()
+        famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
 
-    idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
+        idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
+    except:
+        print("No module 'PrettyTable'")
 
     for id in idListSorted:
         famData = familyData[id]
