@@ -9,6 +9,7 @@
 import sys
 from datetime import date
 from prettytable import PrettyTable
+from natsort import natsorted
 
 validTagLevelPairs = {
     'INDI': 0,
@@ -100,9 +101,13 @@ def displayIndiData(outputFile, individualData):
         indiDataTable = PrettyTable()
         indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Alive", "Death", "Child", "Spouse"]
 
-        idListSorted = sorted( individualData.keys(), key = lambda id: id[0] )
     except:
         print("No module 'PrettyTable'")
+
+    try:
+        idListSorted = natsorted( individualData.keys() )
+    except:
+        print("No module 'natsort'")
 
     for id in idListSorted:
         indiData = individualData[ id ]
@@ -156,9 +161,13 @@ def displayFamData(outputFile, individualData, familyData):
         famDataTable = PrettyTable()
         famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
 
-        idListSorted = sorted( familyData.keys(), key = lambda id: id[0] )
     except:
         print("No module 'PrettyTable'")
+
+    try:
+        idListSorted = natsorted( familyData.keys() )
+    except:
+        print("No module 'natsort'")
 
     for id in idListSorted:
         famData = familyData[id]
