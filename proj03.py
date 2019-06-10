@@ -112,8 +112,12 @@ def displayIndiData(outputFile, individualData):
     for id in idListSorted:
         indiData = individualData[ id ]
 
-        name = indiData['NAME']
-        gender = indiData['SEX']
+        try:
+            name = indiData['NAME']
+            gender = indiData['SEX']
+        except:
+            name = "N/A"
+            gender = "N/A"
 
         try:
             child = '{\'' + indiData['FAMC'] + '\'}'
@@ -129,7 +133,10 @@ def displayIndiData(outputFile, individualData):
             spouse = 'N/A'
 
         # Format Birth Date
-        birthdate = indiData['BIRT']
+        try:
+            birthdate = indiData['BIRT']
+        except:
+            birthdate = 'N/A'
         birthdateSplit = birthdate.split(" ")
         birthday = birthdateSplit[2] + '-' + monthToNumDict[ birthdateSplit[1] ] + '-' + birthdateSplit[0].zfill(2)
 
@@ -137,7 +144,10 @@ def displayIndiData(outputFile, individualData):
         if ( 'DEAT' in indiData.keys() ):
             alive = 'False'
 
-            deathdate = indiData['DEAT']
+            try:
+                deathdate = indiData['DEAT']
+            except:
+                deathdate = 'N/A'
             deathdateSplit = deathdate.split(" ")
             death = deathdateSplit[2] + '-' + monthToNumDict[ deathdateSplit[1] ] + '-' + deathdateSplit[0]
         else:
