@@ -1,8 +1,5 @@
 import datetime
 
-def us00(x):
-    return x + 1
-
 def us01(data):
     for key, value in data.items():
         if 'BIRT' in value:
@@ -19,6 +16,7 @@ def us01(data):
                 value['DIV'] = '00 JAN 0000'
 
     return data
+
 
 def us02(individualData, familyData):
     for key, value in familyData.items():
