@@ -97,6 +97,9 @@ monthToNumDict = {
 }
 
 def displayIndiData(outputFile, individualData):
+    hdUserStories.us_35(individualData)
+    hdUserStories.us_36(individualData)
+    
     print('Individuals')
 
     individualData = jbUserStories.us01(individualData)
