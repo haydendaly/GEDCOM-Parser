@@ -99,6 +99,8 @@ monthToNumDict = {
 def displayIndiData(outputFile, individualData):
     print('Individuals')
 
+    individualData = jbUserStories.us01(individualData)
+
     try:
         indiDataTable = PrettyTable()
         indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Alive", "Death", "Child", "Spouse"]
@@ -168,7 +170,7 @@ def displayIndiData(outputFile, individualData):
 
 def displayFamData(outputFile, individualData, familyData):
     print('Families')
-
+    familyData = jbUserStories.us01(familyData)
     try:
         famDataTable = PrettyTable()
         famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
