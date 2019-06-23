@@ -11,6 +11,8 @@ from datetime import date
 from prettytable import PrettyTable
 from natsort import natsorted
 
+from userstories import hdUserStories, jbUserStories, gaUserStories
+
 validTagLevelPairs = {
     'INDI': 0,
     'FAM': 0,
