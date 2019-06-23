@@ -173,7 +173,7 @@ def displayIndiData(outputFile, individualData):
 
 def displayFamData(outputFile, individualData, familyData):
     print('Families')
-    individualData, familyData = jbUserStories.us02(individualData, familyData)
+    familyData = jbUserStories.us02(individualData, familyData)
     familyData = jbUserStories.us01(familyData)
 
     try:

@@ -4,6 +4,7 @@
     <list default="true" id="a1c5bdf2-2ccb-4f15-b115-2ca642d86322" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proj03.py" beforeDir="false" afterPath="$PROJECT_DIR$/proj03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittest/mainTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/unittest/mainTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userstories/jbUserStories.py" beforeDir="false" afterPath="$PROJECT_DIR$/userstories/jbUserStories.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,25 +24,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ged" value="2" />
-          <entry key="py" value="5" />
+          <entry key="py" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="5" />
+          <entry key="Python" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ged" value="13" />
-          <entry key="py" value="1206" />
+          <entry key="py" value="1454" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="1206" />
+          <entry key="Python" value="1454" />
         </counts>
       </usages-collector>
     </session>
@@ -60,14 +61,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userstories/jbUserStories.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="396">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
               <folding>
-                <marker date="1561310533272" expanded="true" signature="37:410" ph="..." />
-                <marker date="1561310533272" expanded="true" signature="807:1372" ph="..." />
+                <marker date="1561313318353" expanded="true" signature="29:48" ph="..." />
+                <marker date="1561313318353" expanded="true" signature="68:441" ph="..." />
+                <marker date="1561313318353" expanded="true" signature="838:1387" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/unittest/mainTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1561313361769" expanded="true" signature="332:676" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unittest/us01.ged">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="315">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -96,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sample.ged">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="11" selection-end-line="32" selection-end-column="11" />
+            <state relative-caret-position="377">
+              <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -121,6 +136,7 @@
         <option value="$PROJECT_DIR$/unittest/us01.ged" />
         <option value="$PROJECT_DIR$/proj03.py" />
         <option value="$PROJECT_DIR$/userstories/jbUserStories.py" />
+        <option value="$PROJECT_DIR$/unittest/mainTest.py" />
       </list>
     </option>
   </component>
@@ -172,7 +188,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.mainTest">
+    <configuration name="mainTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GEDCOM-Parser" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unittest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unittest/mainTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="proj03" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GEDCOM-Parser" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,8 +231,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.proj03" />
+      <item itemvalue="Python.mainTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mainTest" />
         <item itemvalue="Python.proj03" />
       </list>
     </recent_temporary>
@@ -215,17 +257,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.33975902" />
+      <window_info anchor="bottom" id="Terminal" weight="0.33975902" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -244,26 +287,26 @@
     <entry file="file://$PROJECT_DIR$/userstories/gaUserStories.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample.ged">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unittest/us01.ged">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/userstories/hdUserStories.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/us01.ged">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.ged">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="49" column="6" lean-forward="true" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -279,11 +322,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/userstories/jbUserStories.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="45" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+        <state relative-caret-position="396">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
           <folding>
-            <marker date="1561310533272" expanded="true" signature="37:410" ph="..." />
-            <marker date="1561310533272" expanded="true" signature="807:1372" ph="..." />
+            <marker date="1561313318353" expanded="true" signature="29:48" ph="..." />
+            <marker date="1561313318353" expanded="true" signature="68:441" ph="..." />
+            <marker date="1561313318353" expanded="true" signature="838:1387" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/mainTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1561313361769" expanded="true" signature="332:676" ph="..." />
           </folding>
         </state>
       </provider>

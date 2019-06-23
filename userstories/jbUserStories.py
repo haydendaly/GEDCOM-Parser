@@ -1,5 +1,8 @@
 import datetime
 
+def us00(x):
+    return x + 1
+
 def us01(data):
     for key, value in data.items():
         if 'BIRT' in value:
@@ -29,4 +32,4 @@ def us02(individualData, familyData):
             elif wife_birt >= marr_date:
                 value['MARR'] = '00 JAN 0000'
 
-    return individualData, familyData
+    return familyData
