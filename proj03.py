@@ -97,16 +97,19 @@ monthToNumDict = {
 }
 
 def displayIndiData(outputFile, individualData):
+
+    birthdayDict = {}
+
     hdUserStories.us_35(individualData)
     hdUserStories.us_36(individualData)
-    
-    print('Individuals')
 
     individualData = jbUserStories.us01(individualData)
 
+    print('Individuals')
+
     try:
         indiDataTable = PrettyTable()
-        indiDataTable.field_names = ["ID", "Name", "Gender", "Birthday", "Alive", "Death", "Child", "Spouse"]
+        indiDataTable.field_names = ["ID", "Name", "Gender", "Age", "Birthday", "Alive", "Death", "Child", "Spouse"]
 
     except:
         print("No module 'PrettyTable'")
@@ -161,9 +164,16 @@ def displayIndiData(outputFile, individualData):
             alive = 'True'
             death = 'N/A'
 
-        indiDataTable.add_row([id, name, gender, birthday, alive, death, child, spouse])
+        if (alive == 'True'):
+            birthdayDict[id] = { 'NAME': name, 'BIRT': birthday }
+
+        age = gaUserStories.us_27(birthday, death, alive)
+
+        indiDataTable.add_row([id, name, gender, age, birthday, alive, death, child, spouse])
 
     print( indiDataTable )
+
+    gaUserStories.us_38(birthdayDict)
 
     outputTable = open(outputFile, 'a')
     outputTable.write('Individuals\n')
