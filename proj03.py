@@ -109,8 +109,8 @@ def displayIndiData(outputFile, individualData):
 
     try:
         indiDataTable = PrettyTable()
-        indiDataTable.field_names = ["ID", "Name", "Gender", "Age", "Birthday", "Alive", "Death", "Child", "Spouse"]
-
+        indiDataTable.field_names = ["ID", "Name", "Gender", "Age", "Birthday", "Alive", "Death", "Child", "Spouse", "Anomaly"]
+        anomaly = 'N/A'
     except:
         print("No module 'PrettyTable'")
 
@@ -145,6 +145,8 @@ def displayIndiData(outputFile, individualData):
         # Format Birth Date
         try:
             birthdate = indiData['BIRT']
+            if (birthdate == '00 JAN 0000'):
+                anomaly = 'Date After Current Date'
         except:
             birthdate = 'N/A'
         birthdateSplit = birthdate.split(" ")
@@ -156,6 +158,8 @@ def displayIndiData(outputFile, individualData):
 
             try:
                 deathdate = indiData['DEAT']
+                if (deathdate == '00 JAN 0000'):
+                  anomaly = 'Date After Current Date'
             except:
                 deathdate = 'N/A'
             deathdateSplit = deathdate.split(" ")
@@ -169,7 +173,7 @@ def displayIndiData(outputFile, individualData):
 
         age = gaUserStories.us_27(birthday, death, alive)
 
-        indiDataTable.add_row([id, name, gender, age, birthday, alive, death, child, spouse])
+        indiDataTable.add_row([id, name, gender, age, birthday, alive, death, child, spouse, anomaly])
 
     print( indiDataTable )
 
@@ -188,8 +192,8 @@ def displayFamData(outputFile, individualData, familyData):
 
     try:
         famDataTable = PrettyTable()
-        famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
-
+        famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children","Anomaly"]
+        anomaly = 'N/A'
     except:
         print("No module 'PrettyTable'")
 
@@ -204,6 +208,8 @@ def displayFamData(outputFile, individualData, familyData):
         try:
             # Format Married Date
             marriedDate = famData['MARR']
+            if (marriedDate == '00 JAN 0000'):
+                anomaly = 'Date After Current Date'
             marriedDateSplit = marriedDate.split(" ")
             married = marriedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
         except:
@@ -212,6 +218,8 @@ def displayFamData(outputFile, individualData, familyData):
         # Check if Divorced and Format Death Date
         try:
             divorcedDate = famData['DIV']
+            if (divorcedDate == '00 JAN 0000'):
+                anomaly = 'Date After Current Date'
             divorcedDateSplit = divorcedDate.split(" ")
             divorced = divorcedDateSplit[2] + '-' + monthToNumDict[ marriedDateSplit[1] ] + '-' + marriedDateSplit[0].zfill(2)
         except:
@@ -242,7 +250,7 @@ def displayFamData(outputFile, individualData, familyData):
         except:
             children = 'None'
 
-        famDataTable.add_row([id, married, divorced, husbandId, husbandName, wifeId, wifeName, children])
+        famDataTable.add_row([id, married, divorced, husbandId, husbandName, wifeId, wifeName, children, anomaly])
 
     print(famDataTable)
 
