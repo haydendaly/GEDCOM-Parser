@@ -37,10 +37,6 @@ uniqueTags = ['INDI', 'FAM']
 tagsWithDates = ['BIRT', 'DEAT', 'DIV', 'MARR']
 tagsWithMultiplePossibleEntries = ['FAMS', 'CHIL']
 
-def formatString(level, tag, validity, arguments):
-    return str(level) + "|" + str(tag) + "|" + str(validity) + "|" + str(arguments)
-
-
 def validate(line):
     lineSplit = line.split()
 
@@ -50,7 +46,7 @@ def validate(line):
     if (level == 0):    # Special Case because we need to parse INDI/FAM tags differently
         if(lineSplit[1] in uniqueTags):
             # Case where INDI/FAM tag appear in the wrong order
-            return formatString(level, lineSplit[1], "N", " ".join(lineSplit[2:]))
+            return f'{level} | {lineSplit[1]} | N | ' + " ".join(lineSplit[2:])
         else:
             # Case of a Correctly Ordered INDI/FAM tag
             if (len(lineSplit) >= 3 and lineSplit[2] in uniqueTags):
@@ -63,22 +59,22 @@ def validate(line):
     else:
         # Case where the INDI/FAM tag is formatted correctly but has the wrong level
         if (len(lineSplit) >= 3 and lineSplit[2] in uniqueTags):
-            return formatString(level, lineSplit[2], "N", lineSplit[1])
+            return f'{level} | {lineSplit[2]} | N | {lineSplit[1]}'
         # Default case for a normal tag and level
         tag = lineSplit[1]
         arguments = " ".join(lineSplit[2:])
 
     # Case where level is not in between 0 and 2, inclusive
     if (level < 0 or level > 2):
-        return formatString(level, tag, "N", arguments)
+        return f'{level} | {tag} | N | {arguments}'
     # Case where parsed tag is not a valid tag that should be recognized by our program
     if (tag not in validTagLevelPairs.keys()):
-        return formatString(level, tag, "N", arguments)
+        return f'{level} | {tag} | N | {arguments}'
     # Case where tag does not appear
     if (validTagLevelPairs[tag] != level):
-        return formatString(level, tag, "N", arguments)
+        return f'{level} | {tag} | N | {arguments}'
 
-    return formatString(level, tag, "Y", arguments)
+    return f'{level} | {tag} | Y | {arguments}'
 
 
 monthToNumDict = {
