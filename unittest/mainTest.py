@@ -1,7 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.abspath('../userstories'))
+
 import unittest
-from userstories.jbUserStories import us01, us02
-from userstories.hdUserStories import us_35, us_36
-from userstories.gaUserStories import us_38, us_27
+from jbUserStories import us01, us02
+from hdUserStories import us_35, us_36
+from gaUserStories import us_38, us_27
 
 class Tests(unittest.TestCase):
     def test_us01(self):
@@ -31,15 +35,15 @@ class Tests(unittest.TestCase):
         self.assertEqual(us_38(input), output)
 
     def test_us27(self):
-        output = '20'
+        output = 20
         self.assertEqual(us_27('1999-10-29', 'N/A', 'True'), output)
 
     def test_us27_2(self):
-        output = '100'
+        output = 100
         self.assertEqual(us_27('1800-01-01', '1900-01-01', 'False'), output)
 
     def test_us27_3(self):
-        output = '100'
+        output = 100
         self.assertEqual(us_27('1800-01-01', '1900-01-01', 'False'), output)
 
 unittest.main()

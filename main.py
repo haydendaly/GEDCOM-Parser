@@ -1,7 +1,8 @@
 # /*******************************************************************************
 #  Author		: Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  Date			: 2019-06-09
-#  Description	: Project 03
+#  Version      : Sprint.02.Proj.05
+#  Description	: GEDCOM File Parser and Validator
 #  Github       : https://github.com/haydendaly/GEDCOM-Parser
 #  Pledge		:"I pledge my honor that I have abided by the Stevens Honor System"	- Gil Gerard Austria, Justin Bernstein, Hayden Daly
 #  *******************************************************************************/
@@ -94,7 +95,7 @@ monthToNumDict = {
 
 def displayIndiData(outputFile, individualData):
 
-    birthdayDict = {}
+    birthdayDict = {}   # Dict used to hold data to be passed into us_38 to find upcoming birthdays
 
     hdUserStories.us_35(individualData)
     hdUserStories.us_36(individualData)
