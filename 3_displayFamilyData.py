@@ -99,8 +99,7 @@ def main(fileName, GEDCOM_dict):
         familyDataTable = displayFamilyData( GEDCOM_dict['individualData'], GEDCOM_dict['familyData'] )
 
         with open(fileName.rstrip('_dict.json') + '_output.txt', 'a+') as output:
-            output.write('Families\n')
-            output.write(familyDataTable.get_string()+'\n\n')
+            output.write(familyDataTable.get_string(title="Families")+'\n\n')
 
         # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables
         with open(fileName[:-4] + '_dict.json', 'w', encoding='utf-8') as outfile:
@@ -113,8 +112,7 @@ def main(fileName, GEDCOM_dict):
             familyDataTable = displayFamilyData( GEDCOM_dict['individualData'], GEDCOM_dict['familyData'] )
 
             with open(fileName[:-4] + '_output.txt', 'a+') as output:
-                output.write('Families\n')
-                output.write(familyDataTable.get_string()+'\n\n')
+                output.write(familyDataTable.get_string(title="Families")+'\n\n')
 
             # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables
             with open(fileName[:-4] + '_dict.json', 'w', encoding='utf-8') as outfile:
