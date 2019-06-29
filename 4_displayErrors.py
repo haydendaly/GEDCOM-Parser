@@ -19,6 +19,16 @@ from prettytable import PrettyTable
 # Import userstories
 from userstories import hdUserStories, jbUserStories, gaUserStories
 
+
+# Errors:
+#   us01 -
+#   us02 -
+#   us02
+#   us02
+#   us02
+#   us02
+#   us21
+#   us42
 def displayErrors(fileName, GEDCOM_dict):
 
     us01 = jbUserStories.us01(GEDCOM_dict)
@@ -32,8 +42,7 @@ def displayErrors(fileName, GEDCOM_dict):
 
     us02 = jbUserStories.us02(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
-        output.write('[us02] - Error: Date Occurs AFter Current Date\n')
-        output.write(us02.get_string()+'\n\n')
+        output.write(us02.get_string(title="[us02] - Error: Birth Occurs After Marriage Date")+'\n\n')
     print('\n[us02] Error: Date Occurs AFter Current Date')
     print( us02 )
 
