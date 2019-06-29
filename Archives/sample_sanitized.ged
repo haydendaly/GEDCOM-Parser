@@ -1,0 +1,215 @@
+0 | HEAD | Y | 
+0 | INDI | Y | @I0@
+1 | BIRT | Y | 
+2 | DATE | Y | 20 JUN 2000
+1 | FAMC | Y | @F1@
+0 | INDI | Y | @I1@
+1 | NAME | Y | Hayden /Daly/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 7 MAR 2000
+1 | FAMC | Y | @F1@
+0 | INDI | Y | @I2@
+1 | NAME | Y | Todd /Daly/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 17 JUL 1965
+1 | FAMS | Y | @F1@
+1 | FAMC | Y | @F2@
+0 | INDI | Y | @I3@
+1 | NAME | Y | Amy /Fisher/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 15 JAN 1967
+1 | FAMS | Y | @F1@
+1 | FAMC | Y | @F3@
+0 | INDI | Y | @I4@
+1 | NAME | Y | Emery /Daly/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 2 FEB 2007
+1 | FAMC | Y | @F1@
+0 | INDI | Y | @I5@
+1 | NAME | Y | Megan /Daly/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 31 JUL 1997
+1 | FAMC | Y | @F1@
+0 | INDI | Y | @I6@
+1 | NAME | Y | Charles /Fisher/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 2 JUL 1929
+1 | DEAT | Y | Y
+2 | DATE | Y | 10 NOV 2008
+1 | FAMS | Y | @F3@
+0 | INDI | Y | @I7@
+1 | NAME | Y | Margaret /Anthony/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 13 DEC 1928
+1 | FAMS | Y | @F3@
+0 | INDI | Y | @I8@
+1 | NAME | Y | David /Fisher/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 10 SEP 1962
+1 | FAMS | Y | @F4@
+1 | FAMC | Y | @F3@
+0 | INDI | Y | @I9@
+1 | NAME | Y | Eric /Fisher/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 14 JUL 1996
+1 | FAMC | Y | @F4@
+0 | INDI | Y | @I10@
+1 | NAME | Y | Polly /Twist/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 2 FEB 1967
+1 | FAMS | Y | @F4@
+0 | INDI | Y | @I11@
+1 | NAME | Y | Emily /Fisher/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 6 MAR 1994
+1 | FAMC | Y | @F4@
+0 | INDI | Y | @I12@
+1 | NAME | Y | Sarah /Fisher/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 3 JUL 1998
+1 | FAMC | Y | @F4@
+0 | INDI | Y | @I13@
+1 | NAME | Y | Jim /Fisher/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 4 OCT 1966
+1 | FAMC | Y | @F3@
+0 | INDI | Y | @I14@
+1 | NAME | Y | Lee /Daly/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 25 JUN 1935
+1 | FAMS | Y | @F2@
+1 | FAMS | Y | @F5@
+1 | FAMS | Y | @F6@
+0 | INDI | Y | @I15@
+1 | NAME | Y | Betty /Berardini/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 14 APR 1938
+1 | FAMS | Y | @F2@
+1 | FAMS | Y | @F7@
+0 | INDI | Y | @I16@
+1 | NAME | Y | Beverly /Miceli/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 22 MAR 1942
+1 | DEAT | Y | Y
+2 | DATE | Y | 5 JUL 2000
+1 | FAMS | Y | @F6@
+0 | INDI | Y | @I17@
+1 | NAME | Y | Lisa /Daly/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 26 OCT 1964
+1 | FAMS | Y | @F8@
+1 | FAMS | Y | @F9@
+1 | FAMS | Y | @F10@
+1 | FAMC | Y | @F2@
+0 | INDI | Y | @I18@
+1 | NAME | Y | Deborah /Daly/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 4 NOV 1965
+1 | FAMC | Y | @F2@
+0 | INDI | Y | @I19@
+1 | NAME | Y | Danny /Daly/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 14 MAR 1993
+1 | FAMC | Y | @F10@
+0 | INDI | Y | @I20@
+1 | NAME | Y | Scott /Frankwell/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 26 JUN 1972
+1 | DEAT | Y | Y
+2 | DATE | Y | 10 MAR 2003
+1 | FAMS | Y | @F9@
+0 | INDI | Y | @I21@
+1 | NAME | Y | Murray /Frankwell/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 6 MAY 2002
+1 | FAMC | Y | @F9@
+0 | INDI | Y | @I22@
+1 | NAME | Y | Antoine /Phillips/
+1 | SEX | Y | F
+1 | BIRT | Y | 
+2 | DATE | Y | 8 MAR 1960
+1 | FAMS | Y | @F5@
+0 | INDI | Y | @I23@
+1 | NAME | Y | Francis /Bacon/
+1 | SEX | Y | M
+1 | BIRT | Y | 
+2 | DATE | Y | 3 JAN 1983
+1 | FAMS | Y | @F8@
+0 | FAM | Y | @F1@
+1 | HUSB | Y | @I2@
+1 | WIFE | Y | @I3@
+1 | CHIL | Y | @I1@
+1 | CHIL | Y | @I4@
+1 | CHIL | Y | @I5@
+0 | FAM | Y | @F2@
+1 | HUSB | Y | @I14@
+1 | WIFE | Y | @I15@
+1 | CHIL | Y | @I2@
+1 | CHIL | Y | @I17@
+1 | CHIL | Y | @I18@
+1 | MARR | Y | 
+2 | DATE | Y | 14 JUN 1962
+1 | DIV | Y | 
+2 | DATE | Y | 20 MAY 1993
+0 | FAM | Y | @F7@
+1 | WIFE | Y | @I15@
+0 | FAM | Y | @F3@
+1 | HUSB | Y | @I6@
+1 | WIFE | Y | @I7@
+1 | CHIL | Y | @I3@
+1 | CHIL | Y | @I8@
+1 | CHIL | Y | @I13@
+0 | FAM | Y | @F4@
+1 | HUSB | Y | @I8@
+1 | WIFE | Y | @I10@
+1 | CHIL | Y | @I9@
+1 | CHIL | Y | @I11@
+1 | CHIL | Y | @I12@
+0 | FAM | Y | @F5@
+1 | HUSB | Y | @I14@
+1 | WIFE | Y | @I22@
+1 | MARR | Y | 
+2 | DATE | Y | 7 MAR 2004
+0 | FAM | Y | @F6@
+1 | HUSB | Y | @I14@
+1 | WIFE | Y | @I16@
+1 | MARR | Y | 
+2 | DATE | Y | 1 MAR 1980
+2 | DATE | Y | 5 JUL 2000
+0 | FAM | Y | @F8@
+1 | HUSB | Y | @I23@
+1 | WIFE | Y | @I17@
+1 | MARR | Y | 
+2 | DATE | Y | 5 MAY 2008
+0 | FAM | Y | @F9@
+1 | HUSB | Y | @I20@
+1 | WIFE | Y | @I17@
+1 | CHIL | Y | @I21@
+1 | MARR | Y | 
+2 | DATE | Y | 14 JUN 2000
+2 | DATE | Y | 10 MAR 2003
+0 | FAM | Y | @F10@
+1 | WIFE | Y | @I17@
+1 | CHIL | Y | @I19@
+0 | TRLR | Y | 

@@ -1,0 +1,380 @@
+{
+  "individualData": {
+    "@I0@": {
+      "BIRT": "2000-06-20",
+      "FAMC": "@F1@",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 19
+    },
+    "@I1@": {
+      "NAME": "Hayden /Daly/",
+      "SEX": "M",
+      "BIRT": "2000-03-07",
+      "FAMC": "@F1@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 20
+    },
+    "@I2@": {
+      "NAME": "Todd /Daly/",
+      "SEX": "M",
+      "BIRT": "1965-07-17",
+      "FAMS": [
+        "@F1@"
+      ],
+      "FAMC": "@F2@",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 54
+    },
+    "@I3@": {
+      "NAME": "Amy /Fisher/",
+      "SEX": "F",
+      "BIRT": "1967-01-15",
+      "FAMS": [
+        "@F1@"
+      ],
+      "FAMC": "@F3@",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 53
+    },
+    "@I4@": {
+      "NAME": "Emery /Daly/",
+      "SEX": "F",
+      "BIRT": "2007-02-02",
+      "FAMC": "@F1@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 13
+    },
+    "@I5@": {
+      "NAME": "Megan /Daly/",
+      "SEX": "F",
+      "BIRT": "1997-07-31",
+      "FAMC": "@F1@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 22
+    },
+    "@I6@": {
+      "NAME": "Charles /Fisher/",
+      "SEX": "M",
+      "BIRT": "1929-07-02",
+      "DEAT": "2008-11-10",
+      "FAMS": [
+        "@F3@"
+      ],
+      "FAMC": "N/A",
+      "ALIVE": "False",
+      "AGE": 80
+    },
+    "@I7@": {
+      "NAME": "Margaret /Anthony/",
+      "SEX": "F",
+      "BIRT": "1928-12-13",
+      "FAMS": [
+        "@F3@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 91
+    },
+    "@I8@": {
+      "NAME": "David /Fisher/",
+      "SEX": "M",
+      "BIRT": "1962-09-10",
+      "FAMS": [
+        "@F4@"
+      ],
+      "FAMC": "@F3@",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 57
+    },
+    "@I9@": {
+      "NAME": "Eric /Fisher/",
+      "SEX": "M",
+      "BIRT": "1996-07-14",
+      "FAMC": "@F4@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 23
+    },
+    "@I10@": {
+      "NAME": "Polly /Twist/",
+      "SEX": "F",
+      "BIRT": "1967-02-02",
+      "FAMS": [
+        "@F4@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 53
+    },
+    "@I11@": {
+      "NAME": "Emily /Fisher/",
+      "SEX": "F",
+      "BIRT": "1994-03-06",
+      "FAMC": "@F4@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 26
+    },
+    "@I12@": {
+      "NAME": "Sarah /Fisher/",
+      "SEX": "F",
+      "BIRT": "1998-07-03",
+      "FAMC": "@F4@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 21
+    },
+    "@I13@": {
+      "NAME": "Jim /Fisher/",
+      "SEX": "M",
+      "BIRT": "1966-10-04",
+      "FAMC": "@F3@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 53
+    },
+    "@I14@": {
+      "NAME": "Lee /Daly/",
+      "SEX": "M",
+      "BIRT": "1935-06-25",
+      "FAMS": [
+        "@F6@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 84
+    },
+    "@I15@": {
+      "NAME": "Betty /Berardini/",
+      "SEX": "F",
+      "BIRT": "1938-04-14",
+      "FAMS": [
+        "@F7@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 82
+    },
+    "@I16@": {
+      "NAME": "Beverly /Miceli/",
+      "SEX": "F",
+      "BIRT": "1942-03-22",
+      "DEAT": "2000-07-5",
+      "FAMS": [
+        "@F6@"
+      ],
+      "FAMC": "N/A",
+      "ALIVE": "False",
+      "AGE": 59
+    },
+    "@I17@": {
+      "NAME": "Lisa /Daly/",
+      "SEX": "F",
+      "BIRT": "1964-10-26",
+      "FAMS": [
+        "@F10@"
+      ],
+      "FAMC": "@F2@",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 55
+    },
+    "@I18@": {
+      "NAME": "Deborah /Daly/",
+      "SEX": "F",
+      "BIRT": "1965-11-04",
+      "FAMC": "@F2@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 54
+    },
+    "@I19@": {
+      "NAME": "Danny /Daly/",
+      "SEX": "M",
+      "BIRT": "1993-03-14",
+      "FAMC": "@F10@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 27
+    },
+    "@I20@": {
+      "NAME": "Scott /Frankwell/",
+      "SEX": "M",
+      "BIRT": "1972-06-26",
+      "DEAT": "2003-03-10",
+      "FAMS": [
+        "@F9@"
+      ],
+      "FAMC": "N/A",
+      "ALIVE": "False",
+      "AGE": 31
+    },
+    "@I21@": {
+      "NAME": "Murray /Frankwell/",
+      "SEX": "M",
+      "BIRT": "2002-05-06",
+      "FAMC": "@F9@",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 18
+    },
+    "@I22@": {
+      "NAME": "Antoine /Phillips/",
+      "SEX": "F",
+      "BIRT": "1960-03-08",
+      "FAMS": [
+        "@F5@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 60
+    },
+    "@I23@": {
+      "NAME": "Francis /Bacon/",
+      "SEX": "M",
+      "BIRT": "1983-01-03",
+      "FAMS": [
+        "@F8@"
+      ],
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": 37
+    }
+  },
+  "familyData": {
+    "@F1@": {
+      "HUSB": "@I2@",
+      "WIFE": "@I3@",
+      "CHIL": [
+        "@I1@",
+        "@I4@",
+        "@I5@"
+      ],
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "Todd /Daly/",
+      "WIFE_NAME": "Amy /Fisher/"
+    },
+    "@F2@": {
+      "HUSB": "@I14@",
+      "WIFE": "@I15@",
+      "CHIL": [
+        "@I2@",
+        "@I17@",
+        "@I18@"
+      ],
+      "MARR": "1962-06-14",
+      "DIV": "1993-06-14",
+      "HUSB_NAME": "Lee /Daly/",
+      "WIFE_NAME": "Betty /Berardini/"
+    },
+    "@F7@": {
+      "WIFE": "@I15@",
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB": "N/A",
+      "WIFE_NAME": "Betty /Berardini/",
+      "CHIL": "N/A"
+    },
+    "@F3@": {
+      "HUSB": "@I6@",
+      "WIFE": "@I7@",
+      "CHIL": [
+        "@I3@",
+        "@I8@",
+        "@I13@"
+      ],
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "Charles /Fisher/",
+      "WIFE_NAME": "Margaret /Anthony/"
+    },
+    "@F4@": {
+      "HUSB": "@I8@",
+      "WIFE": "@I10@",
+      "CHIL": [
+        "@I9@",
+        "@I11@",
+        "@I12@"
+      ],
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "David /Fisher/",
+      "WIFE_NAME": "Polly /Twist/"
+    },
+    "@F5@": {
+      "HUSB": "@I14@",
+      "WIFE": "@I22@",
+      "MARR": "2004-03-07",
+      "DIV": "N/A",
+      "HUSB_NAME": "Lee /Daly/",
+      "WIFE_NAME": "Antoine /Phillips/",
+      "CHIL": "N/A"
+    },
+    "@F6@": {
+      "HUSB": "@I14@",
+      "WIFE": "@I16@",
+      "MARR": "2000-07-05",
+      "DIV": "N/A",
+      "HUSB_NAME": "Lee /Daly/",
+      "WIFE_NAME": "Beverly /Miceli/",
+      "CHIL": "N/A"
+    },
+    "@F8@": {
+      "HUSB": "@I23@",
+      "WIFE": "@I17@",
+      "MARR": "2008-05-05",
+      "DIV": "N/A",
+      "HUSB_NAME": "Francis /Bacon/",
+      "WIFE_NAME": "Lisa /Daly/",
+      "CHIL": "N/A"
+    },
+    "@F9@": {
+      "HUSB": "@I20@",
+      "WIFE": "@I17@",
+      "CHIL": [
+        "@I21@"
+      ],
+      "MARR": "2003-03-10",
+      "DIV": "N/A",
+      "HUSB_NAME": "Scott /Frankwell/",
+      "WIFE_NAME": "Lisa /Daly/"
+    },
+    "@F10@": {
+      "WIFE": "@I17@",
+      "CHIL": [
+        "@I19@"
+      ],
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB": "N/A",
+      "WIFE_NAME": "Lisa /Daly/"
+    }
+  }
+}
