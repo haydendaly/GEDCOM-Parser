@@ -35,19 +35,20 @@ def us38(GEDCOM_dict):
     for id in birthdayDict:
 
         birthdate = str(birthdayDict[id].get('BIRT'))
-        birthdateSplit = birthdate.split('-')
-        birthMonth = int(birthdateSplit[1])
-        birthDayDate = int(birthdateSplit[2])
+        if ( birthdate != 'N/A' ):
+            birthdateSplit = birthdate.split('-')
+            birthMonth = int(birthdateSplit[1])
+            birthDayDate = int(birthdateSplit[2])
 
-        today = datetime.datetime.today()
-        currentYear = today.year
-        currentMonth = today.month
-        currentDay = today.day
+            today = datetime.datetime.today()
+            currentYear = today.year
+            currentMonth = today.month
+            currentDay = today.day
 
-        birthdayThisYear = datetime.datetime( currentYear, birthMonth, birthDayDate )
+            birthdayThisYear = datetime.datetime( currentYear, birthMonth, birthDayDate )
 
-        if ( birthdayThisYear > today and birthdayThisYear < today + datetime.timedelta(30) ):
-            upcomingBirthdayTable.add_row([id, birthdayDict[id].get('NAME'), birthdayDict[id].get('BIRT')])
+            if ( birthdayThisYear > today and birthdayThisYear < today + datetime.timedelta(30) ):
+                upcomingBirthdayTable.add_row([id, birthdayDict[id].get('NAME'), birthdayDict[id].get('BIRT')])
 
     return upcomingBirthdayTable
 
@@ -58,47 +59,43 @@ def us27(birthday, death, alive):
     if ( birthday != 'N/A' and death != 'N/A' and alive == 'False'):  # Birth and Death Date are Known (alive == 'False')
         #do date arithmetic
         birthdateSplit = birthday.split('-')
-        birthMonth = int(birthdateSplit[1])
-        birthDayDate = int(birthdateSplit[2])
-        birthYear = int(birthdateSplit[0])
+        birthMonth = str(birthdateSplit[1])
+        birthDayDate = str(birthdateSplit[2])
+        birthYear = str(birthdateSplit[0])
 
         deathdateSplit = death.split('-')
-        deathMonth = int(deathdateSplit[1])
-        deathDayDate = int(deathdateSplit[2])
-        deathYear = int(deathdateSplit[0])
+        deathMonth = str(deathdateSplit[1])
+        deathDayDate = str(deathdateSplit[2])
+        deathYear = str(deathdateSplit[0])
 
-        birthDate = datetime.datetime( birthYear, birthMonth, birthDayDate )
-        deathDate = datetime.datetime( deathYear, deathMonth, deathDayDate )
-        ageInYears = deathDate.year - birthYear
-        if ( deathDate.month < birthMonth ):
-            return ageInYears >= 0 if ageInYears else 'N/A'
-        elif ( deathDate.month == birthMonth ):
-            if ( deathDate.day < int( birthdateSplit[0] ) ):
-                return ageInYears >= 0 if ageInYears else 'N/A'
-            elif ( deathDate.day >= int( birthdateSplit[0] ) ):
-                return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
-        else:
-            return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
+        birthDate = birthYear + birthMonth + birthDayDate
+        deathDate = deathYear + deathMonth + deathDayDate
+
+        age = int(deathDate) - int(birthDate)
+
+        if ( age < 0 ):
+            return 'N/A'
+
+        return str(age).zfill(7)[:-4].lstrip('0').zfill(1)
+
 
     if ( birthday != 'N/A' and death == 'N/A' and alive == 'True' ): # BirthDay is known and alive == 'True', no death date
         #do date arithmetic
         birthdateSplit = birthday.split('-')
-        birthMonth = int(birthdateSplit[1])
-        birthDayDate = int(birthdateSplit[2])
-        birthYear = int(birthdateSplit[0])
+        birthMonth = str(birthdateSplit[1])
+        birthDayDate = str(birthdateSplit[2])
+        birthYear = str(birthdateSplit[0])
+        birthDate = birthYear + birthMonth + birthDayDate
 
-        birthDate = datetime.datetime( birthYear, birthMonth, birthDayDate )
-        dateToday = datetime.datetime.today()
-        ageInYears = dateToday.year - birthYear
-        if ( dateToday.month < birthMonth ):
-            return ageInYears >= 0 if ageInYears else 'N/A'
-        elif ( dateToday.month == birthMonth ):
-            if ( dateToday.day < int( birthdateSplit[0] ) ):
-                return ageInYears >= 0 if ageInYears else 'N/A'
-            elif ( dateToday.day >= int( birthdateSplit[0] ) ):
-                return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
-        else:
-            return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
+        today = datetime.datetime.today()
+        dateToday = str(today.year) + str(today.month).zfill(2) + str(today.day).zfill(2)
+
+        age = int(dateToday) - int(birthDate)
+
+        if ( age < 0 ):
+            return 'N/A'
+
+        return str(age).zfill(7)[:-4].lstrip('0').zfill(1)
 
     if ( birthday == 'N/A' ):
         # Cannot calculate age

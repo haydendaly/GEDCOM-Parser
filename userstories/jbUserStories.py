@@ -9,10 +9,10 @@ def us01(GEDCOM_dict):
 
     for key, value in GEDCOM_dict['individualData'].items():
         today = datetime.datetime.now()
-        if 'BIRT' != 'N/A':
+        if ( value['BIRT'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['BIRT'].split('-') ), '%Y %m %d') > today:
                 invalidIndiDateTable.add_row([key, value['NAME'], 'BIRT', value['BIRT']])
-        elif 'DEAT' != 'N/A':
+        if ( value['DEAT'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['DEAT'].split('-') ), '%Y %m %d') > today:
                 invalidIndiDateTable.add_row([key, value['NAME'], 'DEAT', value['DEAT']])
 
@@ -23,7 +23,7 @@ def us01(GEDCOM_dict):
         if ( value['MARR'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > today:
                 invalidFamDateTable.add_row([key, 'MARR', value['MARR']])
-        elif ( value['DIV'] != 'N/A' ):
+        if ( value['DIV'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d') > today:
                 invalidFamDateTable.add_row([key, 'DIV', value['DIV']])
 
@@ -41,11 +41,17 @@ def us02(GEDCOM_dict):
         if ( value['MARR'] != 'N/A' ):
             # Checks that the Husband's and Wife's Marriage Date does not occur before their respective birthdays
             marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
-            husb_birt = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['BIRT'].split('-') ), '%Y %m %d')
-            wife_birt = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['BIRT'].split('-') ), '%Y %m %d')
+            if ( individualData[value['HUSB']]['BIRT'] != 'N/A' ):
+                husb_birt = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['BIRT'].split('-') ), '%Y %m %d')
+            else:
+                husb_birt = datetime.datetime.min
+
+            if ( individualData[value['WIFE']]['BIRT'] != 'N/A' ):
+                wife_birt = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['BIRT'].split('-') ), '%Y %m %d')
+            else:
+                wife_birt = datetime.datetime.min
 
             if ( husb_birt >= marr_date or wife_birt >= marr_date ):
                 invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'] ] )
-
 
     return invalidDateTable

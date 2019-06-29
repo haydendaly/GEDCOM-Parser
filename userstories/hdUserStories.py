@@ -1,7 +1,7 @@
 import datetime
 import prettytable
 
-def us_35(GEDCOM_dict):
+def us35(GEDCOM_dict):
 
     recentBirtTable = prettytable.PrettyTable()
     recentBirtTable.field_names = ['ID', 'Name', 'Birthday']
@@ -17,7 +17,7 @@ def us_35(GEDCOM_dict):
 
     return recentBirtTable
 
-def us_36(GEDCOM_dict):
+def us36(GEDCOM_dict):
 
     recentDeatTable = prettytable.PrettyTable()
     recentDeatTable.field_names = ["ID", "Name", "Death"]
