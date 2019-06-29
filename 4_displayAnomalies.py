@@ -19,6 +19,11 @@ from prettytable import PrettyTable
 # Import userstories
 from userstories import hdUserStories, jbUserStories, gaUserStories
 
+# Anomalies:
+#   us07
+#   us07
+#   us10
+#   us15
 def displayAnomalies(GEDCOM_dict):
     return
 
