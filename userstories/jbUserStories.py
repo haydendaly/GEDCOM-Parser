@@ -1,33 +1,51 @@
 import datetime
+from prettytable import PrettyTable
 
-def us01(data):
-    for key, value in data.items():
-        if 'BIRT' in value:
-            if datetime.datetime.strptime(value['BIRT'], '%d %b %Y') > datetime.datetime.now():
-                value['BIRT'] = '00 JAN 0000'
-        elif 'DEAT' in value:
-            if datetime.datetime.strptime(value['DEAT'], '%d %b %Y') > datetime.datetime.now():
-                value['DEAT'] = '00 JAN 0000'
-        elif 'MARR' in value:
-            if datetime.datetime.strptime(value['MARR'], '%d %b %Y') > datetime.datetime.now():
-                value['MARR'] = '00 JAN 0000'
-        elif 'DIV' in value:
-            if datetime.datetime.strptime(value['DIV'], '%d %b %Y') > datetime.datetime.now():
-                value['DIV'] = '00 JAN 0000'
+# Checks that Dates (birth, marriage, divorce, death) are not after the current date
+def us01(GEDCOM_dict):
 
-    return data
+    invalidIndiDateTable = PrettyTable()
+    invalidIndiDateTable.field_names = ['ID', 'Name', 'Date Tag', 'Date']
 
+    for key, value in GEDCOM_dict['individualData'].items():
+        today = datetime.datetime.now()
+        if 'BIRT' != 'N/A':
+            if datetime.datetime.strptime(" ".join( value['BIRT'].split('-') ), '%Y %m %d') > today:
+                invalidIndiDateTable.add_row([key, value['NAME'], 'BIRT', value['BIRT']])
+        elif 'DEAT' != 'N/A':
+            if datetime.datetime.strptime(" ".join( value['DEAT'].split('-') ), '%Y %m %d') > today:
+                invalidIndiDateTable.add_row([key, value['NAME'], 'DEAT', value['DEAT']])
 
-def us02(individualData, familyData):
+    invalidFamDateTable = PrettyTable()
+    invalidFamDateTable.field_names = ['FAM ID', 'Date Tag', 'Date']
+    for key, value in GEDCOM_dict['familyData'].items():
+        today = datetime.datetime.now()
+        if ( value['MARR'] != 'N/A' ):
+            if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > today:
+                invalidFamDateTable.add_row([key, 'MARR', value['MARR']])
+        elif ( value['DIV'] != 'N/A' ):
+            if datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d') > today:
+                invalidFamDateTable.add_row([key, 'DIV', value['DIV']])
+
+    return { 'invalidIndiDates' : invalidIndiDateTable.get_string(), 'invalidFamDates' : invalidFamDateTable.get_string() }
+
+# Checks that Birth occur before marriage of an individual
+def us02(GEDCOM_dict):
+
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Birthday', 'Wife ID', 'Wife Name', 'Wife Birthday']
+
+    familyData = GEDCOM_dict['familyData']
+    individualData = GEDCOM_dict['individualData']
     for key, value in familyData.items():
-        if 'MARR' in value:
-            marr_date = datetime.datetime.strptime(value['MARR'], '%d %b %Y')
-            husb_birt = datetime.datetime.strptime(individualData[value['HUSB']]['BIRT'], '%d %b %Y')
-            wife_birt = datetime.datetime.strptime(individualData[value['WIFE']]['BIRT'], '%d %b %Y')
+        if ( value['MARR'] != 'N/A' ):
+            # Checks that the Husband's and Wife's Marriage Date does not occur before their respective birthdays
+            marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
+            husb_birt = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['BIRT'].split('-') ), '%Y %m %d')
+            wife_birt = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['BIRT'].split('-') ), '%Y %m %d')
 
-            if husb_birt >= marr_date:
-                value['MARR'] = '00 JAN 0000'
-            elif wife_birt >= marr_date:
-                value['MARR'] = '00 JAN 0000'
+            if ( husb_birt >= marr_date or wife_birt >= marr_date ):
+                invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'] ] )
 
-    return familyData
+
+    return invalidDateTable
