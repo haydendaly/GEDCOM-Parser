@@ -65,6 +65,8 @@ def displayIndividualData(individualData):
             birthdateSplit = birthdate.split(" ")
             birthday = birthdateSplit[2] + '-' + monthToNumDict[ birthdateSplit[1] ] + '-' + birthdateSplit[0].zfill(2)
             indiData['BIRT'] = birthday
+        else:
+            birthday = 'N/A'
 
         deathdate = indiData['DEAT']
         if ( deathdate != 'N/A' ):
@@ -78,7 +80,7 @@ def displayIndividualData(individualData):
             alive = 'True'
             death = 'N/A'
 
-        age = gaUserStories.us_27(birthday, death, alive)
+        age = gaUserStories.us27(birthday, death, alive)
         indiData['AGE'] = age
 
         indiDataTable.add_row([id, name, gender, age, birthday, alive, death, child, spouse])
@@ -97,8 +99,7 @@ def main(fileName, GEDCOM_dict):
         individualDataTable = displayIndividualData( GEDCOM_dict['individualData'] )
 
         with open(fileName.rstrip('_dict.json') + '_output.txt', 'a+') as output:
-            output.write('Individuals (with us_27)\n')
-            output.write(individualDataTable.get_string()+'\n\n')
+            output.write(individualDataTable.get_string(title="Individuals (with us_27)")+'\n\n')
 
         # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables
         with open(fileName[:-4] + '_dict.json', 'w', encoding='utf-8') as outfile:
@@ -111,8 +112,7 @@ def main(fileName, GEDCOM_dict):
             individualDataTable = displayIndividualData( GEDCOM_dict['individualData'] )
 
             with open(fileName[:-4] + '_output.txt', 'a+') as output:
-                output.write('Individuals (with us_27)\n')
-                output.write(individualDataTable.get_string()+'\n\n')
+                output.write(individualDataTable.get_string(title="Individuals (with us_27)")+'\n\n')
 
             # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables
             with open(fileName[:-4] + '_dict.json', 'w', encoding='utf-8') as outfile:
