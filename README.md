@@ -7,4 +7,4 @@ pip install -r requirements.txt
 
 Then run the program using:
 
-python main.py {GEDCOM filename}
+python 0_main.py {GEDCOM filename}
