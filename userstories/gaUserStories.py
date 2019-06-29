@@ -13,7 +13,7 @@ from natsort import natsorted
 
 
 # List all upcoming birthdays
-def us_38(GEDCOM_dict):
+def us38(GEDCOM_dict):
 
     birthdayDict = {}   # Dict used to hold data to be passed into us_38 to find upcoming birthdays
 
@@ -53,7 +53,7 @@ def us_38(GEDCOM_dict):
 
 
 # Display Individual Age
-def us_27(birthday, death, alive):
+def us27(birthday, death, alive):
 
     if ( birthday != 'N/A' and death != 'N/A' and alive == 'False'):  # Birth and Death Date are Known (alive == 'False')
         #do date arithmetic
@@ -71,14 +71,14 @@ def us_27(birthday, death, alive):
         deathDate = datetime.datetime( deathYear, deathMonth, deathDayDate )
         ageInYears = deathDate.year - birthYear
         if ( deathDate.month < birthMonth ):
-            return ageInYears
+            return ageInYears >= 0 if ageInYears else 'N/A'
         elif ( deathDate.month == birthMonth ):
             if ( deathDate.day < int( birthdateSplit[0] ) ):
-                return ageInYears
+                return ageInYears >= 0 if ageInYears else 'N/A'
             elif ( deathDate.day >= int( birthdateSplit[0] ) ):
-                return ageInYears + 1
+                return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
         else:
-            return ageInYears + 1
+            return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
 
     if ( birthday != 'N/A' and death == 'N/A' and alive == 'True' ): # BirthDay is known and alive == 'True', no death date
         #do date arithmetic
@@ -91,14 +91,14 @@ def us_27(birthday, death, alive):
         dateToday = datetime.datetime.today()
         ageInYears = dateToday.year - birthYear
         if ( dateToday.month < birthMonth ):
-            return ageInYears
+            return ageInYears >= 0 if ageInYears else 'N/A'
         elif ( dateToday.month == birthMonth ):
             if ( dateToday.day < int( birthdateSplit[0] ) ):
-                return ageInYears
+                return ageInYears >= 0 if ageInYears else 'N/A'
             elif ( dateToday.day >= int( birthdateSplit[0] ) ):
-                return ageInYears + 1
+                return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
         else:
-            return ageInYears + 1
+            return ageInYears + 1 >= 0 if ageInYears + 1 else 'N/A'
 
     if ( birthday == 'N/A' ):
         # Cannot calculate age
