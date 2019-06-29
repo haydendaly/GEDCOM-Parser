@@ -1,3 +1,4 @@
+# Must run unitTest while in the unittest directory (more flexibility can be added in future refactors)
 import sys
 import os
 sys.path.append(os.path.abspath('../userstories'))
