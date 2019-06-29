@@ -20,39 +20,39 @@ from prettytable import PrettyTable
 from userstories import hdUserStories, jbUserStories, gaUserStories
 
 # Enhancements:
-#   us_27 (Implemented/Called Directly in 3_displayIndividualData.py)
-#   us_28
-#   us_29
-#   us_30
-#   us_31
-#   us_34
-#   us_35
-#   us_36
-#   us_38 -
-#   us_39
-#   us_40
-#   us_41
+#   us27 - (Implemented/Called Directly in 3_displayIndividualData.py)
+#   us28
+#   us29
+#   us30
+#   us31
+#   us34
+#   us35 -
+#   us36 -
+#   us38 -
+#   us39
+#   us40
+#   us41
 def displayEnhancements(fileName, GEDCOM_dict):
 
-    us_35 = hdUserStories.us_35(GEDCOM_dict)
+    us35 = hdUserStories.us35(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
-        output.write(us_35.get_string(title="[us_35] - Birth Within the Past 30 Days")+'\n\n')
-    print('\n[us_35] Birth Within the Past 30 Days')
-    print( us_35 )
+        output.write(us35.get_string(title="[us35] - Birth Within the Past 30 Days")+'\n\n')
+    print('\n[us35] Birth Within the Past 30 Days')
+    print( us35 )
 
 
-    us_36 = hdUserStories.us_36(GEDCOM_dict)
+    us36 = hdUserStories.us36(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
-        output.write(us_36.get_string(title="[us_36] - Death Within the Past 30 Days")+'\n\n')
-    print('\n[us_36] Death Within the Past 30 Days')
-    print( us_36 )
+        output.write(us36.get_string(title="[us36] - Death Within the Past 30 Days")+'\n\n')
+    print('\n[us36] Death Within the Past 30 Days')
+    print( us36 )
 
 
-    us_38 = gaUserStories.us_38(GEDCOM_dict)
+    us38 = gaUserStories.us38(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
-        output.write(us_38.get_string(title="[us_38] - Upcoming Birthdays")+'\n\n')
-    print('\n[us_38] Upcoming Birthdays')
-    print( us_38 )
+        output.write(us38.get_string(title="[us38] - Upcoming Birthdays")+'\n\n')
+    print('\n[us38] Upcoming Birthdays')
+    print( us38 )
 
     return
 
