@@ -11,7 +11,7 @@ import datetime
 from prettytable import PrettyTable
 from natsort import natsorted
 
-
+# ----------------------------------- Sprint 01 -----------------------------------
 # List all upcoming birthdays
 def us38(GEDCOM_dict):
 
@@ -102,3 +102,55 @@ def us27(birthday, death, alive):
         return 'N/A'
 
     return 'N/A'
+
+
+# ----------------------------------- Sprint 02 -----------------------------------
+
+# List all living married people in a GEDCOM file
+def us30(GEDCOM_dict):
+
+    livingMarriedTable = PrettyTable()
+    livingMarriedTable.field_names = [ 'ID', 'Name' ]
+
+    individualData = GEDCOM_dict['individualData']
+    familyData = GEDCOM_dict['familyData']
+    idListSorted = natsorted( individualData.keys() )
+
+    for id in idListSorted:
+        if ( individualData[id]['ALIVE'] == 'True' ):
+            if ( individualData[id]['FAMS'] == 'N/A' ):
+                continue
+            else:
+                fams = individualData[id]['FAMS']
+                for famId in fams:
+                    if ( familyData[ famId ]['DIV'] == 'N/A' ):
+                        livingMarriedTable.add_row( [ id, individualData[id]['NAME'] ] )
+                    else:
+                        continue
+        else:
+            continue
+
+    return livingMarriedTable
+
+# List all living people over 30 who have never been married in a GEDCOM file
+def us31(GEDCOM_dict):
+
+    livingSingleTable = PrettyTable()
+    livingSingleTable.field_names = [ 'ID', 'Name' ]
+
+    individualData = GEDCOM_dict['individualData']
+    idListSorted = natsorted( individualData.keys() )
+
+    for id in idListSorted:
+        if ( individualData[id]['ALIVE'] == 'True' ):
+            if ( individualData[id]['FAMS'] == 'N/A' ):
+                if ( individualData[id]['AGE'] != 'N/A' and int(individualData[id]['AGE']) >= 30 ):
+                    livingSingleTable.add_row( [ id, individualData[id]['NAME'] ] )
+                else:
+                    continue
+            else:
+                continue
+        else:
+            continue
+
+    return livingSingleTable
