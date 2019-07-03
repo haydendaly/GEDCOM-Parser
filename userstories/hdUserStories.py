@@ -7,7 +7,7 @@ def us35(GEDCOM_dict):
     recentBirtTable.field_names = ['ID', 'Name', 'Birthday']
 
     for key, value in GEDCOM_dict['individualData'].items():
-        if ( value['BIRT'] != 'N/A' ):
+        if ( value['BIRT'] and value['BIRT'] != 'N/A' ):
             birthdate = datetime.datetime.strptime(" ".join( value['BIRT'].split('-') ), '%Y %m %d')
             today = datetime.datetime.now()
 
@@ -23,7 +23,7 @@ def us36(GEDCOM_dict):
     recentDeatTable.field_names = ["ID", "Name", "Death"]
 
     for key, value in GEDCOM_dict['individualData'].items():
-        if ( value['DEAT'] != 'N/A' ):
+        if ( value['DEAT'] and value['DEAT'] != 'N/A' ):
             deathdate = datetime.datetime.strptime(" ".join(value['DEAT'].split('-') ), '%Y %m %d')
             today = datetime.datetime.now()
             if( deathdate >= today + datetime.timedelta(-30) and deathdate <= today ):
