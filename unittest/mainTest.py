@@ -8,7 +8,7 @@ from prettytable import PrettyTable;
 import unittest
 from jbUserStories import us01, us02
 from hdUserStories import us35, us36
-from gaUserStories import us38, us27
+from gaUserStories import us38, us27, us30, us31
 
 class Tests(unittest.TestCase):
     def test_us01(self):
@@ -74,5 +74,63 @@ class Tests(unittest.TestCase):
     def test_us27_3(self):
         output = '100'
         self.assertEqual(us27('1800-01-01', '1900-01-01', 'False'), output)
+
+    def test_us30(self):
+        inputDict = {
+            'individualData': {
+                '@US30_01@': {
+                    'NAME': 'Deceased Married /Person/',
+                    'ALIVE': 'False',
+                    'FAMS': [ '@US30@' ]
+                },
+                '@US30_02@': {
+                    'NAME': 'Living Married /Person/',
+                    'ALIVE': 'True',
+                    'FAMS': [ '@US30@' ]
+                }
+            },
+            'familyData': {
+                '@US30@': {
+                    'DIV': 'N/A'
+                }
+            }
+        }
+
+        expectedOutputTable = PrettyTable()
+        expectedOutputTable.field_names = [ 'ID', 'Name' ]
+        expectedOutputTable.add_row( [ '@US30_02@', 'Living Married /Person/' ] )
+
+        self.assertEqual( us30( inputDict ).get_string(), expectedOutputTable.get_string() )
+
+    def test_us31(self):
+        inputDict = {
+            'individualData': {
+                '@US31_01@': {
+                    'NAME': 'Deceased Single /Person/',
+                    'ALIVE': 'False',
+                    'AGE': 'N/A',
+                    'FAMS': 'N/A'
+                },
+                '@US31_02@': {
+                    'NAME': 'Living Single /Person/ Over 30',
+                    'ALIVE': 'True',
+                    'AGE': '40',
+                    'FAMS': 'N/A'
+                },
+                '@US31_03@': {
+                    'NAME': 'Living Single /Person/ Under 30',
+                    'ALIVE': 'True',
+                    'AGE': '29',
+                    'FAMS': 'N/A'
+                }
+            },
+            'familyData': { }
+        }
+
+        expectedOutputTable = PrettyTable()
+        expectedOutputTable.field_names = [ 'ID', 'Name' ]
+        expectedOutputTable.add_row( [ '@US31_02@', 'Living Single /Person/ Over 30' ] )
+
+        self.assertEqual( us31( inputDict ).get_string(), expectedOutputTable.get_string() )
 
 unittest.main()
