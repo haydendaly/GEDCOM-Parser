@@ -44,7 +44,7 @@ def main(fileName):
 
     # Every Function After This Line will be using a GEDCOM_dict modified by displayIndividualData and displayFamilyData
 
-    # print( displayAnomalies.main( fileName, GEDCOM_dict ) )
+    displayAnomalies.main( fileName, GEDCOM_dict )
     displayErrors.main( fileName, GEDCOM_dict )
     displayEnhancements.main( fileName, GEDCOM_dict)
 
