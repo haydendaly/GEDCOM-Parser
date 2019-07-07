@@ -77,7 +77,7 @@ def displayEnhancements(fileName, GEDCOM_dict):
     us39 = hdUserStories.us39(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
         output.write(us39.get_string(title="[us39] - Linst Upcoming Anniversaries")+'\n\n')
-    print('\n[us39] List Upcoming Anniversaries in the ext 30 days')
+    print('\n[us39] List Upcoming Anniversaries in the next 30 days')
     print( us39 )
 
     return
