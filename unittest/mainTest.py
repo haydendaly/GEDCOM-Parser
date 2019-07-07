@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath('../userstories'))
 from prettytable import PrettyTable;
 
 import unittest
-from jbUserStories import us01, us02
+from jbUserStories import us01, us02, us04
 from hdUserStories import us35, us36, us29, us39
 from gaUserStories import us38, us27, us30, us31
 
@@ -32,6 +32,16 @@ class Tests(unittest.TestCase):
 
         output = testTable
         self.assertEqual(us02(input).get_string(), output.get_string())
+
+    def test_us04(self):
+        input = {'individualData': {'@I1@': {'NAME': 'HUSB', 'BIRT': '2018-03-07'}, '@I2@': {'NAME': 'WIFE', 'BIRT': '2018-03-07'} }, 'familyData': {'@F1@': {'HUSB': '@I1@', 'HUSB_NAME': 'HUSB', 'WIFE': '@I2@', 'WIFE_NAME': 'WIFE', 'MARR': '2018-03-06', 'DIV': '2018-03-05'}} }
+
+        testTable = PrettyTable()
+        testTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
+        testTable.add_row(['@F1@', '2018-03-06', '2018-03-05', '@I1@', 'HUSB', '@I2@', 'WIFE'])
+
+        output = testTable
+        self.assertEqual(us04(input).get_string(), output.get_string())
 
     def test_us35(self):
         input = { 'individualData': {'@I1@': {'NAME' : 'Hayden /Daly/', 'BIRT': '2019-06-07'}, '@I2@': {'NAME' : 'Todd /Daly/', 'BIRT': '2018-03-07'}} }

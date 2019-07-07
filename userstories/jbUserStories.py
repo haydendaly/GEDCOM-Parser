@@ -58,7 +58,7 @@ def us02(GEDCOM_dict):
 
 def us04(GEDCOM_dict):
     invalidDateTable = PrettyTable()
-    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Birthday', 'Wife ID', 'Wife Name', 'Wife Birthday']
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
 
     familyData = GEDCOM_dict['familyData']
     # individualData = GEDCOM_dict['individualData']
@@ -67,5 +67,28 @@ def us04(GEDCOM_dict):
         if ( value['MARR'] != 'N/A' ):
             if value['DIV'] != 'N/A':
                 if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d'):
-                    invalidDateTable.add_row([key, value['MARR'], value['DIV']])
+                    invalidDateTable.add_row([ key, value['MARR'], value['DIV'], value['HUSB'], value['HUSB_NAME'], value['WIFE'], value['WIFE_NAME']])
+    return invalidDateTable
+
+def us05(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death']
+
+    familyData = GEDCOM_dict['familyData']
+    individualData = GEDCOM_dict['individualData']
+    for key, value in familyData.items():
+        if ( value['MARR'] != 'N/A' ):
+            marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
+            if (individualData[value['HUSB']]['DEAT'] != 'N/A'):
+                husb_deat = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['DEAT'].split('-') ), '%Y %m %d')
+            else:
+                husb_deat = datetime.datetime.min
+
+            if (individualData[value['WIFE']]['DEAT'] != 'N/A'):
+                wife_deat = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['DEAT'].split('-') ), '%Y %m %d')
+            else:
+                wife_deat = datetime.datetime.min
+
+            if (husb_deat >= marr_date or wife_deat >= marr_date):
+                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat, value['WIFE'], value['WIFE_NAME'], wife_deat])
     return invalidDateTable
