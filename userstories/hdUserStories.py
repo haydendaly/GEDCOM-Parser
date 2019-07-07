@@ -1,6 +1,11 @@
 import datetime
 import prettytable
 
+def us29(individualData):
+
+
+    return deceasedTable
+
 def us35(GEDCOM_dict):
 
     recentBirtTable = prettytable.PrettyTable()
@@ -31,3 +36,7 @@ def us36(GEDCOM_dict):
                 recentDeatTable.add_row(row)
 
     return recentDeatTable
+
+def us39():
+
+    return upcomingAnniversariesTable

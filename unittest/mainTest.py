@@ -133,4 +133,13 @@ class Tests(unittest.TestCase):
 
         self.assertEqual( us31( inputDict ).get_string(), expectedOutputTable.get_string() )
 
+    def test_us29(self):
+        expectedOutput = [];
+        self.assertEqual( us29( individualData ), expectedOutput);
+
+    def test_us39(self):
+        expectedOutput = [];
+        self.assertEqual( us39( individualData ), expectedOutput);
+
+
 unittest.main()
