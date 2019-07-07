@@ -134,12 +134,24 @@ class Tests(unittest.TestCase):
         self.assertEqual( us31( inputDict ).get_string(), expectedOutputTable.get_string() )
 
     def test_us29(self):
-        expectedOutput = [];
-        self.assertEqual( us29( individualData ), expectedOutput);
+        input = { 'individualData': {'@I1@': {'NAME' : 'Hayden /Daly/', 'DEAT': '2019-06-06'}, '@I2@': {'NAME' : 'Todd /Daly/', 'BIRT': '2019-03-07', 'DEAT': 'N/A'} } }
+
+        testTable = PrettyTable()
+        testTable.field_names = ['ID', 'Name']
+        testTable.add_row(['@I1@', 'Hayden /Daly/'])
+
+        output = testTable
+        self.assertEqual(us29(input).get_string(), output.get_string())
 
     def test_us39(self):
-        expectedOutput = [];
-        self.assertEqual( us39( individualData ), expectedOutput);
+        input = { familyData : {'@F1@': {'MARR': '2019-6-5', 'HUSB_NAME': 'Todd /Daly/', 'WIFE_NAME': 'Amy /Fisher/'}, '@F2@': {'MARR': '1962-06-14', 'HUSB_NAME': 'Lee /Daly/', 'WIFE_NAME': 'Betty /Berardini/'} } }
+
+        testTable = PrettyTable()
+        testTable.field_names = ['Family ID', 'Husband', 'Wife', 'Marriage Date' ]
+        testTable.add_row(['@F1@', 'Todd /Daly/', 'Amy /Daly/', '2019-6-5'])
+
+        output = testTable;
+        self.assertEqual( us39( individualData ).get_string(), output.get_string());
 
 
 unittest.main()

@@ -40,7 +40,19 @@ def displayEnhancements(fileName, GEDCOM_dict):
     with open(outputFile, 'a+') as output:
         output.write(us29.get_string(title="[us29] - List Deceased")+'\n\n')
     print('\n[us29] List all deceased individuals')
-    print( us29 )
+    print(us29)
+
+    us30 = gaUserStories.us30(GEDCOM_dict)
+    with open(outputFile, 'a+') as output:
+        output.write(us30.get_string(title="[us30] - Living Married People")+'\n\n')
+    print('\n[us30] Living Married People')
+    print(us30)
+
+    us31 = gaUserStories.us31(GEDCOM_dict)
+    with open(outputFile, 'a+') as output:
+        output.write(us31.get_string(title="[us31] - Living Single People Over 30")+'\n\n')
+    print('\n[us31] Living Single People Over 30')
+    print(us31)
 
     us35 = hdUserStories.us35(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
@@ -62,17 +74,11 @@ def displayEnhancements(fileName, GEDCOM_dict):
     print('\n[us38] Upcoming Birthdays')
     print( us38 )
 
-    us30 = gaUserStories.us30(GEDCOM_dict)
+    us39 = hdUserStories.us39(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
-        output.write(us30.get_string(title="[us30] - Living Married People")+'\n\n')
-    print('\n[us30] Living Married People')
-    print(us30)
-
-    us31 = gaUserStories.us31(GEDCOM_dict)
-    with open(outputFile, 'a+') as output:
-        output.write(us31.get_string(title="[us31] - Living Single People Over 30")+'\n\n')
-    print('\n[us31] Living Single People Over 30')
-    print(us31)
+        output.write(us39.get_string(title="[us39] - Linst Upcoming Anniversaries")+'\n\n')
+    print('\n[us39] List Upcoming Anniversaries in the ext 30 days')
+    print( us39 )
 
     return
 

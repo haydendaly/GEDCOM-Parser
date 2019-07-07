@@ -44,9 +44,18 @@ def us36(GEDCOM_dict):
 
     return recentDeatTable
 
-def us39(familyData):
-    for key in familyData:
-        print(familyData[key])
-    upcomingAnniversariesTable = familyData
+def us39(GEDCOM_dict):
+
+    upcomingAnniversariesTable = prettytable.PrettyTable()
+    upcomingAnniversariesTable.field_names = ["Family ID", "Husband", "Wife", "Marriage Date"]
+
+    for key, value in GEDCOM_dict['familyData'].items():
+        if ( value['MARR'] and value['MARR'] != 'N/A' ):
+            marriagedate = datetime.datetime.strptime(" ".join(value['MARR'].split('-') ), '%Y %m %d')
+            today = datetime.datetime.now()
+
+            if( marriagedate >= today + datetime.timedelta(30) and marriagedate <= today ):
+                row = [key, value['HUSB_NAME'], value['WIFE_NAME'], value['MARR']]
+                upcomingAnniversariesTable.add_row(row)
 
     return upcomingAnniversariesTable
