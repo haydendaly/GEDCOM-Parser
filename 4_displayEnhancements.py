@@ -22,14 +22,14 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 # Enhancements:
 #   us27 - (Implemented/Called Directly in 3_displayIndividualData.py)
 #   us28
-#   us29
-#   us30
-#   us31
+#   us29 -
+#   us30 -
+#   us31 -
 #   us34
 #   us35 -
 #   us36 -
 #   us38 -
-#   us39
+#   us39 -
 #   us40
 #   us41
 def displayEnhancements(fileName, GEDCOM_dict):
@@ -76,7 +76,7 @@ def displayEnhancements(fileName, GEDCOM_dict):
 
     us39 = hdUserStories.us39(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
-        output.write(us39.get_string(title="[us39] - Linst Upcoming Anniversaries")+'\n\n')
+        output.write(us39.get_string(title="[us39] - List Upcoming Anniversaries")+'\n\n')
     print('\n[us39] List Upcoming Anniversaries in the next 30 days')
     print( us39 )
 

@@ -23,8 +23,8 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 # Errors:
 #   us01 -
 #   us02 -
-#   us02
-#   us02
+#   us04 -
+#   us05 -
 #   us02
 #   us02
 #   us21
