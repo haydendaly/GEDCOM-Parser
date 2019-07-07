@@ -52,9 +52,10 @@ def us39(GEDCOM_dict):
     for key, value in GEDCOM_dict['familyData'].items():
         if ( value['MARR'] and value['MARR'] != 'N/A' ):
             marriagedate = datetime.datetime.strptime(" ".join(value['MARR'].split('-') ), '%Y %m %d')
+            marriagedate = marriagedate.replace(year=2019)
             today = datetime.datetime.now()
 
-            if( marriagedate >= today + datetime.timedelta(30) and marriagedate <= today ):
+            if( marriagedate <= today + datetime.timedelta(30)) and marriagedate >= today:
                 row = [key, value['HUSB_NAME'], value['WIFE_NAME'], value['MARR']]
                 upcomingAnniversariesTable.add_row(row)
 
