@@ -1,10 +1,17 @@
 import datetime
 import prettytable
 
-def us29(individualData):
+def us29(GEDCOM_dict):
 
+    deadTable = prettytable.PrettyTable()
+    deadTable.field_names = ["ID", "Name"]
 
-    return deceasedTable
+    for key, value in GEDCOM_dict['individualData'].items():
+        if ( value['DEAT'] and value['DEAT'] != 'N/A' ):
+            row = [key, value['NAME']]
+            deadTable.add_row(row)
+
+    return deadTable
 
 def us35(GEDCOM_dict):
 
@@ -37,6 +44,9 @@ def us36(GEDCOM_dict):
 
     return recentDeatTable
 
-def us39():
+def us39(familyData):
+    for key in familyData:
+        print(familyData[key])
+    upcomingAnniversariesTable = familyData
 
     return upcomingAnniversariesTable

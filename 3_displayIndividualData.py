@@ -19,7 +19,6 @@ from natsort import natsorted
 
 # User Stories
 from userstories import gaUserStories
-from userstories import hdUserStories
 
 
 def displayIndividualData(individualData):

@@ -36,6 +36,12 @@ def displayEnhancements(fileName, GEDCOM_dict):
 
     outputFile = fileName[:-4] + '_output.txt'
 
+    us29 = hdUserStories.us29(GEDCOM_dict)
+    with open(outputFile, 'a+') as output:
+        output.write(us29.get_string(title="[us29] - List Deceased")+'\n\n')
+    print('\n[us29] List all deceased individuals')
+    print( us29 )
+
     us35 = hdUserStories.us35(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
         output.write(us35.get_string(title="[us35] - Birth Within the Past 30 Days")+'\n\n')
