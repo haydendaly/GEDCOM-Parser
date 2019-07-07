@@ -55,3 +55,17 @@ def us02(GEDCOM_dict):
                 invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'] ] )
 
     return invalidDateTable
+
+def us04(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Birthday', 'Wife ID', 'Wife Name', 'Wife Birthday']
+
+    familyData = GEDCOM_dict['familyData']
+    # individualData = GEDCOM_dict['individualData']
+    for key, value in familyData.items():
+        # marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
+        if ( value['MARR'] != 'N/A' ):
+            if value['DIV'] != 'N/A':
+                if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d'):
+                    invalidDateTable.add_row([key, value['MARR'], value['DIV']])
+    return invalidDateTable
