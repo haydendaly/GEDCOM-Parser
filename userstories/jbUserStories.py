@@ -56,6 +56,7 @@ def us02(GEDCOM_dict):
 
     return invalidDateTable
 
+# Marriage should occur before divorce of spouses, and divorce can only occur after marriage
 def us04(GEDCOM_dict):
     invalidDateTable = PrettyTable()
     invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
@@ -70,6 +71,7 @@ def us04(GEDCOM_dict):
                     invalidDateTable.add_row([ key, value['MARR'], value['DIV'], value['HUSB'], value['HUSB_NAME'], value['WIFE'], value['WIFE_NAME']])
     return invalidDateTable
 
+# Marriage should occur before death of either spouse
 def us05(GEDCOM_dict):
     invalidDateTable = PrettyTable()
     invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death']
