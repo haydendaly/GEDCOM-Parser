@@ -1,6 +1,7 @@
-0 | NOTE | Y | Sprint 01 Acceptance Test
+0 | NOTE | Y | Sprint 01 and 02 Acceptance Test
 0 | NOTE | Y | github.com/haydendaly/GEDCOM-Parser
-0 | NOTE | Y | All Test Cases Created Based on Current Date 29-JUN-2019
+0 | NOTE | Y | All Test Cases Created Based on Current Date 07-JUL-2019
+0 | NOTE | Y | Mainly Sprint 01 Acceptance Test Data
 0 | INDI | Y | @US01_01@
 1 | NAME | Y | Birth Date After Current /Date/ Age N/A
 1 | BIRT | Y | 
@@ -71,17 +72,17 @@
 0 | INDI | Y | @US36_02@
 1 | NAME | Y | Recent /Death/
 1 | DEAT | Y | 
-2 | DATE | Y | 04 JUN 2019
+2 | DATE | Y | 10 JUN 2019
 1 | SEX | Y | F
 0 | INDI | Y | @US38_01@
 1 | NAME | Y | Upcoming Birthday /Age 19/
 1 | BIRT | Y | 
-2 | DATE | Y | 01 JUL 1999
+2 | DATE | Y | 20 JUL 1999
 1 | SEX | Y | F
 0 | INDI | Y | @US38_02@
 1 | NAME | Y | Upcoming Birthday /Age 218/
 1 | BIRT | Y | 
-2 | DATE | Y | 25 JUL 1800
+2 | DATE | Y | 30 JUL 1800
 0 | FAM | Y | @US01@
 1 | HUSB | Y | @US01_02@
 1 | WIFE | Y | @US01_01@
@@ -99,3 +100,49 @@
 1 | WIFE | Y | @US02_01@
 1 | MARR | Y | 
 2 | DATE | Y | 01 JAN 1800
+0 | NOTE | Y | Mainly Sprint 02 Acceptance Test Data
+0 | INDI | Y | @US04_01@
+1 | NAME | Y | Marriage Occurs After Divorce of /Spouses/
+1 | SEX | Y | M
+1 | FAMS | Y | @US04@
+0 | INDI | Y | @US04_02@
+1 | NAME | Y | Marriage Occurs After Divorce of /Spouses/
+1 | SEX | Y | F
+1 | FAMS | Y | @US04@
+0 | FAM | Y | @US04@
+1 | HUSB | Y | @US04_01@
+1 | WIFE | Y | @US04_02@
+1 | MARR | Y | 
+2 | DATE | Y | 01 JAN 1900
+1 | DIV | Y | 
+2 | DATE | Y | 01 JAN 1800
+0 | INDI | Y | @US05_01@
+1 | NAME | Y | Marriage Occurs After /Death/
+1 | SEX | Y | M
+1 | DEAT | Y | 
+2 | DATE | Y | 31 DEC 1900
+1 | FAMS | Y | @US05@
+0 | INDI | Y | @US05_02@
+1 | NAME | Y | Marriage Occurs Before /Death/
+1 | SEX | Y | F
+1 | DEAT | Y | 
+2 | DATE | Y | 31 DEC 1901
+1 | FAMS | Y | @US05@
+0 | FAM | Y | @US05@
+1 | HUSB | Y | @US05_01@
+1 | WIFE | Y | @US05_02@
+1 | MARR | Y | 
+2 | DATE | Y | 15 MAR 1901
+0 | INDI | Y | @US39_01@
+1 | NAME | Y | Living Couple [HUSB], Anniversary in 30 /Days/
+1 | SEX | Y | M
+1 | FAMS | Y | @US39@
+0 | INDI | Y | @US39_02@
+1 | NAME | Y | Living Couple [WIFE], Anniversary in 30 /Days/
+1 | SEX | Y | F
+1 | FAMS | Y | @US39@
+0 | FAM | Y | @US39@
+1 | HUSB | Y | @US39_01@
+1 | WIFE | Y | @US39_02@
+1 | MARR | Y | 
+2 | DATE | Y | 30 JUL 2000

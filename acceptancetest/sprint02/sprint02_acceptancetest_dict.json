@@ -144,7 +144,7 @@
     },
     "@US36_02@": {
       "NAME": "Recent /Death/",
-      "DEAT": "2019-06-04",
+      "DEAT": "2019-06-10",
       "SEX": "F",
       "FAMC": "N/A",
       "FAMS": "N/A",
@@ -154,23 +154,95 @@
     },
     "@US38_01@": {
       "NAME": "Upcoming Birthday /Age 19/",
-      "BIRT": "1999-07-01",
+      "BIRT": "1999-07-20",
       "SEX": "F",
       "FAMC": "N/A",
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": "20"
+      "AGE": "19"
     },
     "@US38_02@": {
       "NAME": "Upcoming Birthday /Age 218/",
-      "BIRT": "1800-07-25",
+      "BIRT": "1800-07-30",
       "SEX": "N/A",
       "FAMC": "N/A",
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
       "AGE": "218"
+    },
+    "@US04_01@": {
+      "NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "SEX": "M",
+      "FAMS": [
+        "@US04@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US04_02@": {
+      "NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "SEX": "F",
+      "FAMS": [
+        "@US04@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US05_01@": {
+      "NAME": "Marriage Occurs After /Death/",
+      "SEX": "M",
+      "DEAT": "1900-12-31",
+      "FAMS": [
+        "@US05@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US05_02@": {
+      "NAME": "Marriage Occurs Before /Death/",
+      "SEX": "F",
+      "DEAT": "1901-12-31",
+      "FAMS": [
+        "@US05@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US39_01@": {
+      "NAME": "Living Couple [HUSB], Anniversary in 30 /Days/",
+      "SEX": "M",
+      "FAMS": [
+        "@US39@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US39_02@": {
+      "NAME": "Living Couple [WIFE], Anniversary in 30 /Days/",
+      "SEX": "F",
+      "FAMS": [
+        "@US39@"
+      ],
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
     }
   },
   "familyData": {
@@ -199,6 +271,33 @@
       "DIV": "N/A",
       "HUSB_NAME": "Birth After /Marriage/ Age 117",
       "WIFE_NAME": "Birth After /Marriage/ Age 119",
+      "CHIL": "N/A"
+    },
+    "@US04@": {
+      "HUSB": "@US04_01@",
+      "WIFE": "@US04_02@",
+      "MARR": "1900-01-01",
+      "DIV": "1800-01-01",
+      "HUSB_NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "WIFE_NAME": "Marriage Occurs After Divorce of /Spouses/",
+      "CHIL": "N/A"
+    },
+    "@US05@": {
+      "HUSB": "@US05_01@",
+      "WIFE": "@US05_02@",
+      "MARR": "1901-03-15",
+      "DIV": "N/A",
+      "HUSB_NAME": "Marriage Occurs After /Death/",
+      "WIFE_NAME": "Marriage Occurs Before /Death/",
+      "CHIL": "N/A"
+    },
+    "@US39@": {
+      "HUSB": "@US39_01@",
+      "WIFE": "@US39_02@",
+      "MARR": "2000-07-30",
+      "DIV": "N/A",
+      "HUSB_NAME": "Living Couple [HUSB], Anniversary in 30 /Days/",
+      "WIFE_NAME": "Living Couple [WIFE], Anniversary in 30 /Days/",
       "CHIL": "N/A"
     }
   }
