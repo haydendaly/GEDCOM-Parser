@@ -20,6 +20,7 @@ from natsort import natsorted
 # User Stories
 from userstories import gaUserStories
 
+
 def displayIndividualData(individualData):
 
     monthToNumDict = {

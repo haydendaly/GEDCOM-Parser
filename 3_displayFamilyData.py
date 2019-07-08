@@ -34,7 +34,6 @@ def displayFamilyData(individualData, familyData):
         'DEC': '12'
     }
 
-
     famDataTable = PrettyTable()
     famDataTable.field_names = ["ID", "Married", "Divorced", "Husband ID", "Husband Name", "Wife ID", "Wife Name", "Children"]
 

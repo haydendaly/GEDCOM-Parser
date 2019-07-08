@@ -23,10 +23,10 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 # Errors:
 #   us01 -
 #   us02 -
-#   us02
-#   us02
-#   us02
-#   us02
+#   us03
+#   us04 -
+#   us05 -
+#   us06
 #   us21
 #   us42
 def displayErrors(fileName, GEDCOM_dict):
@@ -36,15 +36,27 @@ def displayErrors(fileName, GEDCOM_dict):
         output.write('[us_01] - Error: Date Occurs After Current Date\n')
         output.write(us01['invalidIndiDates']+'\n\n')
         output.write(us01['invalidFamDates']+'\n\n')
-    print('\n[us01] Error: Date Occurs AFter Current Date')
+    print('\n[us01] Error: Date Occurs After Current Date')
     print( us01 )
 
 
     us02 = jbUserStories.us02(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
         output.write(us02.get_string(title="[us02] - Error: Birth Occurs After Marriage Date")+'\n\n')
-    print('\n[us02] Error: Date Occurs AFter Current Date')
+    print('\n[us02] Error: Date Occurs After Current Date')
     print( us02 )
+
+    us04 = jbUserStories.us04(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us04.get_string(title="[us04] - Error: Divorce Occurs Before Marriage Date")+'\n\n')
+    print('\n[us04] Error: Marriage Occurs After Divorce Date')
+    print( us04 )
+
+    us05 = jbUserStories.us05(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us05.get_string(title="[us05] - Error: Death Occurs Before Marriage Date")+'\n\n')
+    print('\n[us05] Error: Marriage Occurs After Death Date')
+    print( us05 )
 
 
     return

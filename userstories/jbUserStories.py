@@ -55,3 +55,40 @@ def us02(GEDCOM_dict):
                 invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'] ] )
 
     return invalidDateTable
+
+# Marriage should occur before divorce of spouses, and divorce can only occur after marriage
+def us04(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
+
+    familyData = GEDCOM_dict['familyData']
+    for key, value in familyData.items():
+        if ( value['MARR'] != 'N/A' ):
+            if value['DIV'] != 'N/A':
+                if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d'):
+                    invalidDateTable.add_row([ key, value['MARR'], value['DIV'], value['HUSB'], value['HUSB_NAME'], value['WIFE'], value['WIFE_NAME']])
+    return invalidDateTable
+
+# Marriage should occur before death of either spouse
+def us05(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death']
+
+    familyData = GEDCOM_dict['familyData']
+    individualData = GEDCOM_dict['individualData']
+    for key, value in familyData.items():
+        if ( value['MARR'] != 'N/A' ):
+            marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
+            if (individualData[value['HUSB']]['DEAT'] != 'N/A'):
+                husb_deat = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['DEAT'].split('-') ), '%Y %m %d')
+            else:
+                husb_deat = datetime.datetime.min
+
+            if (individualData[value['WIFE']]['DEAT'] != 'N/A'):
+                wife_deat = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['DEAT'].split('-') ), '%Y %m %d')
+            else:
+                wife_deat = datetime.datetime.min
+
+            if (husb_deat >= marr_date or wife_deat >= marr_date):
+                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
+    return invalidDateTable

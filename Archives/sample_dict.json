@@ -8,7 +8,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 19
+      "AGE": "19"
     },
     "@I1@": {
       "NAME": "Hayden /Daly/",
@@ -18,7 +18,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 20
+      "AGE": "19"
     },
     "@I2@": {
       "NAME": "Todd /Daly/",
@@ -30,7 +30,7 @@
       "FAMC": "@F2@",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 54
+      "AGE": "53"
     },
     "@I3@": {
       "NAME": "Amy /Fisher/",
@@ -42,7 +42,7 @@
       "FAMC": "@F3@",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 53
+      "AGE": "52"
     },
     "@I4@": {
       "NAME": "Emery /Daly/",
@@ -52,7 +52,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 13
+      "AGE": "12"
     },
     "@I5@": {
       "NAME": "Megan /Daly/",
@@ -62,7 +62,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 22
+      "AGE": "21"
     },
     "@I6@": {
       "NAME": "Charles /Fisher/",
@@ -74,7 +74,7 @@
       ],
       "FAMC": "N/A",
       "ALIVE": "False",
-      "AGE": 80
+      "AGE": "79"
     },
     "@I7@": {
       "NAME": "Margaret /Anthony/",
@@ -86,7 +86,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 91
+      "AGE": "90"
     },
     "@I8@": {
       "NAME": "David /Fisher/",
@@ -98,7 +98,7 @@
       "FAMC": "@F3@",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 57
+      "AGE": "56"
     },
     "@I9@": {
       "NAME": "Eric /Fisher/",
@@ -108,7 +108,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 23
+      "AGE": "22"
     },
     "@I10@": {
       "NAME": "Polly /Twist/",
@@ -120,7 +120,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 53
+      "AGE": "52"
     },
     "@I11@": {
       "NAME": "Emily /Fisher/",
@@ -130,7 +130,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 26
+      "AGE": "25"
     },
     "@I12@": {
       "NAME": "Sarah /Fisher/",
@@ -140,7 +140,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 21
+      "AGE": "21"
     },
     "@I13@": {
       "NAME": "Jim /Fisher/",
@@ -150,7 +150,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 53
+      "AGE": "52"
     },
     "@I14@": {
       "NAME": "Lee /Daly/",
@@ -162,7 +162,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 84
+      "AGE": "84"
     },
     "@I15@": {
       "NAME": "Betty /Berardini/",
@@ -174,7 +174,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 82
+      "AGE": "81"
     },
     "@I16@": {
       "NAME": "Beverly /Miceli/",
@@ -186,7 +186,7 @@
       ],
       "FAMC": "N/A",
       "ALIVE": "False",
-      "AGE": 59
+      "AGE": "N/A"
     },
     "@I17@": {
       "NAME": "Lisa /Daly/",
@@ -198,7 +198,7 @@
       "FAMC": "@F2@",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 55
+      "AGE": "54"
     },
     "@I18@": {
       "NAME": "Deborah /Daly/",
@@ -208,7 +208,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 54
+      "AGE": "53"
     },
     "@I19@": {
       "NAME": "Danny /Daly/",
@@ -218,7 +218,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 27
+      "AGE": "26"
     },
     "@I20@": {
       "NAME": "Scott /Frankwell/",
@@ -230,7 +230,7 @@
       ],
       "FAMC": "N/A",
       "ALIVE": "False",
-      "AGE": 31
+      "AGE": "30"
     },
     "@I21@": {
       "NAME": "Murray /Frankwell/",
@@ -240,7 +240,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 18
+      "AGE": "17"
     },
     "@I22@": {
       "NAME": "Antoine /Phillips/",
@@ -252,7 +252,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 60
+      "AGE": "59"
     },
     "@I23@": {
       "NAME": "Francis /Bacon/",
@@ -264,7 +264,7 @@
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": 37
+      "AGE": "36"
     }
   },
   "familyData": {
