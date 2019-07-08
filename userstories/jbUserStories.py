@@ -62,9 +62,7 @@ def us04(GEDCOM_dict):
     invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
 
     familyData = GEDCOM_dict['familyData']
-    # individualData = GEDCOM_dict['individualData']
     for key, value in familyData.items():
-        # marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
         if ( value['MARR'] != 'N/A' ):
             if value['DIV'] != 'N/A':
                 if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d'):
