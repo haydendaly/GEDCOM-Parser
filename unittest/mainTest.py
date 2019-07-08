@@ -46,11 +46,12 @@ class Tests(unittest.TestCase):
     def test_us05(self):
         input = {'individualData': {'@I1@': {'NAME': 'HUSB', 'DEAT': '2018-03-07'}, '@I2@': {'NAME': 'WIFE', 'DEAT': '2018-03-05'} }, 'familyData': {'@F1@': {'HUSB': '@I1@', 'HUSB_NAME': 'HUSB', 'WIFE': '@I2@', 'WIFE_NAME': 'WIFE', 'MARR': '2018-03-06'}} }
 
-        testTable = PrettyTable(maxDiff=None)
+        testTable = PrettyTable()
         testTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death']
         testTable.add_row(['@F1@', '2018-03-06', '@I1@', 'HUSB', '2018-03-07', '@I2@', 'WIFE', '2018-03-05' ])
 
         output = testTable
+
         self.assertEqual(us05(input).get_string(), output.get_string())
 
     def test_us35(self):

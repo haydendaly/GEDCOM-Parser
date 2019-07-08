@@ -82,13 +82,13 @@ def us05(GEDCOM_dict):
             if (individualData[value['HUSB']]['DEAT'] != 'N/A'):
                 husb_deat = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['DEAT'].split('-') ), '%Y %m %d')
             else:
-                husb_deat = datetime.datetime.min
+                husb_deat = datetime.datetime.min.date()
 
             if (individualData[value['WIFE']]['DEAT'] != 'N/A'):
                 wife_deat = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['DEAT'].split('-') ), '%Y %m %d')
             else:
-                wife_deat = datetime.datetime.min
+                wife_deat = datetime.datetime.min.date()
 
             if (husb_deat >= marr_date or wife_deat >= marr_date):
-                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat, value['WIFE'], value['WIFE_NAME'], wife_deat])
+                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
     return invalidDateTable
