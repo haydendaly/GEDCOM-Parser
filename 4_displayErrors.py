@@ -23,10 +23,10 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 # Errors:
 #   us01 -
 #   us02 -
+#   us03
 #   us04 -
 #   us05 -
-#   us02
-#   us02
+#   us06
 #   us21
 #   us42
 def displayErrors(fileName, GEDCOM_dict):
