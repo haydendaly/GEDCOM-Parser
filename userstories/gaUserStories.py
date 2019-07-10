@@ -228,9 +228,3 @@ def us10(GEDCOM_dict):
             continue
 
     return marriedBefore14Table
-
-# List line numbers from GEDCOM source file when reporting errors
-# Take in a prettyTable, then it's going to use the data in the prettytable to pinpoint a line number
-# Add a line number column to the prettyTable and return the new prettyTable
-def us40(table):
-    return
