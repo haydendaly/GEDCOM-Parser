@@ -30,12 +30,15 @@ def storeGEDCOMInDict(validLinesList):
         tag = validLineSplit[1]
         valid = validLineSplit[2]
         arguments = validLineSplit[3]
+        lineNumber = validLineSplit[4]
 
         if ( tag in uniqueTags ):
             if ( tag == "INDI" ):
                 individualData[ arguments ] = defaultdict( lambda: 'N/A')   # Using defaultdict means that ValueErrors will be Impossible
+                individualData[ arguments ][ "INDILine" ] = lineNumber
             if ( tag == "FAM" ):
                 familyData[ arguments ] = defaultdict( lambda: 'N/A')   # Using defaultdict means that ValueErrors will be Impossible
+                familyData[ arguments ][ "FAMLine" ] = lineNumber
 
             prevTopLevelTag = tag
             prevTopLevelId = arguments
@@ -47,13 +50,17 @@ def storeGEDCOMInDict(validLinesList):
                     if ( tag in tagsWithMultiplePossibleEntries ):
                         individualData[ prevTopLevelId ].update( { tag : [] } )
                         individualData[ prevTopLevelId ][ tag ].append( arguments )
+                        individualData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
                     elif ( tag == "DATE" ):
                         individualData[ prevTopLevelId ][ prevTagPendingDate ] = arguments
+                        individualData[ prevTopLevelId ][ prevTagPendingDate + "Line" ] = lineNumber
                     else:
                         individualData[ prevTopLevelId ].update( { tag : arguments } )
+                        individualData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
                 else:
                     prevTagPendingDate = tag
                     individualData[ prevTopLevelId ].update( { tag: "" } )
+                    individualData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
 
 
             if ( prevTopLevelTag == "FAM" ):
@@ -62,13 +69,17 @@ def storeGEDCOMInDict(validLinesList):
                         if ( tag not in familyData[ prevTopLevelId ].keys() ):
                             familyData[ prevTopLevelId ].update( { tag : [] } )
                         familyData[ prevTopLevelId ][ tag ].append( arguments )
+                        familyData[ prevTopLevelId ][ tag + "Line" ] = lineNumber
                     elif ( tag == "DATE" ):
                         familyData[ prevTopLevelId ][ prevTagPendingDate ] = arguments
+                        familyData[ prevTopLevelId ][ prevTagPendingDate + "Line" ] = lineNumber
                     else:
                         familyData[ prevTopLevelId ].update( { tag : arguments } )
+                        familyData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
                 else:
                     prevTagPendingDate = tag
                     familyData[ prevTopLevelId ].update( { tag: "" } )
+                    familyData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
 
     return { 'individualData': individualData, 'familyData': familyData }
 
