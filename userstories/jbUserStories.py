@@ -5,27 +5,27 @@ from prettytable import PrettyTable
 def us01(GEDCOM_dict):
 
     invalidIndiDateTable = PrettyTable()
-    invalidIndiDateTable.field_names = ['ID', 'Name', 'Date Tag', 'Date']
+    invalidIndiDateTable.field_names = ['ID', 'Name', 'Date Tag', 'Date', '[US40] Line Number']
 
     for key, value in GEDCOM_dict['individualData'].items():
         today = datetime.datetime.now()
         if ( value['BIRT'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['BIRT'].split('-') ), '%Y %m %d') > today:
-                invalidIndiDateTable.add_row([key, value['NAME'], 'BIRT', value['BIRT']])
+                invalidIndiDateTable.add_row([key, value['NAME'], 'BIRT', value['BIRT'], value['BIRTLine']])
         if ( value['DEAT'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['DEAT'].split('-') ), '%Y %m %d') > today:
-                invalidIndiDateTable.add_row([key, value['NAME'], 'DEAT', value['DEAT']])
+                invalidIndiDateTable.add_row([key, value['NAME'], 'DEAT', value['DEAT'], value['DEATLine']])
 
     invalidFamDateTable = PrettyTable()
-    invalidFamDateTable.field_names = ['FAM ID', 'Date Tag', 'Date']
+    invalidFamDateTable.field_names = ['FAM ID', 'Date Tag', 'Date', '[US40] Line Number']
     for key, value in GEDCOM_dict['familyData'].items():
         today = datetime.datetime.now()
         if ( value['MARR'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > today:
-                invalidFamDateTable.add_row([key, 'MARR', value['MARR']])
+                invalidFamDateTable.add_row([key, 'MARR', value['MARR'], value['MARRLine']])
         if ( value['DIV'] != 'N/A' ):
             if datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d') > today:
-                invalidFamDateTable.add_row([key, 'DIV', value['DIV']])
+                invalidFamDateTable.add_row([key, 'DIV', value['DIV'], value['DIVLine']])
 
     return { 'invalidIndiDates' : invalidIndiDateTable.get_string(), 'invalidFamDates' : invalidFamDateTable.get_string() }
 
@@ -33,7 +33,7 @@ def us01(GEDCOM_dict):
 def us02(GEDCOM_dict):
 
     invalidDateTable = PrettyTable()
-    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Birthday', 'Wife ID', 'Wife Name', 'Wife Birthday']
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Birthday', 'Wife ID', 'Wife Name', 'Wife Birthday', '[US40] Line Number']
 
     familyData = GEDCOM_dict['familyData']
     individualData = GEDCOM_dict['individualData']
@@ -52,27 +52,27 @@ def us02(GEDCOM_dict):
                 wife_birt = datetime.datetime.min
 
             if ( husb_birt >= marr_date or wife_birt >= marr_date ):
-                invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'] ] )
+                invalidDateTable.add_row( [ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], individualData[value['HUSB']]['BIRT'], value['WIFE'], value['WIFE_NAME'], individualData[value['WIFE']]['BIRT'], value['MARRLine'] ] )
 
     return invalidDateTable
 
 # Marriage should occur before divorce of spouses, and divorce can only occur after marriage
 def us04(GEDCOM_dict):
     invalidDateTable = PrettyTable()
-    invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name']
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Divorced', 'Husband ID', 'Husband Name', 'Wife ID', 'Wife Name', '[US40] Line Number']
 
     familyData = GEDCOM_dict['familyData']
     for key, value in familyData.items():
         if ( value['MARR'] != 'N/A' ):
             if value['DIV'] != 'N/A':
                 if datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d') > datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d'):
-                    invalidDateTable.add_row([ key, value['MARR'], value['DIV'], value['HUSB'], value['HUSB_NAME'], value['WIFE'], value['WIFE_NAME']])
+                    invalidDateTable.add_row([ key, value['MARR'], value['DIV'], value['HUSB'], value['HUSB_NAME'], value['WIFE'], value['WIFE_NAME'], value['DIVLine']])
     return invalidDateTable
 
 # Marriage should occur before death of either spouse
 def us05(GEDCOM_dict):
     invalidDateTable = PrettyTable()
-    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death']
+    invalidDateTable.field_names = ['FAM ID', 'Married', 'Husband ID', 'Husband Name', 'Husband Death', 'Wife ID', 'Wife Name', 'Wife Death', '[US40] Line Number']
 
     familyData = GEDCOM_dict['familyData']
     individualData = GEDCOM_dict['individualData']
@@ -90,5 +90,5 @@ def us05(GEDCOM_dict):
                 wife_deat = datetime.datetime.min
 
             if (husb_deat >= marr_date or wife_deat >= marr_date):
-                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
+                    invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date(), value['MARRLine']])
     return invalidDateTable
