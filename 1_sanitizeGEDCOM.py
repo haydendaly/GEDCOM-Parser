@@ -79,6 +79,7 @@ def main(fileName):
     inputFile = open(fileName, 'r')
 
     validLinesList = []
+    lineCounter = 1
 
     for line in inputFile:
         parse.write('--> ' + line.rstrip() + "\n")
@@ -88,8 +89,9 @@ def main(fileName):
         lineValidationSplit = lineValidation.split(" | ")
         valid = lineValidationSplit[2]
         if ( str(valid) == "Y" ):
-            sanitize.write(lineValidation + "\n")
-            validLinesList.append(lineValidation)
+            sanitize.write(lineValidation + " | " + str(lineCounter) + "\n")
+            validLinesList.append(lineValidation + " | " + str(lineCounter) )
+        lineCounter = lineCounter + 1
 
 
     return validLinesList

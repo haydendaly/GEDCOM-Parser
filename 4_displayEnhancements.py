@@ -30,7 +30,7 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 #   us36 -
 #   us38 -
 #   us39 -
-#   us40
+#   us40 - (Implemented Directly in All Functions that Output Errors (in userstories))
 #   us41
 def displayEnhancements(fileName, GEDCOM_dict):
 

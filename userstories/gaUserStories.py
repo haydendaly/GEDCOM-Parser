@@ -154,3 +154,77 @@ def us31(GEDCOM_dict):
             continue
 
     return livingSingleTable
+
+
+# ----------------------------------- Sprint 03 -----------------------------------
+# Marriage should be at least 14 years after birth of both spouses (parents must be at least 14 years old)
+def us10(GEDCOM_dict):
+
+    marriedBefore14Table = PrettyTable()
+    marriedBefore14Table.field_names = [ 'Fam ID', 'Marriage Date', 'ID', 'Name', 'Birthday', 'Age During Marriage' ]
+
+    individualData = GEDCOM_dict['individualData']
+    familyData = GEDCOM_dict['familyData']
+
+    for famId in familyData:
+        marr_date = familyData[famId]['MARR']
+        if ( marr_date != 'N/A' ):
+
+            marrdateSplit = marr_date.split('-')
+            marrMonth = str(marrdateSplit[1])
+            marrDayDate = str(marrdateSplit[2])
+            marrYear = str(marrdateSplit[0])
+            marrDate = marrYear + marrMonth + marrDayDate
+
+            husbId = familyData[famId]['HUSB']
+            wifeId = familyData[famId]['WIFE']
+            husb_birthday = individualData[husbId]['BIRT'] if husbId != 'N/A' else 'N/A'
+            husb_name = individualData[husbId]['NAME'] if husbId != 'N/A' else 'N/A'
+            wife_birthday = individualData[wifeId]['BIRT'] if wifeId != 'N/A' else 'N/A'
+            wife_name = individualData[wifeId]['NAME'] if wifeId != 'N/A' else 'N/A'
+
+            if ( husb_birthday != 'N/A' ):
+                husb_birthdateSplit = husb_birthday.split('-')
+                husb_birthMonth = str(husb_birthdateSplit[1])
+                husb_birthDayDate = str(husb_birthdateSplit[2])
+                husb_birthYear = str(husb_birthdateSplit[0])
+
+                husb_birthDate = husb_birthYear + husb_birthMonth + husb_birthDayDate
+
+                age = int(marrDate) - int(husb_birthDate)
+
+                if ( age < 0 ):
+                    continue
+
+
+                husb_age_at_marr = str(age).zfill(7)[:-4].lstrip('0').zfill(1)
+
+                if ( int( husb_age_at_marr ) < 14 ):
+                    marriedBefore14Table.add_row( [ famId, marr_date, husbId, husb_name, husb_birthday, husb_age_at_marr ] )
+                else:
+                    continue
+
+            if ( wife_birthday != 'N/A' ):
+                wife_birthdateSplit = wife_birthday.split('-')
+                wife_birthMonth = str(wife_birthdateSplit[1])
+                wife_birthDayDate = str(wife_birthdateSplit[2])
+                wife_birthYear = str(wife_birthdateSplit[0])
+
+                wife_birthDate = wife_birthYear + wife_birthMonth + wife_birthDayDate
+
+                age = int(marrDate) - int(wife_birthDate)
+
+                if ( age < 0 ):
+                    continue
+
+                wife_age_at_marr = str(age).zfill(7)[:-4].lstrip('0').zfill(1)
+
+                if ( int( wife_age_at_marr ) < 14 ):
+                    marriedBefore14Table.add_row( [ famId, marr_date, wifeId, wife_name, wife_birthday, wife_age_at_marr ] )
+                else:
+                    continue
+
+        else:
+            continue
+
+    return marriedBefore14Table
