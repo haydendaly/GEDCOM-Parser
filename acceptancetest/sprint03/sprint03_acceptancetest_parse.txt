@@ -294,3 +294,37 @@
 <-- 1 | MARR | Y | 
 --> 2 DATE 30 JUL 2000
 <-- 2 | DATE | Y | 30 JUL 2000
+--> 0 @US10_01@ INDI
+<-- 0 | INDI | Y | @US10_01@
+--> 1 NAME Married Before /14/ [HUSB]
+<-- 1 | NAME | Y | Married Before /14/ [HUSB]
+--> 1 SEX M
+<-- 1 | SEX | Y | M
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 1900
+<-- 2 | DATE | Y | 01 JAN 1900
+--> 1 FAMS @US10@
+<-- 1 | FAMS | Y | @US10@
+--> 0 @US10_02@ INDI
+<-- 0 | INDI | Y | @US10_02@
+--> 1 NAME Married Before /14/ [WIFE]
+<-- 1 | NAME | Y | Married Before /14/ [WIFE]
+--> 1 SEX F
+<-- 1 | SEX | Y | F
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 1900
+<-- 2 | DATE | Y | 01 JAN 1900
+--> 1 FAMS @US10@
+<-- 1 | FAMS | Y | @US10@
+--> 0 @US10@ FAM
+<-- 0 | FAM | Y | @US10@
+--> 1 HUSB @US10_01@
+<-- 1 | HUSB | Y | @US10_01@
+--> 1 WIFE @US10_02@
+<-- 1 | WIFE | Y | @US10_02@
+--> 1 MARR
+<-- 1 | MARR | Y | 
+--> 2 DATE 01 JAN 1910
+<-- 2 | DATE | Y | 01 JAN 1910

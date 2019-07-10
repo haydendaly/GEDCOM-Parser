@@ -336,6 +336,40 @@
       "DEAT": "N/A",
       "ALIVE": "True",
       "AGE": "N/A"
+    },
+    "@US10_01@": {
+      "INDILine": "149",
+      "NAME": "Married Before /14/ [HUSB]",
+      "NAMELine": "150",
+      "SEX": "M",
+      "SEXLine": "151",
+      "BIRT": "1900-01-01",
+      "BIRTLine": "153",
+      "FAMS": [
+        "@US10@"
+      ],
+      "FAMSLine": "154",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "119"
+    },
+    "@US10_02@": {
+      "INDILine": "155",
+      "NAME": "Married Before /14/ [WIFE]",
+      "NAMELine": "156",
+      "SEX": "F",
+      "SEXLine": "157",
+      "BIRT": "1900-01-01",
+      "BIRTLine": "159",
+      "FAMS": [
+        "@US10@"
+      ],
+      "FAMSLine": "160",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "119"
     }
   },
   "familyData": {
@@ -417,6 +451,19 @@
       "DIV": "N/A",
       "HUSB_NAME": "Living Couple [HUSB], Anniversary in 30 /Days/",
       "WIFE_NAME": "Living Couple [WIFE], Anniversary in 30 /Days/",
+      "CHIL": "N/A"
+    },
+    "@US10@": {
+      "FAMLine": "161",
+      "HUSB": "@US10_01@",
+      "HUSBLine": "162",
+      "WIFE": "@US10_02@",
+      "WIFELine": "163",
+      "MARR": "1910-01-01",
+      "MARRLine": "165",
+      "DIV": "N/A",
+      "HUSB_NAME": "Married Before /14/ [HUSB]",
+      "WIFE_NAME": "Married Before /14/ [WIFE]",
       "CHIL": "N/A"
     }
   }

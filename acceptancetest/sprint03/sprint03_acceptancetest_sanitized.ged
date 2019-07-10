@@ -146,3 +146,20 @@
 1 | WIFE | Y | @US39_02@ | 146
 1 | MARR | Y |  | 147
 2 | DATE | Y | 30 JUL 2000 | 148
+0 | INDI | Y | @US10_01@ | 149
+1 | NAME | Y | Married Before /14/ [HUSB] | 150
+1 | SEX | Y | M | 151
+1 | BIRT | Y |  | 152
+2 | DATE | Y | 01 JAN 1900 | 153
+1 | FAMS | Y | @US10@ | 154
+0 | INDI | Y | @US10_02@ | 155
+1 | NAME | Y | Married Before /14/ [WIFE] | 156
+1 | SEX | Y | F | 157
+1 | BIRT | Y |  | 158
+2 | DATE | Y | 01 JAN 1900 | 159
+1 | FAMS | Y | @US10@ | 160
+0 | FAM | Y | @US10@ | 161
+1 | HUSB | Y | @US10_01@ | 162
+1 | WIFE | Y | @US10_02@ | 163
+1 | MARR | Y |  | 164
+2 | DATE | Y | 01 JAN 1910 | 165
