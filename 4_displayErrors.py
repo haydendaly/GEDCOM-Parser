@@ -46,6 +46,12 @@ def displayErrors(fileName, GEDCOM_dict):
     print('\n[us02] Error: Date Occurs After Current Date')
     print( us02 )
 
+    us03 = jbUserStories.us03(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us02.get_string(title="[us03] - Error: Birth Occurs After Death Date")+'\n\n')
+    print('\n[us03] Error: Birth date Occurs After Death Date')
+    print( us03 )
+
     us04 = jbUserStories.us04(GEDCOM_dict)
     with open(fileName[:-4] + '_output.txt', 'a+') as output:
         output.write(us04.get_string(title="[us04] - Error: Divorce Occurs Before Marriage Date")+'\n\n')

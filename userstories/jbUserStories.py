@@ -92,3 +92,24 @@ def us05(GEDCOM_dict):
             if (husb_deat >= marr_date or wife_deat >= marr_date):
                     invalidDateTable.add_row([ key, value['MARR'], value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date(), value['MARRLine']])
     return invalidDateTable
+
+# Checks that Birth occur before death of an individual
+def us03(GEDCOM_dict):
+
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['ID', 'Name', 'Birth', ' Death']
+
+    individualData = GEDCOM_dict['individualData']
+    for key, value in individualData.items():
+        if ( value['DEAT'] != 'N/A' ):
+            deat = datetime.datetime.strptime(" ".join( value['DEAT'].split('-') ), '%Y %m %d')
+        else:
+            deat = datetime.datetime.min
+        if ( value['BIRT'] != 'N/A' ):
+                birt = datetime.datetime.strptime(" ".join( value['BIRT'].split('-') ), '%Y %m %d')
+        else:
+            birt = datetime.datetime.min
+        if ( birt >= deat and deat != datetime.datetime.min):
+            invalidDateTable.add_row( [ key, value['NAME'], value['BIRT'], value['DEAT'] ] )
+
+    return invalidDateTable

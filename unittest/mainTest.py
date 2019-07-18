@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath('../userstories'))
 from prettytable import PrettyTable;
 
 import unittest
-from jbUserStories import us01, us02, us04, us05
+from jbUserStories import us01, us02, us03, us04, us05
 from hdUserStories import us35, us36, us29, us39
 from gaUserStories import us38, us27, us30, us31, us10
 
@@ -218,5 +218,23 @@ class Tests(unittest.TestCase):
         output = testTable
 
         self.assertEqual( us10( input ).get_string(), output.get_string())
+
+    def test_us03(self):
+        input = {
+            'individualData': {
+                '@US03@': {
+                    'NAME': 'Died before born',
+                    'BIRT': '2019-01-01',
+                    'DEAT': '2018 -01-01'
+                }
+            }
+        }
+
+        testTable = PrettyTable()
+        testTable.field_names = [ 'ID', 'Name', 'BIRT', 'DEAT']
+        testTable.add_row(['@US03@', 'Died before born', '2019-01-01', '2018-01-01'])
+
+        output = testTable
+        self.assertEqual( us03( input ).get_string(), output.get_string())
 
 unittest.main()
