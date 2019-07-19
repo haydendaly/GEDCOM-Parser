@@ -285,7 +285,7 @@ class Tests(unittest.TestCase):
                     'HUSB_NAME' : 'Husband',
                     'WIFE_NAME' : 'Wife'
                 },
-                '@US07.6' : {
+                '@US07.6@' : {
                     'DIV' : '2018-01-01',
                     'HUSB' : '@US07.3@',
                     'WIFE' : '@US07.4@',
@@ -297,7 +297,7 @@ class Tests(unittest.TestCase):
 
         testTable = PrettyTable()
         testTable.field_names = ["Family ID", "Husband ID", "Husband", "Husband Death Date", "Wife ID", "Wife", "Wife Death Date", "Divorce Date"]
-        testTable.add_row([ '@US07.5@', '@US07.2@', 'Husband', 'N/A', '@US07.1@', 'Wife', '2017-01-01', '2018-01-01'])
+        testTable.add_row([ '@US07.6@', '@US07.3@', 'Husband', '2019-01-01', '@US07.4@', 'Wife', 'N/A', '2018-01-01'])
 
         output = testTable
 
