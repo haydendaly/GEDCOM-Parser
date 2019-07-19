@@ -7,7 +7,7 @@ from prettytable import PrettyTable;
 
 import unittest
 from jbUserStories import us01, us02, us03, us04, us05
-from hdUserStories import us35, us36, us29, us39
+from hdUserStories import us35, us36, us29, us39, us06, us07
 from gaUserStories import us38, us27, us30, us31, us10
 
 class Tests(unittest.TestCase):
@@ -225,16 +225,82 @@ class Tests(unittest.TestCase):
                 '@US03@': {
                     'NAME': 'Died before born',
                     'BIRT': '2019-01-01',
-                    'DEAT': '2018 -01-01'
+                    'DEAT': '2018-01-01'
                 }
             }
         }
 
         testTable = PrettyTable()
-        testTable.field_names = [ 'ID', 'Name', 'BIRT', 'DEAT']
+        testTable.field_names = [ 'ID', 'Name', 'Birth', 'Death']
         testTable.add_row(['@US03@', 'Died before born', '2019-01-01', '2018-01-01'])
 
         output = testTable
         self.assertEqual( us03( input ).get_string(), output.get_string())
+
+    def test_us07(self):
+        input = {
+            'individualData': {
+                '@US06.1@': {
+                    'NAME' : 'Old Guy',
+                    'AGE' : '151',
+                    'BIRT' : 'Random Date'
+                },
+                '@US06.2@' : {
+                    'NAME' : 'Young Guy',
+                    'AGE' : '25',
+                    'BIRT' : 'Random Date'
+                }
+            }
+        }
+
+        testTable = PrettyTable()
+        testTable.field_names = [ 'ID', 'NAME', 'AGE', 'BIRTHDATE']
+        testTable.add_row([ '@US06.1@', 'Old Guy', '151', 'Random Date'])
+
+        output = testTable
+
+        self.assertEqual( us07( input ).get_string(), output.get_string())
+
+    def test_us06(self):
+        input = {
+            'individualData': {
+                '@US07.1@': {
+                    'DEAT' : '2017-01-01'
+                },
+                '@US07.2@' : {
+                    'DEAT' : 'N/A'
+                },
+                '@US07.3@': {
+                    'DEAT' : '2019-01-01'
+                },
+                '@US07.4@' : {
+                    'DEAT' : 'N/A'
+                }
+            },
+            'familyData': {
+                '@US07.5' : {
+                    'DIV' : '2018-01-01',
+                    'HUSB' : '@US07.2@',
+                    'WIFE' : '@US07.1@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife'
+                },
+                '@US07.6' : {
+                    'DIV' : '2018-01-01',
+                    'HUSB' : '@US07.3@',
+                    'WIFE' : '@US07.4@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife'
+                }
+            }
+        }
+
+        testTable = PrettyTable()
+        testTable.field_names = ["Family ID", "Husband ID", "Husband", "Husband Death Date", "Wife ID", "Wife", "Wife Death Date", "Divorce Date"]
+        testTable.add_row([ '@US07.5@', '@US07.2@', 'Husband', 'N/A', '@US07.1@', 'Wife', '2017-01-01', '2018-01-01'])
+
+        output = testTable
+
+        self.assertEqual( us06( input ).get_string(), output.get_string())
 
 unittest.main()

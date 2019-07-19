@@ -64,6 +64,12 @@ def displayErrors(fileName, GEDCOM_dict):
     print('\n[us05] Error: Marriage Occurs After Death Date')
     print( us05 )
 
+    us06 = hdUserStories.us06(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us06.get_string(title="[us06] - Error: Divorce Before Death")+'\n\n')
+    print('\n[us06] Error: Divorce Before Death')
+    print( us06 )
+
 
     return
 

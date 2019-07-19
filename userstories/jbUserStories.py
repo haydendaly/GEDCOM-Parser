@@ -97,7 +97,7 @@ def us05(GEDCOM_dict):
 def us03(GEDCOM_dict):
 
     invalidDateTable = PrettyTable()
-    invalidDateTable.field_names = ['ID', 'Name', 'Birth', ' Death']
+    invalidDateTable.field_names = ['ID', 'Name', 'Birth', 'Death']
 
     individualData = GEDCOM_dict['individualData']
     for key, value in individualData.items():

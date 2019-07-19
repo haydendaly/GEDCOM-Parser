@@ -64,3 +64,45 @@ def us39(GEDCOM_dict):
                 upcomingAnniversariesTable.add_row(row)
 
     return upcomingAnniversariesTable
+
+def us06(GEDCOM_dict):
+
+    divorceBeforeDeathTable = prettytable.PrettyTable()
+    divorceBeforeDeathTable.field_names = ["Family ID", "Husband ID", "Husband", "Husband Death Date", "Wife ID", "Wife", "Wife Death Date", "Divorce Date"]
+
+    familyData = GEDCOM_dict['familyData'].items()
+    individualData = GEDCOM_dict['individualData']
+
+    for key, value in familyData:
+
+        if value['DIV'] != 'N/A' and value['HUSB'] != 'N/A' and value['WIFE'] != 'N/A':
+
+            husbandDeathDate = individualData[value['HUSB']]['DEAT']
+            wifeDeathDate = individualData[value['WIFE']]['DEAT']
+
+            husbDate = datetime.datetime.strptime(" ".join('1800-01-01'.split('-') ), '%Y %m %d')
+            wifeDate = husbDate
+
+            if husbandDeathDate != 'N/A':
+                husbDate = datetime.datetime.strptime(" ".join(husbandDeathDate.split('-') ), '%Y %m %d')
+            if wifeDeathDate != 'N/A':
+                wifeDate = datetime.datetime.strptime(" ".join(wifeDeathDate.split('-') ), '%Y %m %d')
+            divDate = datetime.datetime.strptime(" ".join(value['DIV'].split('-') ), '%Y %m %d')
+            if husbDate >= divDate or wifeDate >= divDate:
+                row = [key, value['HUSB'], value['HUSB_NAME'], husbandDeathDate, value['WIFE'], value['WIFE_NAME'], wifeDeathDate, value['DIV']]
+                divorceBeforeDeathTable.add_row(row)
+
+    return divorceBeforeDeathTable
+
+def us07(GEDCOM_dict):
+
+    ageOver150Table = prettytable.PrettyTable()
+    ageOver150Table.field_names = ["ID", "NAME", "AGE", "BIRTHDATE"]
+
+    for key, value in GEDCOM_dict['individualData'].items():
+        if value['AGE'] != 'N/A':
+            if int(value['AGE']) >= 150:
+                row = [key, value['NAME'], value['AGE'], value['BIRT']]
+                ageOver150Table.add_row(row)
+
+    return ageOver150Table
