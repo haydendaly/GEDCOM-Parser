@@ -314,7 +314,8 @@ class Tests(unittest.TestCase):
                 },
                 '@US09.3@': {
                     'BIRT' : '2019-01-01',
-                    'NAME' : 'Child'
+                    'NAME' : 'Child',
+                    'DEAT' : 'N/A'
                 }
             },
             'familyData': {
@@ -323,7 +324,7 @@ class Tests(unittest.TestCase):
                     'WIFE' : '@US09.1@',
                     'HUSB_NAME' : 'Husband',
                     'WIFE_NAME' : 'Wife',
-                    'CHIL' : '@US09.3@'
+                    'CHIL' : [ '@US09.3@' ]
                 }
             }
         }
