@@ -122,18 +122,17 @@ def us09(GEDCOM_dict):
     familyData = GEDCOM_dict['familyData']
     individualData = GEDCOM_dict['individualData']
     for key, value in familyData.items():
-        if ( value['DEAT'] != 'N/A' ):
-            if ( individualData[value['HUSB']]['DEAT'] != 'N/A'):    
-                husb_deat = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['DEAT'].split('-') ), '%Y %m %d')
-            else:
-                husb_deat = datetime.datetime.min
+        if ( individualData[value['HUSB']]['DEAT'] != 'N/A'):
+            husb_deat = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['DEAT'].split('-') ), '%Y %m %d')
+        else:
+            husb_deat = datetime.datetime.min
 
-            if (individualData[value['WIFE']]['DEAT'] != 'N/A'):
-                wife_deat = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['DEAT'].split('-') ), '%Y %m %d')
-            else:
-                wife_deat = datetime.datetime.min
-            for i in range(len(value['CHIL'])):
-                chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL'][i]]['BIRT'].split('-') ), '%Y %m %d') 
-                if ((husb_deat >= (chil_birt + datetime.timedelta(9*365/12))) or wife_deat >= chil_birt):
-                    invalidDateTable.add_row([ key, individualData[value['CHIL'][i]], individualData[value['CHIL'][i]]['NAME'], individualData[value['CHIL'][i]]['BIRT'],value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
+        if (individualData[value['WIFE']]['DEAT'] != 'N/A'):
+            wife_deat = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['DEAT'].split('-') ), '%Y %m %d')
+        else:
+            wife_deat = datetime.datetime.min
+        for i in range(len(value['CHIL'])):
+            chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL'][i]]['BIRT'].split('-') ), '%Y %m %d')
+            if ((husb_deat >= (chil_birt + datetime.timedelta(9*365/12))) or wife_deat >= chil_birt):
+                invalidDateTable.add_row([ key, individualData[value['CHIL'][i]], individualData[value['CHIL'][i]]['NAME'], individualData[value['CHIL'][i]]['BIRT'],value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
     return invalidDateTable
