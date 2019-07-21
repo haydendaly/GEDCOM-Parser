@@ -70,6 +70,11 @@ def displayErrors(fileName, GEDCOM_dict):
     print('\n[us06] Error: Divorce Before Death')
     print( us06 )
 
+    us09 = jbUserStories.us09(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us09.get_string(title="[us09] - Error: Birth Occurs After Parents Death Date")+'\n\n')
+    print('\n[us09] Error: Birth Occurs After Parents Death Date')
+    print( us09 )
 
     return
 
