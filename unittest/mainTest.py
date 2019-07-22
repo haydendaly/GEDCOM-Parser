@@ -319,7 +319,7 @@ class Tests(unittest.TestCase):
                 }
             },
             'familyData': {
-                '@US09.4' : {
+                '@US09.4@' : {
                     'HUSB' : '@US09.2@',
                     'WIFE' : '@US09.1@',
                     'HUSB_NAME' : 'Husband',
@@ -336,5 +336,7 @@ class Tests(unittest.TestCase):
 
 
         output = testTable
+        print( us09( input ).get_string() )
+        print( output.get_string() )
         self.assertEqual( us09( input ).get_string(), output.get_string())
 unittest.main()

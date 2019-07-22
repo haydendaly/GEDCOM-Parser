@@ -224,7 +224,7 @@
       "FAMS": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
-      "AGE": "19"
+      "AGE": "20"
     },
     "@US38_02@": {
       "INDILine": "82",
@@ -338,34 +338,34 @@
       "AGE": "N/A"
     },
     "@US10_01@": {
-      "INDILine": "149",
+      "INDILine": "150",
       "NAME": "Married Before /14/ [HUSB]",
-      "NAMELine": "150",
+      "NAMELine": "151",
       "SEX": "M",
-      "SEXLine": "151",
+      "SEXLine": "152",
       "BIRT": "1900-01-01",
-      "BIRTLine": "153",
+      "BIRTLine": "154",
       "FAMS": [
         "@US10@"
       ],
-      "FAMSLine": "154",
+      "FAMSLine": "155",
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
       "AGE": "119"
     },
     "@US10_02@": {
-      "INDILine": "155",
+      "INDILine": "156",
       "NAME": "Married Before /14/ [WIFE]",
-      "NAMELine": "156",
+      "NAMELine": "157",
       "SEX": "F",
-      "SEXLine": "157",
+      "SEXLine": "158",
       "BIRT": "1900-01-01",
-      "BIRTLine": "159",
+      "BIRTLine": "160",
       "FAMS": [
         "@US10@"
       ],
-      "FAMSLine": "160",
+      "FAMSLine": "161",
       "FAMC": "N/A",
       "DEAT": "N/A",
       "ALIVE": "True",
@@ -454,13 +454,13 @@
       "CHIL": "N/A"
     },
     "@US10@": {
-      "FAMLine": "161",
+      "FAMLine": "162",
       "HUSB": "@US10_01@",
-      "HUSBLine": "162",
+      "HUSBLine": "163",
       "WIFE": "@US10_02@",
-      "WIFELine": "163",
+      "WIFELine": "164",
       "MARR": "1910-01-01",
-      "MARRLine": "165",
+      "MARRLine": "166",
       "DIV": "N/A",
       "HUSB_NAME": "Married Before /14/ [HUSB]",
       "WIFE_NAME": "Married Before /14/ [WIFE]",

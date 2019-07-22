@@ -1,6 +1,6 @@
-0 | NOTE | Y | Sprint 01 and 02 Acceptance Test | 1
+0 | NOTE | Y | Sprint 01, 02, and 03 Acceptance Test | 1
 0 | NOTE | Y | github.com/haydendaly/GEDCOM-Parser | 2
-0 | NOTE | Y | All Test Cases Created Based on Current Date 07-JUL-2019 | 3
+0 | NOTE | Y | All Test Cases Created Based on Current Date 21-JUL-2019 | 3
 0 | NOTE | Y | Mainly Sprint 01 Acceptance Test Data | 4
 0 | INDI | Y | @US01_01@ | 5
 1 | NAME | Y | Birth Date After Current /Date/ Age N/A | 6
@@ -146,20 +146,21 @@
 1 | WIFE | Y | @US39_02@ | 146
 1 | MARR | Y |  | 147
 2 | DATE | Y | 30 JUL 2000 | 148
-0 | INDI | Y | @US10_01@ | 149
-1 | NAME | Y | Married Before /14/ [HUSB] | 150
-1 | SEX | Y | M | 151
-1 | BIRT | Y |  | 152
-2 | DATE | Y | 01 JAN 1900 | 153
-1 | FAMS | Y | @US10@ | 154
-0 | INDI | Y | @US10_02@ | 155
-1 | NAME | Y | Married Before /14/ [WIFE] | 156
-1 | SEX | Y | F | 157
-1 | BIRT | Y |  | 158
-2 | DATE | Y | 01 JAN 1900 | 159
-1 | FAMS | Y | @US10@ | 160
-0 | FAM | Y | @US10@ | 161
-1 | HUSB | Y | @US10_01@ | 162
-1 | WIFE | Y | @US10_02@ | 163
-1 | MARR | Y |  | 164
-2 | DATE | Y | 01 JAN 1910 | 165
+0 | NOTE | Y | Mainly Sprint 03 Acceptance Test Data | 149
+0 | INDI | Y | @US10_01@ | 150
+1 | NAME | Y | Married Before /14/ [HUSB] | 151
+1 | SEX | Y | M | 152
+1 | BIRT | Y |  | 153
+2 | DATE | Y | 01 JAN 1900 | 154
+1 | FAMS | Y | @US10@ | 155
+0 | INDI | Y | @US10_02@ | 156
+1 | NAME | Y | Married Before /14/ [WIFE] | 157
+1 | SEX | Y | F | 158
+1 | BIRT | Y |  | 159
+2 | DATE | Y | 01 JAN 1900 | 160
+1 | FAMS | Y | @US10@ | 161
+0 | FAM | Y | @US10@ | 162
+1 | HUSB | Y | @US10_01@ | 163
+1 | WIFE | Y | @US10_02@ | 164
+1 | MARR | Y |  | 165
+2 | DATE | Y | 01 JAN 1910 | 166
