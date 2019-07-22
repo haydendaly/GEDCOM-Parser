@@ -164,3 +164,54 @@
 1 | WIFE | Y | @US10_02@ | 164
 1 | MARR | Y |  | 165
 2 | DATE | Y | 01 JAN 1910 | 166
+0 | INDI | Y | @US09_01@ | 167
+1 | NAME | Y | Wife Death Before /Child Birt/ | 168
+1 | DEAT | Y |  | 169
+2 | DATE | Y | 01 JAN 2017 | 170
+1 | FAMS | Y | @US09@ | 171
+0 | INDI | Y | @US09_02@ | 172
+1 | NAME | Y | Husb Death Before 9 Months Child /Birt/ | 173
+1 | DEAT | Y |  | 174
+2 | DATE | Y | 01 JAN 2018 | 175
+1 | FAMS | Y | @US09@ | 176
+0 | INDI | Y | @US09_03@ | 177
+1 | NAME | Y | Child | 178
+1 | BIRT | Y |  | 179
+2 | DATE | Y | 01 JAN 2019 | 180
+1 | FAMC | Y | @US09@ | 181
+0 | FAM | Y | @US09@ | 182
+1 | HUSB | Y | @US09_02@ | 183
+1 | WIFE | Y | @US09_01@ | 184
+1 | CHIL | Y | @US09_03@ | 185
+0 | INDI | Y | @US06_01@ | 186
+1 | DEAT | Y |  | 187
+2 | DATE | Y | 01 JAN 2017 | 188
+1 | FAMS | Y | @US06_1@ | 189
+0 | INDI | Y | @US06_02@ | 190
+1 | FAMS | Y | @US06_1@ | 191
+0 | INDI | Y | @US06_03@ | 192
+1 | DEAT | Y |  | 193
+2 | DATE | Y | 01 JAN 2019 | 194
+1 | FAMS | Y | @US06_2@ | 195
+0 | INDI | Y | @US06_04@ | 196
+1 | FAMS | Y | @US06_2@ | 197
+0 | FAM | Y | @US06_1@ | 198
+1 | DIV | Y |  | 199
+2 | DATE | Y | 01 JAN 2018 | 200
+1 | HUSB | Y | @US06_02@ | 201
+1 | WIFE | Y | @US06_01@ | 202
+0 | FAM | Y | @US06_2@ | 203
+1 | DIV | Y |  | 204
+2 | DATE | Y | 01 JAN 2018 | 205
+1 | HUSB | Y | @US06_03@ | 206
+1 | WIFE | Y | @US06_04@ | 207
+0 | INDI | Y | @US07_01@ | 208
+1 | NAME | Y | Old /Guy/ | 209
+1 | BIRT | Y |  | 210
+2 | DATE | Y | 01 JAN 1700 | 211
+0 | INDI | Y | @US03_01@ | 212
+1 | NAME | Y | Died Before /Born/ | 213
+1 | BIRT | Y |  | 214
+2 | DATE | Y | 01 JAN 2019 | 215
+1 | DEAT | Y |  | 216
+2 | DATE | Y | 01 JAN 2018 | 217

@@ -370,6 +370,137 @@
       "DEAT": "N/A",
       "ALIVE": "True",
       "AGE": "119"
+    },
+    "@US09_01@": {
+      "INDILine": "167",
+      "NAME": "Wife Death Before /Child Birt/",
+      "NAMELine": "168",
+      "DEAT": "2017-01-01",
+      "DEATLine": "170",
+      "FAMS": [
+        "@US09@"
+      ],
+      "FAMSLine": "171",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US09_02@": {
+      "INDILine": "172",
+      "NAME": "Husb Death Before 9 Months Child /Birt/",
+      "NAMELine": "173",
+      "DEAT": "2018-01-01",
+      "DEATLine": "175",
+      "FAMS": [
+        "@US09@"
+      ],
+      "FAMSLine": "176",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US09_03@": {
+      "INDILine": "177",
+      "NAME": "Child",
+      "NAMELine": "178",
+      "BIRT": "2019-01-01",
+      "BIRTLine": "180",
+      "FAMC": "@US09@",
+      "FAMCLine": "181",
+      "SEX": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
+    },
+    "@US06_01@": {
+      "INDILine": "186",
+      "DEAT": "2017-01-01",
+      "DEATLine": "188",
+      "FAMS": [
+        "@US06_1@"
+      ],
+      "FAMSLine": "189",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US06_02@": {
+      "INDILine": "190",
+      "FAMS": [
+        "@US06_1@"
+      ],
+      "FAMSLine": "191",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US06_03@": {
+      "INDILine": "192",
+      "DEAT": "2019-01-01",
+      "DEATLine": "194",
+      "FAMS": [
+        "@US06_2@"
+      ],
+      "FAMSLine": "195",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
+    },
+    "@US06_04@": {
+      "INDILine": "196",
+      "FAMS": [
+        "@US06_2@"
+      ],
+      "FAMSLine": "197",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US07_01@": {
+      "INDILine": "208",
+      "NAME": "Old /Guy/",
+      "NAMELine": "209",
+      "BIRT": "1700-01-01",
+      "BIRTLine": "211",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "319"
+    },
+    "@US03_01@": {
+      "INDILine": "212",
+      "NAME": "Died Before /Born/",
+      "NAMELine": "213",
+      "BIRT": "2019-01-01",
+      "BIRTLine": "215",
+      "DEAT": "2018-01-01",
+      "DEATLine": "217",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "FAMS": "N/A",
+      "ALIVE": "False",
+      "AGE": "N/A"
     }
   },
   "familyData": {
@@ -464,6 +595,47 @@
       "DIV": "N/A",
       "HUSB_NAME": "Married Before /14/ [HUSB]",
       "WIFE_NAME": "Married Before /14/ [WIFE]",
+      "CHIL": "N/A"
+    },
+    "@US09@": {
+      "FAMLine": "182",
+      "HUSB": "@US09_02@",
+      "HUSBLine": "183",
+      "WIFE": "@US09_01@",
+      "WIFELine": "184",
+      "CHIL": [
+        "@US09_03@"
+      ],
+      "CHILLine": "185",
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "Husb Death Before 9 Months Child /Birt/",
+      "WIFE_NAME": "Wife Death Before /Child Birt/"
+    },
+    "@US06_1@": {
+      "FAMLine": "198",
+      "DIV": "2018-03-15",
+      "DIVLine": "200",
+      "HUSB": "@US06_02@",
+      "HUSBLine": "201",
+      "WIFE": "@US06_01@",
+      "WIFELine": "202",
+      "MARR": "N/A",
+      "HUSB_NAME": "N/A",
+      "WIFE_NAME": "N/A",
+      "CHIL": "N/A"
+    },
+    "@US06_2@": {
+      "FAMLine": "203",
+      "DIV": "2018-03-15",
+      "DIVLine": "205",
+      "HUSB": "@US06_03@",
+      "HUSBLine": "206",
+      "WIFE": "@US06_04@",
+      "WIFELine": "207",
+      "MARR": "N/A",
+      "HUSB_NAME": "N/A",
+      "WIFE_NAME": "N/A",
       "CHIL": "N/A"
     }
   }

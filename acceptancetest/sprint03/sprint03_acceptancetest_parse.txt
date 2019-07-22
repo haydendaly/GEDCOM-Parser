@@ -330,3 +330,105 @@
 <-- 1 | MARR | Y | 
 --> 2 DATE 01 JAN 1910
 <-- 2 | DATE | Y | 01 JAN 1910
+--> 0 @US09_01@ INDI
+<-- 0 | INDI | Y | @US09_01@
+--> 1 NAME Wife Death Before /Child Birt/
+<-- 1 | NAME | Y | Wife Death Before /Child Birt/
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2017
+<-- 2 | DATE | Y | 01 JAN 2017
+--> 1 FAMS @US09@
+<-- 1 | FAMS | Y | @US09@
+--> 0 @US09_02@ INDI
+<-- 0 | INDI | Y | @US09_02@
+--> 1 NAME Husb Death Before 9 Months Child /Birt/
+<-- 1 | NAME | Y | Husb Death Before 9 Months Child /Birt/
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
+--> 1 FAMS @US09@
+<-- 1 | FAMS | Y | @US09@
+--> 0 @US09_03@ INDI
+<-- 0 | INDI | Y | @US09_03@
+--> 1 NAME Child
+<-- 1 | NAME | Y | Child
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 2019
+<-- 2 | DATE | Y | 01 JAN 2019
+--> 1 FAMC @US09@
+<-- 1 | FAMC | Y | @US09@
+--> 0 @US09@ FAM
+<-- 0 | FAM | Y | @US09@
+--> 1 HUSB @US09_02@
+<-- 1 | HUSB | Y | @US09_02@
+--> 1 WIFE @US09_01@
+<-- 1 | WIFE | Y | @US09_01@
+--> 1 CHIL @US09_03@
+<-- 1 | CHIL | Y | @US09_03@
+--> 0 @US06_01@ INDI
+<-- 0 | INDI | Y | @US06_01@
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2017
+<-- 2 | DATE | Y | 01 JAN 2017
+--> 1 FAMS @US06_1@
+<-- 1 | FAMS | Y | @US06_1@
+--> 0 @US06_02@ INDI
+<-- 0 | INDI | Y | @US06_02@
+--> 1 FAMS @US06_1@
+<-- 1 | FAMS | Y | @US06_1@
+--> 0 @US06_03@ INDI
+<-- 0 | INDI | Y | @US06_03@
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2019
+<-- 2 | DATE | Y | 01 JAN 2019
+--> 1 FAMS @US06_2@
+<-- 1 | FAMS | Y | @US06_2@
+--> 0 @US06_04@ INDI
+<-- 0 | INDI | Y | @US06_04@
+--> 1 FAMS @US06_2@
+<-- 1 | FAMS | Y | @US06_2@
+--> 0 @US06_1@ FAM
+<-- 0 | FAM | Y | @US06_1@
+--> 1 DIV
+<-- 1 | DIV | Y | 
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
+--> 1 HUSB @US06_02@
+<-- 1 | HUSB | Y | @US06_02@
+--> 1 WIFE @US06_01@
+<-- 1 | WIFE | Y | @US06_01@
+--> 0 @US06_2@ FAM
+<-- 0 | FAM | Y | @US06_2@
+--> 1 DIV
+<-- 1 | DIV | Y | 
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
+--> 1 HUSB @US06_03@
+<-- 1 | HUSB | Y | @US06_03@
+--> 1 WIFE @US06_04@
+<-- 1 | WIFE | Y | @US06_04@
+--> 0 @US07_01@ INDI
+<-- 0 | INDI | Y | @US07_01@
+--> 1 NAME Old /Guy/
+<-- 1 | NAME | Y | Old /Guy/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 1700
+<-- 2 | DATE | Y | 01 JAN 1700
+--> 0 @US03_01@ INDI
+<-- 0 | INDI | Y | @US03_01@
+--> 1 NAME Died Before /Born/
+<-- 1 | NAME | Y | Died Before /Born/
+--> 1 BIRT
+<-- 1 | BIRT | Y | 
+--> 2 DATE 01 JAN 2019
+<-- 2 | DATE | Y | 01 JAN 2019
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
