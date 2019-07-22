@@ -135,11 +135,6 @@ def us09(GEDCOM_dict):
             wife_deat = datetime.datetime.min
         for i in range(len(value['CHIL'])):
             chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL'][i]]['BIRT'].split('-') ), '%Y %m %d')
-            print( husb_deat.date() )
-            # print(wife_deat.date())
-            # print(chil_birt.date())
-            # print( husb_deat.date() <= (chil_birt.date() + datetime.timedelta(9*365/12)) )
-            # print( wife_deat.date() <= chil_birt.date())
             if ((husb_deat.date() <= (chil_birt.date() + datetime.timedelta(9*365/12))) or wife_deat.date() <= chil_birt.date()):
                 invalidDateTable.add_row([ key, value['CHIL'][i], individualData[value['CHIL'][i]]['NAME'], individualData[value['CHIL'][i]]['BIRT'],value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
     return invalidDateTable

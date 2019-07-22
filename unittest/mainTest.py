@@ -336,7 +336,5 @@ class Tests(unittest.TestCase):
 
 
         output = testTable
-        print( us09( input ).get_string() )
-        print( output.get_string() )
         self.assertEqual( us09( input ).get_string(), output.get_string())
 unittest.main()
