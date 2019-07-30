@@ -13,6 +13,9 @@ import sys
 import json
 from collections import defaultdict
 
+# User Stories
+from userstories import gaUserStories
+
 def storeGEDCOMInDict(validLinesList):
     uniqueTags = ['INDI', 'FAM']
     tagsWithDates = ['BIRT', 'DEAT', 'DIV', 'MARR']
@@ -52,7 +55,9 @@ def storeGEDCOMInDict(validLinesList):
                         individualData[ prevTopLevelId ][ tag ].append( arguments )
                         individualData[ prevTopLevelId ].update( { tag + "Line" : lineNumber } )
                     elif ( tag == "DATE" ):
-                        individualData[ prevTopLevelId ][ prevTagPendingDate ] = arguments
+                        fillInPartialDateIfNecessary = gaUserStories.us41( arguments )
+                        checkValidDate = gaUserStories.us42( fillInPartialDateIfNecessary )
+                        individualData[ prevTopLevelId ][ prevTagPendingDate ] = checkValidDate
                         individualData[ prevTopLevelId ][ prevTagPendingDate + "Line" ] = lineNumber
                     else:
                         individualData[ prevTopLevelId ].update( { tag : arguments } )
@@ -71,7 +76,9 @@ def storeGEDCOMInDict(validLinesList):
                         familyData[ prevTopLevelId ][ tag ].append( arguments )
                         familyData[ prevTopLevelId ][ tag + "Line" ] = lineNumber
                     elif ( tag == "DATE" ):
-                        familyData[ prevTopLevelId ][ prevTagPendingDate ] = arguments
+                        fillInPartialDateIfNecessary = gaUserStories.us41( arguments )
+                        checkValidDate = gaUserStories.us42( fillInPartialDateIfNecessary )
+                        familyData[ prevTopLevelId ][ prevTagPendingDate ] = checkValidDate
                         familyData[ prevTopLevelId ][ prevTagPendingDate + "Line" ] = lineNumber
                     else:
                         familyData[ prevTopLevelId ].update( { tag : arguments } )
