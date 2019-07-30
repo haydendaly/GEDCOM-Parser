@@ -228,3 +228,29 @@ def us10(GEDCOM_dict):
             continue
 
     return marriedBefore14Table
+
+# ----------------------------------- Sprint 04 -----------------------------------
+# Include Partial Dates - Accept and use dates without days or without days and months
+def us41( date ):
+    dateSplit = date.split( " " )
+    if ( len(dateSplit) < 3 ):
+        if ( len(dateSplit) == 2 ): # Dates without days
+            dateWithDefaultDay = f'01 {dateSplit[0]} {dateSplit[1]}'
+            return dateWithDefaultDay
+        if ( len(dateSplit) == 1 ): # Dates without days and months
+            dateWithDefaultDayAndMonth = f'01 JAN {dateSplit[0]}'
+            return dateWithDefaultDayAndMonth
+    elif ( len(dateSplit) == 3 ):
+        return date
+    else:
+        return 'N/A'
+
+# Reject illegitimate dates - All dates should be legitimate dates for the months specified (e.g., 2/30/2015 is not legitimate)
+def us42( date ):
+
+    try:
+        datetime.datetime.strptime( date, '%d %b %Y')
+    except ValueError:
+        return 'N/A'
+
+    return date
