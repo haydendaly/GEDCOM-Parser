@@ -231,6 +231,7 @@ def us10(GEDCOM_dict):
 
 # ----------------------------------- Sprint 04 -----------------------------------
 # Include Partial Dates - Accept and use dates without days or without days and months
+# -> Default Missing Days to 01; Default Missing Months to JAN
 def us41( date ):
     dateSplit = date.split( " " )
     if ( len(dateSplit) < 3 ):
