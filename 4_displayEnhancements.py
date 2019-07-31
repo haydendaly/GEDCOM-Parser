@@ -31,7 +31,7 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 #   us38 -
 #   us39 -
 #   us40 - (Implemented Directly in All Functions that Output Errors (in userstories))
-#   us41
+#   us41 - (Implemented Directly in All Functions that Output Errors (in userstories))
 def displayEnhancements(fileName, GEDCOM_dict):
 
     outputFile = fileName[:-4] + '_output.txt'

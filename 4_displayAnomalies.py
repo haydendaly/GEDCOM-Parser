@@ -20,8 +20,8 @@ from prettytable import PrettyTable
 from userstories import hdUserStories, jbUserStories, gaUserStories
 
 # Anomalies:
-#   us07
-#   us10
+#   us07 -
+#   us10 -
 #   us15
 def displayAnomalies(fileName, GEDCOM_dict):
 
