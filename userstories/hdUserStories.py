@@ -106,3 +106,36 @@ def us07(GEDCOM_dict):
                 ageOver150Table.add_row(row)
 
     return ageOver150Table
+
+def us34(GEDCOM_dict):
+
+    largeAgeDifferenceTable = prettytable.PrettyTable()
+    largeAgeDifferenceTable.field_names = ["FAMILY ID", "AGE DIFFERENCE", "HUSB NAME", "HUSB AGE", "WIFE NAME", "WIFE AGE"]
+
+    for key, value in GEDCOM_dict['familyData'].items():
+        if(value['HUSB'] != 'N/A' and value['WIFE'] != 'N/A'):
+            husbAge = GEDCOM_dict['individualData'][value['HUSB']]['AGE']
+            wifeAge = GEDCOM_dict['individualData'][value['WIFE']]['AGE']
+            if(husbAge != 'N/A' and wifeAge != 'N/A'):
+                husbAge = int(husbAge)
+                wifeAge = int(wifeAge)
+                if (husbAge >= 2*wifeAge or wifeAge >= 2*husbAge):
+                    row = [key, abs(husbAge - wifeAge), value['HUSB_NAME'], husbAge, value['WIFE_NAME'], wifeAge]
+                    largeAgeDifferenceTable.add_row(row)
+
+    return largeAgeDifferenceTable
+
+def us21(GEDCOM_dict):
+
+    incorrectGenderTable = prettytable.PrettyTable()
+    incorrectGenderTable.field_names = ["FAMILY ID", "NAME", "ROLE", "GENDER" ]
+
+    for key, value in GEDCOM_dict['familyData'].items():
+        if(value['HUSB'] != 'N/A' and GEDCOM_dict['individualData'][value['HUSB']]['SEX'] != 'M'):
+            row = [key, value['HUSB_NAME'], 'HUSB', GEDCOM_dict['individualData'][value['HUSB']]['SEX']]
+            incorrectGenderTable.add_row(row)
+        if(value['WIFE'] != 'N/A' and GEDCOM_dict['individualData'][value['WIFE']]['SEX'] != 'F'):
+            row = [key, value['WIFE_NAME'], 'Wife', GEDCOM_dict['individualData'][value['WIFE']]['SEX']]
+            incorrectGenderTable.add_row(row)
+
+    return incorrectGenderTable

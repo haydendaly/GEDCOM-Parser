@@ -54,6 +54,12 @@ def displayEnhancements(fileName, GEDCOM_dict):
     print('\n[us31] Living Single People Over 30')
     print(us31)
 
+    us34 = hdUserStories.us34(GEDCOM_dict)
+    with open(outputFile, 'a+') as output:
+        output.write(us34.get_string(title="[us34] - List Large Age Differences")+'\n\n')
+    print('\n[us34] List Large Age Differences')
+    print( us34 )
+
     us35 = hdUserStories.us35(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
         output.write(us35.get_string(title="[us35] - Birth Within the Past 30 Days")+'\n\n')

@@ -76,6 +76,12 @@ def displayErrors(fileName, GEDCOM_dict):
     print('\n[us09] Error: Birth Occurs After Parents Death Date')
     print( us09 )
 
+    us21 = hdUserStories.us21(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us21.get_string(title="[us21] - Error: Incorrect Gender for Role")+'\n\n')
+    print('\n[us21] Error: Incorrect Gender for Role')
+    print( us21 )
+
     return
 
 def main(fileName, GEDCOM_dict):

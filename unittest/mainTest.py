@@ -7,7 +7,7 @@ from prettytable import PrettyTable;
 
 import unittest
 from jbUserStories import us01, us02, us03, us04, us05, us09
-from hdUserStories import us35, us36, us29, us39, us06, us07
+from hdUserStories import us35, us36, us29, us39, us06, us07, us34, us21
 from gaUserStories import us38, us27, us30, us31, us10, us41, us42
 
 class Tests(unittest.TestCase):
@@ -89,11 +89,11 @@ class Tests(unittest.TestCase):
         self.assertEqual(us36(input).get_string(), output.get_string())
 
     def test_us38(self):
-        input = { 'individualData': {'@I1A': {'NAME' : 'Not /Upcoming/ /Birthday/', 'BIRT': '1999-10-29', 'ALIVE': 'True'}, '@I2@': {'NAME': 'Upcoming /Birthday/', 'BIRT': '1999-07-30', 'ALIVE': 'True'} } }
+        input = { 'individualData': {'@I1A': {'NAME' : 'Not /Upcoming/ /Birthday/', 'BIRT': '1999-10-29', 'ALIVE': 'True'}, '@I2@': {'NAME': 'Upcoming /Birthday/', 'BIRT': '1999-08-25', 'ALIVE': 'True'} } }
 
         testTable = PrettyTable()
         testTable.field_names = ['ID', 'Name', 'Birthday']
-        testTable.add_row(['@I2@', 'Upcoming /Birthday/', '1999-07-30'])
+        testTable.add_row(['@I2@', 'Upcoming /Birthday/', '1999-08-25'])
 
         output = testTable
         self.assertEqual(us38(input).get_string(), output.get_string())
@@ -179,11 +179,11 @@ class Tests(unittest.TestCase):
         self.assertEqual(us29(input).get_string(), output.get_string())
 
     def test_us39(self):
-        input = { 'familyData' : {'@F1@': {'MARR': '2017-07-30', 'HUSB_NAME': 'Todd /Daly/', 'WIFE_NAME': 'Amy /Fisher/'}, '@F2@': {'MARR': '1962-06-14', 'HUSB_NAME': 'Lee /Daly/', 'WIFE_NAME': 'Betty /Berardini/'} } }
+        input = { 'familyData' : {'@F1@': {'MARR': '2017-08-29', 'HUSB_NAME': 'Todd /Daly/', 'WIFE_NAME': 'Amy /Fisher/'}, '@F2@': {'MARR': '1962-06-14', 'HUSB_NAME': 'Lee /Daly/', 'WIFE_NAME': 'Betty /Berardini/'} } }
 
         testTable = PrettyTable()
         testTable.field_names = ['Family ID', 'Husband', 'Wife', 'Marriage Date' ]
-        testTable.add_row(['@F1@', 'Todd /Daly/', 'Amy /Fisher/', '2017-07-30'])
+        testTable.add_row(['@F1@', 'Todd /Daly/', 'Amy /Fisher/', '2017-08-29'])
 
         output = testTable
         self.assertEqual( us39( input ).get_string(), output.get_string())
@@ -386,5 +386,61 @@ class Tests(unittest.TestCase):
         output = "07 NOV 3000"
 
         self.assertEqual( us42( input ), output )
+
+    def test_us21(self):
+        input = {
+            'individualData': {
+                '@US21.1@': {
+                    'SEX' : 'M'
+                },
+                '@US21.2@' : {
+                    'SEX' : 'M'
+                }
+            },
+            'familyData': {
+                '@US34.3@' : {
+                    'HUSB' : '@US21.1@',
+                    'WIFE' : '@US21.2@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife'
+                }
+            }
+        }
+
+        testTable = PrettyTable()
+        testTable.field_names = ["FAMILY ID", "NAME", "ROLE", "GENDER"]
+        testTable.add_row(['@US34.3@', 'Wife', 'Wife', 'M'])
+
+        output = testTable
+        self.assertEqual( us21( input ).get_string(), output.get_string() )
+
+    def test_us34(self):
+        input = {
+            'individualData': {
+                '@US34.1@': {
+                    'AGE' : '25'
+                },
+                '@US34.2@' : {
+                    'AGE' : '54'
+                }
+            },
+            'familyData': {
+                '@US34.3@' : {
+                    'HUSB' : '@US34.1@',
+                    'WIFE' : '@US34.2@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife'
+                }
+            }
+        }
+
+
+        testTable = PrettyTable()
+        testTable.field_names = ["FAMILY ID", "AGE DIFFERENCE", "HUSB NAME", "HUSB AGE", "WIFE NAME", "WIFE AGE"]
+        testTable.add_row(['@US34.3@', 29, 'Husband', '25', 'Wife', '54'])
+
+
+        output = testTable
+        self.assertEqual( us34( input ).get_string(), output.get_string())
 
 unittest.main()
