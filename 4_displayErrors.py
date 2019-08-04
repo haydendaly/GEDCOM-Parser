@@ -82,6 +82,18 @@ def displayErrors(fileName, GEDCOM_dict):
     print('\n[us21] Error: Incorrect Gender for Role')
     print( us21 )
 
+    us08 = jbUserStories.us08(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us09.get_string(title="[us08] - Error: Birth Occurs Before Marriage or After Parents Divorce Date")+'\n\n')
+    print('\n[us08] Error: Birth Occurs Before Marriage or After Parents Divorce Date')
+    print( us08 )
+
+    us12 = jbUserStories.us12(GEDCOM_dict)
+    with open(fileName[:-4] + '_output.txt', 'a+') as output:
+        output.write(us12.get_string(title="[us12] - Error: Birth Occurs 60 or 80 years after the birth or mother and father respectively")+'\n\n')
+    print('\n[us12] Error: Birth Occurs 60 or 80 years after the birth or mother and father respectively')
+    print( us12 )
+
     return
 
 def main(fileName, GEDCOM_dict):

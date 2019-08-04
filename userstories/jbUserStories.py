@@ -138,3 +138,60 @@ def us09(GEDCOM_dict):
             if ((husb_deat.date() <= (chil_birt.date() + datetime.timedelta(9*365/12))) or wife_deat.date() <= chil_birt.date()):
                 invalidDateTable.add_row([ key, value['CHIL'][i], individualData[value['CHIL'][i]]['NAME'], individualData[value['CHIL'][i]]['BIRT'],value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
     return invalidDateTable
+
+# Child birth should occur after marriage and before divorce of parents
+def us08(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Married']
+
+    familyData = GEDCOM_dict['familyData']
+    individualData = GEDCOM_dict['individualData']
+    for key, value in familyData.items():
+        if ( value['CHIL'] == 'N/A' ):
+            break
+        if ( value['MARR'] != 'N/A'):
+            marr_date = datetime.datetime.strptime(" ".join( value['MARR'].split('-') ), '%Y %m %d')
+            if ( value['DIV'] != 'N/A'):
+                div_date = datetime.datetime.strptime(" ".join( value['DIV'].split('-') ), '%Y %m %d')
+            else:
+                div_date = datetime.datetime.min
+        else:
+            marr_date = datetime.datetime.min
+
+        if (individualData[value['CHIL']]['BIRT'] != 'N/A'):
+            chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL']]['BIRT'].split('-') ), '%Y %m %d')
+        else:
+            chil_birt = datetime.datetime.min
+        # for i in range(len(value['CHIL'])):
+        #     chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL'][i]]['BIRT'].split('-') ), '%Y %m %d')
+        #     if ((husb_deat.date() <= (chil_birt.date() + datetime.timedelta(9*365/12))) or wife_deat.date() <= chil_birt.date()):
+        if ((div_date.date() <= (chil_birt.date() + datetime.timedelta(9*365/12))) or marr_date.date() <= chil_birt.date()):
+            invalidDateTable.add_row([ key, value['CHIL'], individualData[value['CHIL']]['NAME'], individualData[value['CHIL']]['BIRT'], marr_date.date()])
+    return invalidDateTable
+
+    # Child birth should occur after marriage and before divorce of parents
+def us12(GEDCOM_dict):
+    invalidDateTable = PrettyTable()
+    invalidDateTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Husband ID', 'Husband Name', 'Husband Birth', 'Wife ID', 'Wife Name', 'Wife Birth']
+
+    familyData = GEDCOM_dict['familyData']
+    individualData = GEDCOM_dict['individualData']
+    for key, value in familyData.items():
+        if ( value['CHIL'] == 'N/A' ):
+            break
+        if ( individualData[value['HUSB']]['BIRT'] != 'N/A'):
+            husb_birt = datetime.datetime.strptime(" ".join( individualData[value['HUSB']]['BIRT'].split('-') ), '%Y %m %d')
+        else:
+            husb_birt = datetime.datetime.min
+        if ( individualData[value['WIFE']]['BIRT'] != 'N/A'):
+            wife_birt = datetime.datetime.strptime(" ".join( individualData[value['WIFE']]['BIRT'].split('-') ), '%Y %m %d')
+        else:
+            wife_birt = datetime.datetime.min
+        if (individualData[value['CHIL']]['BIRT'] != 'N/A'):
+            chil_birt = datetime.datetime.strptime(" ".join( individualData[value['CHIL']]['BIRT'].split('-') ), '%Y %m %d')
+        else:
+            chil_birt = datetime.datetime.min
+        if ((wife_birt.date() <= (chil_birt.date() + datetime.timedelta(60*365))) or husb_birt.date() <= (chil_birt.date() + datetime.timedelta(80*365))):
+            invalidDateTable.add_row([ key, value['CHIL'], individualData[value['CHIL']]['NAME'], individualData[value['CHIL']]['BIRT'], value['HUSB'], value['HUSB_NAME'], husb_birt.date(), value['WIFE'], value['WIFE_NAME'], wife_birt.date()])
+    return invalidDateTable
+    

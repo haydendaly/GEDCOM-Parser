@@ -6,7 +6,7 @@ sys.path.append(os.path.abspath('../userstories'))
 from prettytable import PrettyTable;
 
 import unittest
-from jbUserStories import us01, us02, us03, us04, us05, us09
+from jbUserStories import us01, us02, us03, us04, us05, us08, us09, us12
 from hdUserStories import us35, us36, us29, us39, us06, us07, us34, us21
 from gaUserStories import us38, us27, us30, us31, us10, us41, us42
 
@@ -442,5 +442,78 @@ class Tests(unittest.TestCase):
 
         output = testTable
         self.assertEqual( us34( input ).get_string(), output.get_string())
+
+    def test_us08(self):
+        input = {
+            'individualData': {
+                '@US08.1@': {
+                    'DEAT' : '2017-01-01'
+                },
+                '@US08.2@' : {
+                    'DEAT' : '2018-01-01'
+                },
+                '@US08.3@': {
+                    'BIRT' : '2019-01-01',
+                    'NAME' : 'Child',
+                    'DEAT' : 'N/A'
+                }
+            },
+            'familyData': {
+                '@US08.4@' : {
+                    'HUSB' : '@US08.2@',
+                    'WIFE' : '@US08.1@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife',
+                    'MARR' : '2018-01-01',
+                    'DIV' : '2019-05-05',
+                    'CHIL' : '@US08.3@'
+                }
+            }
+        }
+
+
+        testTable = PrettyTable()
+        testTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Married']
+        testTable.add_row([ '@US08.4@', '@US08.3@', 'Child', '2019-01-01', '2018-01-01'])
+
+
+        output = testTable
+        self.assertEqual( us08( input ).get_string(), output.get_string())
+
+    def test_us12(self):
+        input = {
+            'individualData': {
+                '@US12.1@': {
+                    'BIRT' : '1958-01-01'
+                },
+                '@US12.2@' : {
+                    'BIRT' : '1935-01-01'
+                },
+                '@US12.3@': {
+                    'BIRT' : '2019-01-01',
+                    'NAME' : 'Child',
+                    'DEAT' : 'N/A'
+                }
+            },
+            'familyData': {
+                '@US12.4@' : {
+                    'HUSB' : '@US12.2@',
+                    'WIFE' : '@US12.1@',
+                    'HUSB_NAME' : 'Husband',
+                    'WIFE_NAME' : 'Wife',
+                    'MARR' : '2018-01-01',
+                    'CHIL' : '@US12.3@'
+                }
+            }
+        }
+
+
+        testTable = PrettyTable()
+        testTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Husband ID', 'Husband Name', 'Husband Birth', 'Wife ID', 'Wife Name', 'Wife Birth']
+        testTable.add_row([ '@US12.4@', '@US12.3@', 'Child', '2019-01-01', '@US12.2@', 'Husband', '1935-01-01', '@US12.1@', 'Wife', '1958-01-01'])
+
+
+        output = testTable
+        self.assertEqual( us12( input ).get_string(), output.get_string())
 
 unittest.main()
