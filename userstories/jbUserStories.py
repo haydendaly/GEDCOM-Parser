@@ -139,7 +139,7 @@ def us09(GEDCOM_dict):
                 invalidDateTable.add_row([ key, value['CHIL'][i], individualData[value['CHIL'][i]]['NAME'], individualData[value['CHIL'][i]]['BIRT'],value['HUSB'], value['HUSB_NAME'], husb_deat.date(), value['WIFE'], value['WIFE_NAME'], wife_deat.date()])
     return invalidDateTable
 
-# Child birth should occur after marriage and before divorce of parents
+# Children should be born after marriage of parents (and not more than 9 months after their divorce)
 def us08(GEDCOM_dict):
     invalidDateTable = PrettyTable()
     invalidDateTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Married']
@@ -169,7 +169,7 @@ def us08(GEDCOM_dict):
             invalidDateTable.add_row([ key, value['CHIL'], individualData[value['CHIL']]['NAME'], individualData[value['CHIL']]['BIRT'], marr_date.date()])
     return invalidDateTable
 
-    # Child birth should occur after marriage and before divorce of parents
+# Mother should be less than 60 years older than her children and father should be less than 80 years older than his children
 def us12(GEDCOM_dict):
     invalidDateTable = PrettyTable()
     invalidDateTable.field_names = ['FAM ID', 'Child ID', 'Child Name', 'Child Birth', 'Husband ID', 'Husband Name', 'Husband Birth', 'Wife ID', 'Wife Name', 'Wife Birth']
@@ -194,4 +194,3 @@ def us12(GEDCOM_dict):
         if ((wife_birt.date() <= (chil_birt.date() + datetime.timedelta(60*365))) or husb_birt.date() <= (chil_birt.date() + datetime.timedelta(80*365))):
             invalidDateTable.add_row([ key, value['CHIL'], individualData[value['CHIL']]['NAME'], individualData[value['CHIL']]['BIRT'], value['HUSB'], value['HUSB_NAME'], husb_birt.date(), value['WIFE'], value['WIFE_NAME'], wife_birt.date()])
     return invalidDateTable
-    

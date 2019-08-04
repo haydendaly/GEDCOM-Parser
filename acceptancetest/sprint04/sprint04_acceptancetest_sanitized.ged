@@ -232,3 +232,64 @@
 1 | NAME | Y | Reject Illegitimate DEAT Date /Non Day/ | 232
 1 | DEAT | Y |  | 233
 2 | DATE | Y | 42 JUN 1800 | 234
+0 | INDI | Y | @US21_01@ | 235
+1 | NAME | Y | Incorrect Gender Role /M/ | 236
+1 | SEX | Y | M | 237
+1 | FAMS | Y | @US21@ | 238
+0 | INDI | Y | @US21_02@ | 239
+1 | NAME | Y | Incorrect Gender Role /Also M/ | 240
+1 | SEX | Y | M | 241
+1 | FAMS | Y | @US21@ | 242
+0 | FAM | Y | @US21@ | 243
+1 | HUSB | Y | @US21_01@ | 244
+1 | WIFE | Y | @US21_02@ | 245
+0 | INDI | Y | @US34_01@ | 246
+1 | NAME | Y | Twice as /Old/ | 247
+1 | BIRT | Y |  | 248
+2 | DATE | Y | 01 JAN 1800 | 249
+1 | FAMS | Y | @US34@ | 250
+0 | INDI | Y | @US34_02@ | 251
+1 | BIRT | Y |  | 253
+2 | DATE | Y | 01 JAN 2000 | 254
+1 | FAMS | Y | @US34@ | 255
+0 | FAM | Y | @US34@ | 256
+1 | HUSB | Y | @US34_01@ | 257
+1 | WIFE | Y | @US34_02@ | 258
+0 | INDI | Y | @US08_01@ | 259
+1 | NAME | Y | Husb | 260
+1 | FAMS | Y | @US08@ | 261
+0 | INDI | Y | @US08_02@ | 262
+1 | NAME | Y | Wife | 263
+1 | FAMS | Y | @US08@ | 264
+0 | INDI | Y | @US08_03@ | 265
+1 | NAME | Y | Child | 266
+1 | BIRT | Y |  | 267
+2 | DATE | Y | 01 JAN 2000 | 268
+1 | FAMC | Y | @US08@ | 269
+0 | FAM | Y | @US08@ | 270
+1 | HUSB | Y | @US08_01@ | 271
+1 | WIFE | Y | @US08_02@ | 272
+1 | MARR | Y |  | 273
+2 | DATE | Y | 01 JAN 2001 | 274
+1 | CHIL | Y | @US08_03@ | 275
+0 | INDI | Y | @US12_01@ | 276
+1 | NAME | Y | More Than 80 Years Older Than /Child/ | 277
+1 | BIRT | Y |  | 278
+2 | DATE | Y | 01 JAN 1935 | 279
+1 | FAMS | Y | @US12@ | 280
+0 | INDI | Y | @US12_02@ | 281
+1 | NAME | Y | More Than 60 Years Older Than /Child/ | 282
+1 | BIRT | Y |  | 283
+2 | DATE | Y | 01 JAN 1958 | 284
+1 | FAMS | Y | @US12@ | 285
+0 | INDI | Y | @US12_03@ | 286
+1 | NAME | Y | Child | 287
+1 | BIRT | Y |  | 288
+2 | DATE | Y | 01 JAN 2019 | 289
+1 | FAMC | Y | @US12@ | 290
+0 | FAM | Y | @US12@ | 291
+1 | HUSB | Y | @US12_01@ | 292
+1 | WIFE | Y | @US12_02@ | 293
+1 | CHIL | Y | @US12_03@ | 294
+1 | MARR | Y |  | 295
+2 | DATE | Y | 01 JAN 2018 | 296

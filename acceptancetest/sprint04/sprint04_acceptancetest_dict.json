@@ -553,6 +553,159 @@
       "BIRT": "N/A",
       "ALIVE": "True",
       "AGE": "N/A"
+    },
+    "@US21_01@": {
+      "INDILine": "235",
+      "NAME": "Incorrect Gender Role /M/",
+      "NAMELine": "236",
+      "SEX": "M",
+      "SEXLine": "237",
+      "FAMS": [
+        "@US21@"
+      ],
+      "FAMSLine": "238",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US21_02@": {
+      "INDILine": "239",
+      "NAME": "Incorrect Gender Role /Also M/",
+      "NAMELine": "240",
+      "SEX": "M",
+      "SEXLine": "241",
+      "FAMS": [
+        "@US21@"
+      ],
+      "FAMSLine": "242",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US34_01@": {
+      "INDILine": "246",
+      "NAME": "Twice as /Old/",
+      "NAMELine": "247",
+      "BIRT": "1800-01-01",
+      "BIRTLine": "249",
+      "FAMS": [
+        "@US34@"
+      ],
+      "FAMSLine": "250",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "219"
+    },
+    "@US34_02@": {
+      "INDILine": "251",
+      "BIRT": "2000-01-01",
+      "BIRTLine": "254",
+      "FAMS": [
+        "@US34@"
+      ],
+      "FAMSLine": "255",
+      "NAME": "N/A",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US08_01@": {
+      "INDILine": "259",
+      "NAME": "Husb",
+      "NAMELine": "260",
+      "FAMS": [
+        "@US08@"
+      ],
+      "FAMSLine": "261",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US08_02@": {
+      "INDILine": "262",
+      "NAME": "Wife",
+      "NAMELine": "263",
+      "FAMS": [
+        "@US08@"
+      ],
+      "FAMSLine": "264",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "BIRT": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "N/A"
+    },
+    "@US08_03@": {
+      "INDILine": "265",
+      "NAME": "Child",
+      "NAMELine": "266",
+      "BIRT": "2000-01-01",
+      "BIRTLine": "268",
+      "FAMC": "@US08@",
+      "FAMCLine": "269",
+      "SEX": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "19"
+    },
+    "@US12_01@": {
+      "INDILine": "276",
+      "NAME": "More Than 80 Years Older Than /Child/",
+      "NAMELine": "277",
+      "BIRT": "1935-01-01",
+      "BIRTLine": "279",
+      "FAMS": [
+        "@US12@"
+      ],
+      "FAMSLine": "280",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "84"
+    },
+    "@US12_02@": {
+      "INDILine": "281",
+      "NAME": "More Than 60 Years Older Than /Child/",
+      "NAMELine": "282",
+      "BIRT": "1958-01-01",
+      "BIRTLine": "284",
+      "FAMS": [
+        "@US12@"
+      ],
+      "FAMSLine": "285",
+      "SEX": "N/A",
+      "FAMC": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "61"
+    },
+    "@US12_03@": {
+      "INDILine": "286",
+      "NAME": "Child",
+      "NAMELine": "287",
+      "BIRT": "2019-01-01",
+      "BIRTLine": "289",
+      "FAMC": "@US12@",
+      "FAMCLine": "290",
+      "SEX": "N/A",
+      "FAMS": "N/A",
+      "DEAT": "N/A",
+      "ALIVE": "True",
+      "AGE": "0"
     }
   },
   "familyData": {
@@ -689,6 +842,62 @@
       "HUSB_NAME": "N/A",
       "WIFE_NAME": "N/A",
       "CHIL": "N/A"
+    },
+    "@US21@": {
+      "FAMLine": "243",
+      "HUSB": "@US21_01@",
+      "HUSBLine": "244",
+      "WIFE": "@US21_02@",
+      "WIFELine": "245",
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "Incorrect Gender Role /M/",
+      "WIFE_NAME": "Incorrect Gender Role /Also M/",
+      "CHIL": "N/A"
+    },
+    "@US34@": {
+      "FAMLine": "256",
+      "HUSB": "@US34_01@",
+      "HUSBLine": "257",
+      "WIFE": "@US34_02@",
+      "WIFELine": "258",
+      "MARR": "N/A",
+      "DIV": "N/A",
+      "HUSB_NAME": "Twice as /Old/",
+      "WIFE_NAME": "N/A",
+      "CHIL": "N/A"
+    },
+    "@US08@": {
+      "FAMLine": "270",
+      "HUSB": "@US08_01@",
+      "HUSBLine": "271",
+      "WIFE": "@US08_02@",
+      "WIFELine": "272",
+      "MARR": "2001-01-01",
+      "MARRLine": "274",
+      "CHIL": [
+        "@US08_03@"
+      ],
+      "CHILLine": "275",
+      "DIV": "N/A",
+      "HUSB_NAME": "Husb",
+      "WIFE_NAME": "Wife"
+    },
+    "@US12@": {
+      "FAMLine": "291",
+      "HUSB": "@US12_01@",
+      "HUSBLine": "292",
+      "WIFE": "@US12_02@",
+      "WIFELine": "293",
+      "CHIL": [
+        "@US12_03@"
+      ],
+      "CHILLine": "294",
+      "MARR": "2018-01-01",
+      "MARRLine": "296",
+      "DIV": "N/A",
+      "HUSB_NAME": "More Than 80 Years Older Than /Child/",
+      "WIFE_NAME": "More Than 60 Years Older Than /Child/"
     }
   }
 }
