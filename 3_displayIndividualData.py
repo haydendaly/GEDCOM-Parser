@@ -100,6 +100,7 @@ def main(fileName, GEDCOM_dict):
         individualDataTable = displayIndividualData( GEDCOM_dict['individualData'] )
 
         with open(fileName.rstrip('_dict.json') + '_output.txt', 'a+') as output:
+            output.write("Individuals (with us_27)\n")
             output.write(individualDataTable.get_string(title="Individuals (with us_27)")+'\n\n')
 
         # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables
@@ -113,6 +114,7 @@ def main(fileName, GEDCOM_dict):
             individualDataTable = displayIndividualData( GEDCOM_dict['individualData'] )
 
             with open(fileName[:-4] + '_output.txt', 'a+') as output:
+                output.write("Individuals (with us_27)\n")
                 output.write(individualDataTable.get_string(title="Individuals (with us_27)")+'\n\n')
 
             # Overwrite GEDCOM Created in 2_storeGEDCOMInDict.py with Data Matching Exactly what is Printed out in the Tables

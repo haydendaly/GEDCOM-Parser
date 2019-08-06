@@ -25,7 +25,7 @@ from userstories import hdUserStories, jbUserStories, gaUserStories
 #   us29 -
 #   us30 -
 #   us31 -
-#   us34
+#   us34 -
 #   us35 -
 #   us36 -
 #   us38 -
@@ -38,30 +38,35 @@ def displayEnhancements(fileName, GEDCOM_dict):
 
     us29 = hdUserStories.us29(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us29] - List Deceased\n")
         output.write(us29.get_string(title="[us29] - List Deceased")+'\n\n')
     print('\n[us29] List all deceased individuals')
     print(us29)
 
     us30 = gaUserStories.us30(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us30] - Living Married People\n")
         output.write(us30.get_string(title="[us30] - Living Married People")+'\n\n')
     print('\n[us30] Living Married People')
     print(us30)
 
     us31 = gaUserStories.us31(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us31] - Living Single People Over 30\n")
         output.write(us31.get_string(title="[us31] - Living Single People Over 30")+'\n\n')
     print('\n[us31] Living Single People Over 30')
     print(us31)
 
     us34 = hdUserStories.us34(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us34] - List Large Age Differences\n")
         output.write(us34.get_string(title="[us34] - List Large Age Differences")+'\n\n')
     print('\n[us34] List Large Age Differences')
     print( us34 )
 
     us35 = hdUserStories.us35(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us35] - Birth Within the Past 30 Days\n")
         output.write(us35.get_string(title="[us35] - Birth Within the Past 30 Days")+'\n\n')
     print('\n[us35] Birth Within the Past 30 Days')
     print( us35 )
@@ -69,6 +74,7 @@ def displayEnhancements(fileName, GEDCOM_dict):
 
     us36 = hdUserStories.us36(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us36] - Death Within the Past 30 Days\n")
         output.write(us36.get_string(title="[us36] - Death Within the Past 30 Days")+'\n\n')
     print('\n[us36] Death Within the Past 30 Days')
     print( us36 )
@@ -76,12 +82,14 @@ def displayEnhancements(fileName, GEDCOM_dict):
 
     us38 = gaUserStories.us38(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us38] - Upcoming Birthdays\n")
         output.write(us38.get_string(title="[us38] - Upcoming Birthdays")+'\n\n')
     print('\n[us38] Upcoming Birthdays')
     print( us38 )
 
     us39 = hdUserStories.us39(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us39] - List Upcoming Anniversaries\n")
         output.write(us39.get_string(title="[us39] - List Upcoming Anniversaries")+'\n\n')
     print('\n[us39] List Upcoming Anniversaries in the next 30 days')
     print( us39 )

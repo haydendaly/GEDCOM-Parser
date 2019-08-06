@@ -29,13 +29,15 @@ def displayAnomalies(fileName, GEDCOM_dict):
 
     us10 = gaUserStories.us10(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
+        output.write("[us10] - Married Before Spouses are 14 Years Old\n")
         output.write(us10.get_string(title="[us10] - Married Before Spouses are 14 Years Old")+'\n\n')
     print('\n[us10] Married Before Spouses are 14 Years Old')
     print( us10 )
 
     us07 = hdUserStories.us07(GEDCOM_dict)
     with open(outputFile, 'a+') as output:
-         output.write(us07.get_string(title="[us07] - Age over 150 Years Old")+'\n\n')
+        output.write("[us07] - Age over 150 Years Old\n")
+        output.write(us07.get_string(title="[us07] - Age over 150 Years Old")+'\n\n')
     print('\n[us07] Age over 150 Years Old')
     print( us07 )
 
