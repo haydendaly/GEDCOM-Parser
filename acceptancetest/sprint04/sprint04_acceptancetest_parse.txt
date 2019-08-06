@@ -116,8 +116,8 @@
 <-- 1 | NAME | Y | Recent Birth /Age 0/
 --> 1 BIRT
 <-- 1 | BIRT | Y | 
---> 2 DATE 29 JUN 2019
-<-- 2 | DATE | Y | 29 JUN 2019
+--> 2 DATE 1 AUG 2019
+<-- 2 | DATE | Y | 1 AUG 2019
 --> 1 SEX F
 <-- 1 | SEX | Y | F
 --> 0 @US35_02@ INDI
@@ -126,8 +126,8 @@
 <-- 1 | NAME | Y | Recent Birth /Age 0/
 --> 1 BIRT
 <-- 1 | BIRT | Y | 
---> 2 DATE 04 JUN 2019
-<-- 2 | DATE | Y | 04 JUN 2019
+--> 2 DATE 10 JUL 2019
+<-- 2 | DATE | Y | 10 JUL 2019
 --> 1 SEX M
 <-- 1 | SEX | Y | M
 --> 0 @US36_01@ INDI
@@ -136,8 +136,8 @@
 <-- 1 | NAME | Y | Recent /Death/
 --> 1 DEAT
 <-- 1 | DEAT | Y | 
---> 2 DATE 29 JUN 2019
-<-- 2 | DATE | Y | 29 JUN 2019
+--> 2 DATE 01 AUG 2019
+<-- 2 | DATE | Y | 01 AUG 2019
 --> 1 SEX M
 <-- 1 | SEX | Y | M
 --> 0 @US36_02@ INDI
@@ -146,8 +146,8 @@
 <-- 1 | NAME | Y | Recent /Death/
 --> 1 DEAT
 <-- 1 | DEAT | Y | 
---> 2 DATE 10 JUN 2019
-<-- 2 | DATE | Y | 10 JUN 2019
+--> 2 DATE 04 AUG 2019
+<-- 2 | DATE | Y | 04 AUG 2019
 --> 1 SEX F
 <-- 1 | SEX | Y | F
 --> 0 @US38_01@ INDI
@@ -156,8 +156,8 @@
 <-- 1 | NAME | Y | Upcoming Birthday /Age 19/
 --> 1 BIRT
 <-- 1 | BIRT | Y | 
---> 2 DATE 20 JUL 1999
-<-- 2 | DATE | Y | 20 JUL 1999
+--> 2 DATE 14 AUG 1999
+<-- 2 | DATE | Y | 14 AUG 1999
 --> 1 SEX F
 <-- 1 | SEX | Y | F
 --> 0 @US38_02@ INDI
@@ -166,8 +166,8 @@
 <-- 1 | NAME | Y | Upcoming Birthday /Age 218/
 --> 1 BIRT
 <-- 1 | BIRT | Y | 
---> 2 DATE 30 JUL 1800
-<-- 2 | DATE | Y | 30 JUL 1800
+--> 2 DATE 30 AUG 1800
+<-- 2 | DATE | Y | 30 AUG 1800
 --> 0 @US01@ FAM
 <-- 0 | FAM | Y | @US01@
 --> 1 HUSB @US01_02@
@@ -292,8 +292,8 @@
 <-- 1 | WIFE | Y | @US39_02@
 --> 1 MARR
 <-- 1 | MARR | Y | 
---> 2 DATE 30 JUL 2000
-<-- 2 | DATE | Y | 30 JUL 2000
+--> 2 DATE 30 AUG 2000
+<-- 2 | DATE | Y | 30 AUG 2000
 --> 0 NOTE Mainly Sprint 03 Acceptance Test Data
 <-- 0 | NOTE | Y | Mainly Sprint 03 Acceptance Test Data
 --> 0 @US10_01@ INDI
@@ -518,12 +518,20 @@
 <-- 0 | INDI | Y | @US08_01@
 --> 1 NAME Husb
 <-- 1 | NAME | Y | Husb
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
 --> 1 FAMS @US08@
 <-- 1 | FAMS | Y | @US08@
 --> 0 @US08_02@ INDI
 <-- 0 | INDI | Y | @US08_02@
 --> 1 NAME Wife
 <-- 1 | NAME | Y | Wife
+--> 1 DEAT
+<-- 1 | DEAT | Y | 
+--> 2 DATE 01 JAN 2017
+<-- 2 | DATE | Y | 01 JAN 2017
 --> 1 FAMS @US08@
 <-- 1 | FAMS | Y | @US08@
 --> 0 @US08_03@ INDI
@@ -532,8 +540,8 @@
 <-- 1 | NAME | Y | Child
 --> 1 BIRT
 <-- 1 | BIRT | Y | 
---> 2 DATE 01 JAN 2000
-<-- 2 | DATE | Y | 01 JAN 2000
+--> 2 DATE 01 JAN 2019
+<-- 2 | DATE | Y | 01 JAN 2019
 --> 1 FAMC @US08@
 <-- 1 | FAMC | Y | @US08@
 --> 0 @US08@ FAM
@@ -544,8 +552,12 @@
 <-- 1 | WIFE | Y | @US08_02@
 --> 1 MARR
 <-- 1 | MARR | Y | 
---> 2 DATE 01 JAN 2001
-<-- 2 | DATE | Y | 01 JAN 2001
+--> 2 DATE 01 JAN 2018
+<-- 2 | DATE | Y | 01 JAN 2018
+--> 1 DIV
+<-- 1 | DIV | Y | 
+--> 2 DATE 05 MAY 2019
+<-- 2 | DATE | Y | 05 MAY 2019
 --> 1 CHIL @US08_03@
 <-- 1 | CHIL | Y | @US08_03@
 --> 0 @US12_01@ INDI

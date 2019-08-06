@@ -57,32 +57,32 @@
 0 | INDI | Y | @US35_01@ | 57
 1 | NAME | Y | Recent Birth /Age 0/ | 58
 1 | BIRT | Y |  | 59
-2 | DATE | Y | 29 JUN 2019 | 60
+2 | DATE | Y | 1 AUG 2019 | 60
 1 | SEX | Y | F | 61
 0 | INDI | Y | @US35_02@ | 62
 1 | NAME | Y | Recent Birth /Age 0/ | 63
 1 | BIRT | Y |  | 64
-2 | DATE | Y | 04 JUN 2019 | 65
+2 | DATE | Y | 10 JUL 2019 | 65
 1 | SEX | Y | M | 66
 0 | INDI | Y | @US36_01@ | 67
 1 | NAME | Y | Recent /Death/ | 68
 1 | DEAT | Y |  | 69
-2 | DATE | Y | 29 JUN 2019 | 70
+2 | DATE | Y | 01 AUG 2019 | 70
 1 | SEX | Y | M | 71
 0 | INDI | Y | @US36_02@ | 72
 1 | NAME | Y | Recent /Death/ | 73
 1 | DEAT | Y |  | 74
-2 | DATE | Y | 10 JUN 2019 | 75
+2 | DATE | Y | 04 AUG 2019 | 75
 1 | SEX | Y | F | 76
 0 | INDI | Y | @US38_01@ | 77
 1 | NAME | Y | Upcoming Birthday /Age 19/ | 78
 1 | BIRT | Y |  | 79
-2 | DATE | Y | 20 JUL 1999 | 80
+2 | DATE | Y | 14 AUG 1999 | 80
 1 | SEX | Y | F | 81
 0 | INDI | Y | @US38_02@ | 82
 1 | NAME | Y | Upcoming Birthday /Age 218/ | 83
 1 | BIRT | Y |  | 84
-2 | DATE | Y | 30 JUL 1800 | 85
+2 | DATE | Y | 30 AUG 1800 | 85
 0 | FAM | Y | @US01@ | 86
 1 | HUSB | Y | @US01_02@ | 87
 1 | WIFE | Y | @US01_01@ | 88
@@ -145,7 +145,7 @@
 1 | HUSB | Y | @US39_01@ | 145
 1 | WIFE | Y | @US39_02@ | 146
 1 | MARR | Y |  | 147
-2 | DATE | Y | 30 JUL 2000 | 148
+2 | DATE | Y | 30 AUG 2000 | 148
 0 | NOTE | Y | Mainly Sprint 03 Acceptance Test Data | 149
 0 | INDI | Y | @US10_01@ | 150
 1 | NAME | Y | Married Before /14/ [HUSB] | 151
@@ -257,39 +257,45 @@
 1 | WIFE | Y | @US34_02@ | 258
 0 | INDI | Y | @US08_01@ | 259
 1 | NAME | Y | Husb | 260
-1 | FAMS | Y | @US08@ | 261
-0 | INDI | Y | @US08_02@ | 262
-1 | NAME | Y | Wife | 263
-1 | FAMS | Y | @US08@ | 264
-0 | INDI | Y | @US08_03@ | 265
-1 | NAME | Y | Child | 266
-1 | BIRT | Y |  | 267
-2 | DATE | Y | 01 JAN 2000 | 268
-1 | FAMC | Y | @US08@ | 269
-0 | FAM | Y | @US08@ | 270
-1 | HUSB | Y | @US08_01@ | 271
-1 | WIFE | Y | @US08_02@ | 272
-1 | MARR | Y |  | 273
-2 | DATE | Y | 01 JAN 2001 | 274
-1 | CHIL | Y | @US08_03@ | 275
-0 | INDI | Y | @US12_01@ | 276
-1 | NAME | Y | More Than 80 Years Older Than /Child/ | 277
-1 | BIRT | Y |  | 278
-2 | DATE | Y | 01 JAN 1935 | 279
-1 | FAMS | Y | @US12@ | 280
-0 | INDI | Y | @US12_02@ | 281
-1 | NAME | Y | More Than 60 Years Older Than /Child/ | 282
-1 | BIRT | Y |  | 283
-2 | DATE | Y | 01 JAN 1958 | 284
-1 | FAMS | Y | @US12@ | 285
-0 | INDI | Y | @US12_03@ | 286
-1 | NAME | Y | Child | 287
-1 | BIRT | Y |  | 288
-2 | DATE | Y | 01 JAN 2019 | 289
-1 | FAMC | Y | @US12@ | 290
-0 | FAM | Y | @US12@ | 291
-1 | HUSB | Y | @US12_01@ | 292
-1 | WIFE | Y | @US12_02@ | 293
-1 | CHIL | Y | @US12_03@ | 294
-1 | MARR | Y |  | 295
-2 | DATE | Y | 01 JAN 2018 | 296
+1 | DEAT | Y |  | 261
+2 | DATE | Y | 01 JAN 2018 | 262
+1 | FAMS | Y | @US08@ | 263
+0 | INDI | Y | @US08_02@ | 264
+1 | NAME | Y | Wife | 265
+1 | DEAT | Y |  | 266
+2 | DATE | Y | 01 JAN 2017 | 267
+1 | FAMS | Y | @US08@ | 268
+0 | INDI | Y | @US08_03@ | 269
+1 | NAME | Y | Child | 270
+1 | BIRT | Y |  | 271
+2 | DATE | Y | 01 JAN 2019 | 272
+1 | FAMC | Y | @US08@ | 273
+0 | FAM | Y | @US08@ | 274
+1 | HUSB | Y | @US08_01@ | 275
+1 | WIFE | Y | @US08_02@ | 276
+1 | MARR | Y |  | 277
+2 | DATE | Y | 01 JAN 2018 | 278
+1 | DIV | Y |  | 279
+2 | DATE | Y | 05 MAY 2019 | 280
+1 | CHIL | Y | @US08_03@ | 281
+0 | INDI | Y | @US12_01@ | 282
+1 | NAME | Y | More Than 80 Years Older Than /Child/ | 283
+1 | BIRT | Y |  | 284
+2 | DATE | Y | 01 JAN 1935 | 285
+1 | FAMS | Y | @US12@ | 286
+0 | INDI | Y | @US12_02@ | 287
+1 | NAME | Y | More Than 60 Years Older Than /Child/ | 288
+1 | BIRT | Y |  | 289
+2 | DATE | Y | 01 JAN 1958 | 290
+1 | FAMS | Y | @US12@ | 291
+0 | INDI | Y | @US12_03@ | 292
+1 | NAME | Y | Child | 293
+1 | BIRT | Y |  | 294
+2 | DATE | Y | 01 JAN 2019 | 295
+1 | FAMC | Y | @US12@ | 296
+0 | FAM | Y | @US12@ | 297
+1 | HUSB | Y | @US12_01@ | 298
+1 | WIFE | Y | @US12_02@ | 299
+1 | CHIL | Y | @US12_03@ | 300
+1 | MARR | Y |  | 301
+2 | DATE | Y | 01 JAN 2018 | 302
